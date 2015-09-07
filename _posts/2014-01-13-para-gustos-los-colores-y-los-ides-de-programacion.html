@@ -1,0 +1,57 @@
+---
+layout: post
+title: Para gustos los colores (y los IDEs de programación)
+date: 2014-01-13 18:49:12.000000000 +01:00
+categories: []
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '239693'
+  _publicize_pending: '1'
+  publicize_twitter_user: franchoLab
+  publicize_twitter_url: http://t.co/3nGMTpP587
+  _wpas_done_5806: '1'
+  _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:18615166;b:1;}}
+  publicize_linkedin_url: http://www.linkedin.com/updates?discuss=&scope=48905255&stype=M&topic=5828553125359169536&type=U&a=8NyG
+  _wpas_done_2338128: '1'
+  _wpas_skip_5885328: '1'
+  _wpas_skip_5806: '1'
+  _wpas_skip_2338128: '1'
+author:
+  login: francho
+  email: francholab@gmail.com
+  display_name: francho
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p><a href="https://franchojoven.files.wordpress.com/2014/01/screen-capture.png"><img class="aligncenter size-large wp-image-1610" alt="screen-capture" src="/assets/screen-capture.png" width="604" height="451" /></a>Definitivamente los programadores somos un poco bipolares: se nos llena la boca al hablar de automatizaciones de tests, despliegues y cosas similares que hacemos para facilitarnos la vida, pero sin embargo, que no se te ocurra decir que usas un IDE moderno…</p>
+<p>...y es que todo el mundo sabe que los buenos programadores, los de pelo en pecho, usan el Vi, en una consola negra y sin tocar el ratón (o en su defecto el Emacs o el Sublime si eres de los modernos)</p>
+<p><!--more-->He de reconocer, que yo era de los que pensaba así. Durante años programé con el Vi (que no vim), luego empecé a usar editores tipo Gedit, o Bluefish hasta llegar al Netbeans, Eclipse o Sublime Text. Con cada cambio de editor iba descubriendo funcionalidades nuevas que pasaban a ser imprescindibles.</p>
+<p>Y es que lo de los buenos IDEs es como el doble monitor, una vez que lo has probado te cuesta trabajar sin el.</p>
+<p>Muchos me diréis que para aprender un lenguaje de programación o a manejar una herramienta hay que hacerlo sin ayuda externa… puede que tengáis razón, pero aquí estamos hablando de ser productivo. Así que por ejemplo una vez que conozco los comandos de git ¿por qué no usar el menú contextual para enviar mis commits? o ¿porqué no usar el autocompletado para escribir mi código en vez de ir cada dos por tres a los manuales?</p>
+<p>Yo continuamente estoy saltando de un lenguaje de programación a otro, de un proyecto a otro, y he de reconocer que sin ciertas ayudas esto me costaría mucho.</p>
+<p dir="ltr">A día de hoy a mi IDE le pido que tenga:</p>
+<ul>
+<li>Coloreado de código</li>
+<li><span style="font-size:14px;line-height:1.5em;">Autocompletado potente y rápido, que funcione bien con los lenguajes anarcas tipo Javascript</span></li>
+<li><span style="font-size:14px;line-height:1.5em;">Inspectores de código configurables que analicen lo que escribo a tiempo real en busca de bugs y fallos de estilo</span></li>
+<li><span style="font-size:14px;line-height:1.5em;">Un menú de refactor potente con atajos de teclado</span></li>
+<li><span style="font-size:14px;line-height:1.5em;">Integración con el sistema de gestión de proyecto (Jira o similar) que me permita ver las historias de usuario o tickets sin abrir el navegador, asociarlas a tareas de trabajo.</span></li>
+<li><span style="font-size:14px;line-height:1.5em;">Integración con el sistema de control de versiones que, aparte de lo típico (commits, gestión de conflictos, etc), me genere luego los mensajes de commit normalizados de forma automática basándose en la tarea</span></li>
+<li><span style="font-size:14px;line-height:1.5em;">Integración con el runner de tests</span></li>
+<li><span style="font-size:14px;line-height:1.5em;">Integración con el debugger ya sabes… puntos de ruptura y todo eso (si en PHP y Javascript también)</span></li>
+<li><span style="font-size:14px;line-height:1.5em;">Opción de “auto guardado” que paso de tener que estar dando al botón de guardar cada vez (para eso está el deshacer).</span></li>
+<li><span style="font-size:14px;line-height:1.5em;">Si estoy programando web que me permita ver en el navegador lo que voy cambiando sin necesidad de refrescar</span></li>
+<li><span style="font-size:14px;line-height:1.5em;">Que sea extensible y configurable (sobre todo los atajos de teclado)</span></li>
+</ul>
+<p>De un par de años a esta parte estoy usando <a href="http://www.jetbrains.com/idea/">IntelliJ</a> como IDE (es el editor que la gente de Google tomo como base para crear Android Studio), para programar Android, Java, PHP y Javascript que son los lenguajes que utilizo en el trabajo principalmente, aunque también lo he usado para temas puntuales en Python y Ruby.</p>
+<p>Si, ya se que es de pago, pero estamos hablando de tu herramienta de trabajo con la que pasas más tiempo que con tu pareja... no me digas que no puedes permitirte pagar <a href="http://www.jetbrains.com/idea/buy/">su licencia</a> (a parte que también tienes la versión gratuita)</p>
+<p>Aparte de los plugins específicos de cada lenguaje, tengo instalados los plugins de Live Edit, Angular JS, GitHub, Karma, Atlassian connector (y alguno que otro mas que seguro que me dejo), con lo que todas mis necesidades están cubiertas.</p>
+<p>A nivel de inspectores de código tengo configurados los mismos (Jshint, CodeSniffer, etc…) que pasan mis servidores de integración continua, con lo que no me llevo ninguna sorpresa cuando se ejecutan los tests.</p>
+<p>Otro tema interesante es el del teclado. En el trabajo tengo un Linux y en casa suelo trabajar con el MacBook con lo que me hacía un lío con los atajos de teclado. Esto lo solucioné comprando un <a href="http://www.logitech.com/es-es/product/wireless-solar-keyboard-k760-for-mac">teclado mac para el curro</a> y mapeando las teclas de mi Ubuntu para que los atajos de teclado sean los mismos en ambas plataformas.</p>
+<p>Resumiendo: si todavía eres de los que crees que se programa mejor en una terminal, te recomendaría que probaras un editor moderno, le instalaras los plugins de los servicios que usas, perdieras un poco de rato en configurarlo y aprender a manejarlo. Pasadas unas semanas ya me dirás si vuelves a tu antiguo editor ;)</p>
+<p>Y tú ¿qué IDE usas?</p>

@@ -1,0 +1,149 @@
+---
+layout: post
+title: 'Android: buscando contactos por de teléfono'
+date: 2009-06-18 01:23:17.000000000 +02:00
+categories:
+- Android
+tags:
+- Android
+- buscador
+- programa
+- telefonos
+status: publish
+type: post
+published: true
+meta:
+  _syntaxhighlighter_encoded: '1'
+  _edit_last: '2'
+  reddit: a:2:{s:5:"count";i:0;s:4:"time";i:1413385938;}
+author:
+  login: francho
+  email: francholab@gmail.com
+  display_name: francho
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p><a href="http://francho.org/lab/wp-content/uploads/2009/06/android-buscatelefonos.jpg"><img class="size-medium wp-image-31 alignright" title="android-buscatelefonos" src="/assets/android-buscatelefonos-189x300.jpg" alt="android-buscatelefonos" width="113" height="180" /></a>Esta es mi primera aplicación con Android. Se trata de un buscador de contactos a través de su número de teléfono.</p>
+<p>Los contactos se van filtrando conforme se va tecleando el número de teléfono. Si pulsamos sobre un item del resultado se abrirá su ficha de contacto.</p>
+<p>Con esta aplicación quería experimentar:</p>
+<ul>
+<li>La estructura básica de un programa en Android</li>
+<li>Comprension del AndroidManifest.xml</li>
+<li>La creación de un interfaz a pelo (editando el XML directamente)</li>
+<li>Cómo consultar datos de contactos (ManagedQuery)</li>
+<li>Cómo mostar los resultados (uso de "Adapters")</li>
+<li>Cómo enlazar mis resultados y las fichas de los contactos (Uso de Intent)</li>
+<li>Captura y personalización de mensajes de error (AlertDialog)</li>
+<li>Creación de aplicaciones multi-idioma (uso de "resources")</li>
+</ul>
+<p><!--more--></p>
+<p>Consideraciones técnicas:</p>
+<ul>
+<li>La aplicación debe tener permisos para acceder a la agenda (activar android.permission.READ_CONTACTS en AndroidManifest.xml)</li>
+<li>Esta aplicación ha sido probada en SDK 1.5</li>
+</ul>
+<p>[java]<br />
+/*<br />
+ * Sencilla aplicación de Android que permite encontrar un contacto a través de su número de telefono<br />
+ *<br />
+ * @autor: http://francho.org/lab<br />
+ *<br />
+ * @License: http://creativecommons.org/licenses/by-sa/3.0/es/<br />
+ *<br />
+ */<br />
+package org.francho.android.pruebas;</p>
+<p>import android.app.Activity;<br />
+import android.app.AlertDialog;<br />
+import android.content.ContentUris;<br />
+import android.content.DialogInterface;<br />
+import android.content.Intent;<br />
+import android.content.DialogInterface.OnClickListener;<br />
+import android.database.Cursor;<br />
+import android.net.Uri;<br />
+import android.os.Bundle;<br />
+import android.provider.Contacts.People;<br />
+import android.view.KeyEvent;<br />
+import android.view.View;<br />
+import android.widget.AdapterView;<br />
+import android.widget.EditText;<br />
+import android.widget.ListView;<br />
+import android.widget.SimpleCursorAdapter;<br />
+import android.widget.AdapterView.OnItemClickListener;</p>
+<p>public class BuscaTlf extends Activity {<br />
+	private EditText telefono;</p>
+<p>	/** Called when the activity is first created. */<br />
+	@Override<br />
+	public void onCreate(Bundle savedInstanceState) {<br />
+		super.onCreate(savedInstanceState);<br />
+		setContentView(R.layout.buscacontactos);</p>
+<p>		telefono = (EditText) findViewById(R.id.telefono);</p>
+<p>		// Conforme se va tecleando va buscando las coincidencias<br />
+		telefono.setOnKeyListener(new View.OnKeyListener() {<br />
+			@Override<br />
+			public boolean onKey(View v, int keyCode, KeyEvent event) {<br />
+				buscaTelefono(telefono.getText().toString());<br />
+				return false;<br />
+			}<br />
+		});</p>
+<p>	}</p>
+<p>	public void buscaTelefono(String telefono) {<br />
+		// Las columnas que queremos en el resultado<br />
+		String[] projection = new String[] {<br />
+				android.provider.Contacts.Phones._ID,<br />
+				android.provider.Contacts.Phones.NAME,<br />
+				android.provider.Contacts.Phones.NUMBER,<br />
+				android.provider.Contacts.Phones.TYPE<br />
+				};</p>
+<p>		ListView lista = (ListView) findViewById(R.id.listaRtdo);</p>
+<p>		// Ejecutamos la consulta<br />
+		try {<br />
+			Cursor datos = managedQuery(android.provider.Contacts.Phones.CONTENT_URI, // Uri de busqueda. Buscamos en todos los telefonos<br />
+					projection, // Con que campos nos quedamos<br />
+					android.provider.Contacts.Phones.NUMBER + &quot; LIKE ? &quot;, // Condición de búsqueda<br />
+					new String[] { &quot;%&quot;+telefono+&quot;%&quot; } , // Parámetros de búsqueda<br />
+					android.provider.Contacts.Phones.NAME + &quot; ASC&quot; // Orden de los resultados<br />
+					);</p>
+<p>			/*<br />
+			 * Creamos un adaptador que enlazamos con la lista de resultados<br />
+			 * juntos se encargan de mostrar los resultados<br />
+			 */<br />
+			SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,<br />
+					android.R.layout.two_line_list_item, // Usamos un layout predefinido: dos lineas por resultado<br />
+					datos, // Cursor que tiene los datos<br />
+					new String[] {<br />
+						android.provider.Contacts.Phones.NAME,<br />
+						android.provider.Contacts.Phones.NUMBER,<br />
+					}, // Campos a coger (From)<br />
+					new int[] { android.R.id.text1, android.R.id.text2}); // Como los mostramos (To)</p>
+<p>			/* Sobreescribimos el evento click de los items.<br />
+			 * Cuando se pulse salte a la ficha del contacto<br />
+			 */<br />
+			lista.setOnItemClickListener(new OnItemClickListener() {<br />
+				public void onItemClick(AdapterView&lt;?&gt; adapterView, View view, int position, long id) {<br />
+					// Preparamos la Uri del contacto<br />
+					Uri contactoUri = ContentUris.withAppendedId(People.CONTENT_URI, id);<br />
+					// Abrimos su ficha<br />
+					Intent i = new Intent(Intent.ACTION_VIEW,contactoUri);<br />
+					startActivity(i);<br />
+				}<br />
+			});</p>
+<p>			// Todo listo, ala Android, apañatelas tu y muestra los resultados ;-)<br />
+			lista.setAdapter(adapter);</p>
+<p>		} catch (Exception e) {<br />
+			// Si algo falla mostramos en una ventana de dialogo el mensaje de error<br />
+			new AlertDialog.Builder(this)<br />
+				.setMessage(e.toString())<br />
+				.setCancelable(false)<br />
+				.setPositiveButton(R.string.terminar, new OnClickListener() {<br />
+					@Override<br />
+					public void onClick(DialogInterface dialog, int which) {<br />
+						finish(); // Al pulsar sobre el boton la aplicacion se cerrará<br />
+					}<br />
+				})<br />
+				.show();<br />
+		}</p>
+<p>	}<br />
+}<br />
+[/java]</p>

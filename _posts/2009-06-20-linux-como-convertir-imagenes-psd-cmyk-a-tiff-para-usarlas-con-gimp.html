@@ -1,0 +1,35 @@
+---
+layout: post
+title: 'Linux: Cómo convertir imágenes PSD (CMYK) a Tiff para usarlas con Gimp'
+date: 2009-06-20 01:07:50.000000000 +02:00
+categories:
+- linux
+- Píldoras
+tags:
+- conversion
+- imágenes
+- linux
+- Píldoras
+- utilidades
+status: publish
+type: post
+published: true
+meta:
+  _syntaxhighlighter_encoded: '1'
+  _edit_last: '2'
+  _wp_old_slug: como-convertir-imagenes-psd-cmyk-a-tiff-para-usarlas-con-gimp
+  reddit: a:2:{s:5:"count";i:0;s:4:"time";i:1412810558;}
+author:
+  login: francho
+  email: francholab@gmail.com
+  display_name: francho
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p>Gimp (de momento) no soporta imágenes con esquemas de color CMYK. Si nos pasan una imagen de este tipo (por ejemplo una creada con Photoshop) deberemos convertirla antes de poder usarla.</p>
+<p>Para esto es muy útil la utilidad convert de ImageMagic. Con el siguiente comando ejecutado desde una consola podremos hacer esta tarea:</p>
+<p>[code language="shell"]</p>
+<p>convert -depth 8 -colorspace RGB imagen_original.psd nueva_imagen.tif</p>
+<p>[/code]</p>

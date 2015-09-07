@@ -1,0 +1,33 @@
+---
+layout: post
+title: Cómo añadir el protocolo lastfm:// al Firefox
+date: 2006-07-24 13:58:09.000000000 +02:00
+categories:
+- Píldoras
+tags:
+- Internet
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '2'
+  syntaxhighlighter_encoded: '1'
+author:
+  login: francho
+  email: francholab@gmail.com
+  display_name: francho
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<blockquote>
+<ol>
+<li><em>Abrimos firefox y pulsamos Ctrl + T para abrir una pestaña nueva, en la que vamos a teclear: <strong>about:config</strong></em></li>
+<li><em>Hacemos click con el botón derecho dónde vemos todo el texto, y pulsamos sobre: <strong>Nueva / Cadena</strong></em></li>
+<li><em>Nuestra cadena tiene que tener el siguiente nombre: <strong><strong><strong>network.protocol-handler.app.lastfm</strong></strong></strong></em></li>
+<li><em>El valor de la cadena debe de ser, el de la ruta en la que tenemos nuestro reproductor de Last.fm, en mi caso sería: <strong>~/programas/Last.fm/player</strong></em></li>
+<li><em>Para probarlo, solo basta con entrar en la página de Last.fm, allí buscamos una radio cualquiera y pinchamos sobre ella para reproducirla, nos saldrá un recuadro con texto preguntandonos sobre el protocolo, nosotros usaremos el checkbox “Recordar siempre mi elección” y le damos a aceptar, automáticamente arrancará el reproductor de Last.fm con esa emisora.</em></li>
+</ol>
+</blockquote>
+<p>Fuente: <a href="http://dizo.agali.org/2006/06/05/como-anadir-el-protocolo-lastfm-en-firefox/">Unstable Minds</a></p>

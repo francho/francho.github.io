@@ -1,0 +1,57 @@
+---
+layout: post
+title: Mostrando datos de forma bonita
+date: 2009-07-05 00:38:54.000000000 +02:00
+categories:
+- Docs
+tags:
+- javascript
+- libreria
+- Programación
+status: publish
+type: post
+published: true
+meta:
+  _syntaxhighlighter_encoded: '1'
+  _edit_last: '2'
+author:
+  login: francho
+  email: francholab@gmail.com
+  display_name: francho
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p>Google a través de su <a href="http://code.google.com/intl/es/apis/visualization/documentation/gadgetgallery.html">Visualization API Gadget Gallery</a> nos ofrece unas librerías JavaScript con las que podemos mostrar fácilmente los datos de una manera mucho mas amigable al usuarios.</p>
+<p>Son ideales para aplicaciones de Business Intelligence. Como muestra un botón:</p>
+<p> //</p>
+<p><!--more--><br />
+El código fuente del ejemplo (copiado de la documentación del API)</p>
+<p>[javascript]<br />
+    &lt;script type=&quot;text/javascript&quot; src=&quot;http://www.google.com/jsapi&quot;&gt;&lt;/script&gt;<br />
+    &lt;script type=&quot;text/javascript&quot;&gt;<br />
+      // Load the Visualization API and the piechart package.<br />
+      google.load('visualization', '1', {'packages':['piechart']});<br />
+      // Set a callback to run when the API is loaded.<br />
+      google.setOnLoadCallback(drawChart);<br />
+      // Callback that creates and populates a data table,<br />
+      // instantiates the pie chart, passes in the data and<br />
+      // draws it.<br />
+      function drawChart() {<br />
+        var data = new google.visualization.DataTable();<br />
+        data.addColumn('string', 'Task');<br />
+        data.addColumn('number', 'Hours per Day');<br />
+        data.addRows([<br />
+          ['Work', 11],<br />
+          ['Eat', 2],<br />
+          ['Commute', 2],<br />
+          ['Watch TV', 2],<br />
+          ['Sleep', 7]<br />
+          ]);<br />
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));<br />
+        chart.draw(data, {width: 400, height: 240, is3D: true, title: 'My Daily Activities'});<br />
+      }<br />
+    &lt;/script&gt;<br />
+    &lt;div id=&quot;chart_div&quot;&gt;&lt;/div&gt;<br />
+[/javascript]</p>

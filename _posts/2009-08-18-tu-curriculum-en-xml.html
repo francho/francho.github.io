@@ -1,0 +1,42 @@
+---
+layout: post
+title: Tu curriculum en XML
+date: 2009-08-18 12:56:03.000000000 +02:00
+categories:
+- linux
+tags:
+- curriculum
+- cv
+- librerías
+- xml
+status: publish
+type: post
+published: true
+meta:
+  _syntaxhighlighter_encoded: '1'
+  _edit_last: '2'
+  reddit: a:2:{s:5:"count";i:0;s:4:"time";i:1423197357;}
+author:
+  login: francho
+  email: francholab@gmail.com
+  display_name: francho
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p>Con esto de la crisis, a muchos nos toca actualizar nuestro curriculum.</p>
+<p>Pero, ¿ en qué formato lo escribimos ? (hay empresas a las que se les manda por email, otras prefieren en PDF, otras modo texto...)</p>
+<p>Por circustancias que otro día explicaré, me he topado con una librería que nos facilita el trabajo enormemente. Se trata de <a href="http://xmlresume.sourceforge.net/">XML Résumé Library</a>. Con ella podemos escribir nuestro CV en formato XML y, una vez validado con su DTD, gracias a sus XSL podemos convertirlo al formato deseado (de serie trae varios formatos e idiomas predefinidos).</p>
+<p>Esta librería está disponible en los repositorios de Ubuntu (y supongo que Debian) así que usarla es tan sencillo como:</p>
+<p>[bash]sudo apt-get install xml-resume-library<br />
+cp  /usr/share/doc/xml-resume-library/examples/example1.xml  ~/cv.xml<br />
+gedit ~/cv.xml<br />
+xsltproc /usr/share/sgml/xml-resume-library/xsl/output/uk-html.xsl ~/cv.xml &gt; cv.html[/bash]</p>
+<ol>
+<li>instalamos la librería</li>
+<li>copiamos un ejemplo como plantilla inicial</li>
+<li>la actualizamos con nuestros datos</li>
+<li>la convertimos a formato xml usando uno de los XSL existentes</li>
+</ol>
+<p>Nota: es una buena idea usar un buen editor XML (por ejemplo Netbeans) para facilitar la edición.</p>

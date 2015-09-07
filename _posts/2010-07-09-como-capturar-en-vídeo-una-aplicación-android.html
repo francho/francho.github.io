@@ -1,0 +1,54 @@
+---
+layout: post
+title: Como capturar en vídeo una aplicación Android
+date: 2010-07-09 09:51:48.000000000 +02:00
+categories:
+- General
+tags: []
+status: draft
+type: post
+published: false
+meta:
+  _edit_last: '2'
+author:
+  login: francho
+  email: francholab@gmail.com
+  display_name: francho
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">07-08 14:30:19.547: ERROR/Launcher(406): Launcher does not have the permission to launch Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=org.francho.android.zgzbus/.PosteActivity }. Make sure to create a MAIN intent-filter for the corresponding activity or use the exported attribute for this activity.</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">07-08 14:30:19.547: ERROR/Launcher(406): java.lang.SecurityException: Permission Denial: starting Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=org.francho.android.zgzbus/.PosteActivity } from ProcessRecord{44b7ff48 406:com.android.launcher2/10019} (pid=406, uid=10019) requires android.permission.INTERNET</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">07-08 14:30:19.547: ERROR/Launcher(406):     at android.os.Parcel.readException(Parcel.java:1218)</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">07-08 14:30:19.547: ERROR/Launcher(406):     at android.os.Parcel.readException(Parcel.java:1206)</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">07-08 14:30:19.547: ERROR/Launcher(406):     at android.app.ActivityManagerProxy.startActivity(ActivityManagerNative.java:1214)</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">07-08 14:30:19.547: ERROR/Launcher(406):     at android.app.Instrumentation.execStartActivity(Instrumentation.java:1373)</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">07-08 14:30:19.547: ERROR/Launcher(406):     at android.app.Activity.startActivityForResult(Activity.java:2749)</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">07-08 14:30:19.547: ERROR/Launcher(406):     at com.android.launcher2.Launcher.startActivityForResult(Launcher.java:947)</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">07-08 14:30:19.547: ERROR/Launcher(406):     at android.app.Activity.startActivity(Activity.java:2855)</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">07-08 14:30:19.547: ERROR/Launcher(406):     at com.android.launcher2.Launcher.startActivitySafely(Launcher.java:1420)</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">07-08 14:30:19.547: ERROR/Launcher(406):     at com.android.launcher2.AllAppsView.onClick(AllAppsView.java:560)</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">07-08 14:30:19.547: ERROR/Launcher(406):     at android.view.View.performClick(View.java:2364)</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">07-08 14:30:19.547: ERROR/Launcher(406):     at android.view.View.onTouchEvent(View.java:4179)</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">07-08 14:30:19.547: ERROR/Launcher(406):     at com.android.launcher2.AllAppsView.onTouchEvent(AllAppsView.java:441)</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">07-08 14:30:19.547: ERROR/Launcher(406):     at android.view.View.dispatchTouchEvent(View.java:3709)</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">07-08 14:30:19.547: ERROR/Launcher(406):     at android.view.ViewGroup.dispatchTouchEvent(ViewGroup.java:884)</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">07-08 14:30:19.547: ERROR/Launcher(406):     at android.view.ViewGroup.dispatchTouchEvent(ViewGroup.java:884)</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">07-08 14:30:19.547: ERROR/Launcher(406):     at android.view.ViewGroup.dispatchTouchEvent(ViewGroup.java:884)</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">07-08 14:30:19.547: ERROR/Launcher(406):     at com.android.internal.policy.impl.PhoneWindow$DecorView.superDispatchTouchEvent(PhoneWindow.java:1659)</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">07-08 14:30:19.547: ERROR/Launcher(406):     at com.android.internal.policy.impl.PhoneWindow.superDispatchTouchEvent(PhoneWindow.java:1107)</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">07-08 14:30:19.547: ERROR/Launcher(406):     at android.app.Activity.dispatchTouchEvent(Activity.java:2061)</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">07-08 14:30:19.547: ERROR/Launcher(406):     at com.android.internal.policy.impl.PhoneWindow$DecorView.dispatchTouchEvent(PhoneWindow.java:1643)</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">07-08 14:30:19.547: ERROR/Launcher(406):     at android.view.ViewRoot.handleMessage(ViewRoot.java:1691)</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">07-08 14:30:19.547: ERROR/Launcher(406):     at android.os.Handler.dispatchMessage(Handler.java:99)</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">07-08 14:30:19.547: ERROR/Launcher(406):     at android.os.Looper.loop(Looper.java:123)</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">07-08 14:30:19.547: ERROR/Launcher(406):     at android.app.ActivityThread.main(ActivityThread.java:4363)</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">07-08 14:30:19.547: ERROR/Launcher(406):     at java.lang.reflect.Method.invokeNative(Native Method)</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">07-08 14:30:19.547: ERROR/Launcher(406):     at java.lang.reflect.Method.invoke(Method.java:521)</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">07-08 14:30:19.547: ERROR/Launcher(406):     at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:860)</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">07-08 14:30:19.547: ERROR/Launcher(406):     at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:618)</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">07-08 14:30:19.547: ERROR/Launcher(406):     at dalvik.system.NativeStart.main(Native Method)</div>
+<p><span style="font-family:arial, sans-serif;line-height:normal;border-collapse:collapse;"><a style="color:#0065cc;" href="http://blog.makezine.com/archive/2009/02/capturing_video_from_android_phones.html" target="_blank">http://blog.makezine.com/archive/2009/02/capturing_video_from_android_phones.html</a></span></p>
+<p><span style="font-family:arial, sans-serif;line-height:normal;border-collapse:collapse;">En Linux Istanbul</span></p>

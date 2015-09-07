@@ -1,0 +1,63 @@
+---
+layout: post
+title: 'Android: Datos de configuración APN para Orange España'
+date: 2010-01-02 01:50:30.000000000 +01:00
+categories:
+- Android
+tags:
+- Android
+- apn
+- configuración
+- Internet
+- mms
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '2'
+  _syntaxhighlighter_encoded: '1'
+author:
+  login: francho
+  email: francholab@gmail.com
+  display_name: francho
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p>Tras liberar mi móvil Android (un HTC Dream de Movistar) he tenido que configurar a mano los APN (nombre de punto de acceso) para poder aprovechar la tarifa plana de datos que tengo con Orange y para poder enviar y recibir mensajes MMS.</p>
+<p>Estos son los pasos necesarios:</p>
+<p>Entramos en el menú "Ajustes / Conexiones inalámbricas / Redes móviles / APN"</p>
+<p>Creamos un APN para conectar a internet por la red telefónica<br />
+[code]<br />
+Nombre: orange internet<br />
+APN: internet<br />
+Proxy: &lt;No establecido&gt;<br />
+Puerto: &lt;No establecido&gt;<br />
+Nombre de usuario: orange<br />
+Contraseña: orange<br />
+Servidor: &lt;No establecido&gt;<br />
+MMSC: &lt;No establecido&gt;<br />
+Proxy MMS: &lt;No establecido&gt;<br />
+Puerto MMS: &lt;No establecido&gt;<br />
+MCC: 214<br />
+MNC: 03<br />
+Tipo de APN: default<br />
+[/code]</p>
+<p>Creamos otro APN para poder mandar/descargar MMS<br />
+[code]<br />
+Nombre: orange MMS<br />
+APN: orangemms<br />
+Proxy: &lt;No establecido&gt;<br />
+Puerto: &lt;No establecido&gt;<br />
+Nombre de usuario: orange<br />
+Contraseña: orange<br />
+Servidor: &lt;No establecido&gt;<br />
+MMSC: http://mms.orange.es<br />
+Proxy MMS: 172.022.188.025<br />
+Puerto MMS: 8080<br />
+MCC: 214<br />
+MNC: 03<br />
+Tipo APN: mms<br />
+[/code]<br />
+Una vez creados hay que apagar y volver a encender el móvil para que la nueva configuración funcione.</p>

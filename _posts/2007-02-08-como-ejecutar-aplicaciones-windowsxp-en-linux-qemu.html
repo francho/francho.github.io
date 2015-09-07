@@ -1,0 +1,49 @@
+---
+layout: post
+title: Como ejecutar aplicaciones WindowsXP en Linux (QEmu)
+date: 2007-02-08 00:07:15.000000000 +01:00
+categories:
+- linux
+tags:
+- emuladores
+- linux
+status: publish
+type: post
+published: true
+meta:
+  _syntaxhighlighter_encoded: '1'
+  _edit_last: '2'
+author:
+  login: francho
+  email: francholab@gmail.com
+  display_name: francho
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p>En este <a href="https://help.ubuntu.com/community/WindowsXPUnderQemuHowTo">tutorial</a> explican paso a paso como instalr QEmu en Ubuntu para poder correr un WindowsXP o aplicaciones Windows en el escritorio de Ubuntu.</p>
+<p>Este es mi script para lanzar el XP desde Gnome (lo lanzo con un "launcher" que tengo en el escritorio)</p>
+<p>[bash]<br />
+$ cat bin/qemu_winXP.sh<br />
+#! /bin/sh<br />
+#<br />
+# francho@pixar.es<br />
+#       utomatiza el lanzamiento de WinXP con qemu</p>
+<p>MIERR=`tempfile`</p>
+<p># Parametros de configuracion<br />
+RAM=256<br />
+TMPFS_SIZE=272</p>
+<p># Preparamos el entorno<br />
+gksudo &quot;modprobe kqemu&quot; 2&gt; ${MIERR}<br />
+gksudo &quot;chgrp adm /dev/kqemu&quot; 2&gt; ${MIERR}<br />
+gksudo &quot;umount /dev/shm&quot; 2&gt; ${MIERR}<br />
+gksudo &quot;mount -t tmpfs -o size=${TMPFS_SIZE}m none /dev/shm&quot; 2&gt; ${MIERR}</p>
+<p># Está el CDROM montado?<br />
+( mount | egrep -q &quot;cdrom|dvdrecorder&quot; ) &amp;&amp; CDROM=&quot;-cdrom /dev/cdrom&quot; || CDROM=&quot;&quot;</p>
+<p># Lanzamos el qemu<br />
+qemu -localtime -hda ~/windowsXP.img ${CDROM} -m ${RAM} 2&gt; ${MIERR}</p>
+<p># Si hay algo en el log de errores lo mostramos con cara gnome<br />
+[ -s ${MIERR} ] &amp;&amp; zenity --text-info --filename ${MIERR}</p>
+<p>rm -f ${MIERR}<br />
+[/bash]</p>

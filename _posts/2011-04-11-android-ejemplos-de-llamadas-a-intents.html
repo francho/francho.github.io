@@ -1,0 +1,158 @@
+---
+layout: post
+title: 'Android: ejemplos de llamadas a Intents'
+date: 2011-04-11 19:14:05.000000000 +02:00
+categories:
+- Android
+tags:
+- Android
+- ejemplo
+- Intents
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '239693'
+  _syntaxhighlighter_encoded: '1'
+  _wpas_skip_twitter: '1'
+  reddit: a:2:{s:5:"count";i:0;s:4:"time";i:1352959827;}
+  _oembed_3aaee110570392500685555bfec258ec: "{{unknown}}"
+  _oembed_53e7694dfafca9f0b0abee4160197937: "{{unknown}}"
+  _oembed_2a71f177b4dc38757adcc500c50ab506: "{{unknown}}"
+  _oembed_9ead9d2e8bda766acb324d1ecb2ed8e9: "{{unknown}}"
+  _oembed_89ccf83c0a1382692a3b133fa4332c58: "{{unknown}}"
+  _oembed_860424d8ca2aa7b27521d39b0e48b175: "{{unknown}}"
+author:
+  login: francho
+  email: francholab@gmail.com
+  display_name: francho
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p>Los filtros de Intents son, desde mi punto de vista, una de las características más potentes de Android. Nos permiten reutilizar componentes de otras aplicaciones usando muy pocas líneas de código.</p>
+<p>"¿Para que voy a programar una Activity de captura de fotos cuando puedo llamar a la de la aplicación de cámara incluida en el sistema?"</p>
+<p>Os dejo un ejemplo sencillo en el que se realizan varias llamadas para ilustrarlo:<br />
+<!--more--><br />
+Más información en la <a href="http://developer.android.com/guide/topics/intents/intents-filters.html">Guia Android</a> y el <a href="http://developer.android.com/guide/appendix/g-app-intents.html">listado de Intents que nos facilita Android</a></p>
+<p>[code lang="java"]<br />
+/**<br />
+ * Intent samples<br />
+ * http://francho.org<br />
+ *<br />
+ *  This program is free software: you can redistribute it and/or modify<br />
+ *  it under the terms of the GNU General Public License as published by<br />
+ *  the Free Software Foundation, either version 3 of the License, or<br />
+ *  (at your option) any later version.<br />
+ *<br />
+ *  This program is distributed in the hope that it will be useful,<br />
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of<br />
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the<br />
+ *  GNU General Public License for more details.<br />
+ *<br />
+ *  You should have received a copy of the GNU General Public License<br />
+ *  along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.<br />
+ */<br />
+package org.francho.test.intents;</p>
+<p>import java.util.HashMap;</p>
+<p>import android.app.Activity;<br />
+import android.content.Intent;<br />
+import android.net.Uri;<br />
+import android.os.Bundle;<br />
+import android.view.View;<br />
+import android.view.ViewGroup;<br />
+import android.view.View.OnClickListener;<br />
+import android.view.ViewGroup.LayoutParams;<br />
+import android.widget.Button;<br />
+import android.widget.LinearLayout;<br />
+import android.widget.Toast;</p>
+<p>public class IntentsActivity extends Activity {<br />
+    private static final int REQUEST_PHOTO = 1;</p>
+<p>	private HashMap&lt;String, Intent&gt; mPruebas;<br />
+	private LinearLayout mContainer;</p>
+<p>	/** Called when the activity is first created. */<br />
+    @Override<br />
+    public void onCreate(Bundle savedInstanceState) {<br />
+        super.onCreate(savedInstanceState);</p>
+<p>        mContainer = new LinearLayout(this);<br />
+        mContainer.setOrientation(LinearLayout.VERTICAL);<br />
+        mContainer.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,LayoutParams.FILL_PARENT));<br />
+        setContentView(mContainer);</p>
+<p>        Intent intent;</p>
+<p>        // Web<br />
+        intent = new Intent(Intent.ACTION_VIEW, Uri.parse(&quot;http://francho.org/&quot;));<br />
+        createButton(&quot;Web&quot;, intent);</p>
+<p>        // Web filtrada<br />
+        intent = new Intent(Intent.ACTION_VIEW, Uri.parse(&quot;http://maps.google.com/&quot;));<br />
+        createButton(&quot;Google maps (web)&quot;, intent);</p>
+<p>        // Geo (maps)<br />
+        intent = new Intent(Intent.ACTION_VIEW, Uri.parse(&quot;geo:41.656313,-0.877351&quot;));<br />
+        createButton(&quot;Google maps geopunto&quot;, intent);</p>
+<p>        // Llamadas<br />
+        intent = new Intent(Intent.ACTION_CALL, Uri.parse(&quot;tel:976123123&quot;));<br />
+        createButton(&quot;Llamada telefónica&quot;, intent);</p>
+<p>        // Enviar texto (sencillo)<br />
+        intent = new Intent(Intent.ACTION_SEND);<br />
+        intent.setType(&quot;text/plain&quot;);<br />
+        intent.putExtra(Intent.EXTRA_SUBJECT, &quot;asunto de prueba&quot;);<br />
+        intent.putExtra(Intent.EXTRA_TEXT, &quot;probando el envio&quot;);<br />
+        createButton(&quot;compartir (selector)&quot;, intent.createChooser(intent, &quot;enviar&quot;));</p>
+<p>        // enviar un mail<br />
+        intent = new Intent(Intent.ACTION_SEND);<br />
+        intent.setType(&quot;text/plain&quot;);<br />
+        intent.putExtra(Intent.EXTRA_SUBJECT, &quot;asunto de prueba&quot;);<br />
+        intent.putExtra(Intent.EXTRA_TEXT, &quot;probando el envio&quot;);<br />
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[] {&quot;sheldon@cooper.com&quot;});<br />
+        createButton(&quot;Mail To&quot;, intent);</p>
+<p>        // tomar una foto<br />
+        intent = new Intent(&quot;android.media.action.IMAGE_CAPTURE&quot;);<br />
+        createButton(&quot;Tomar foto&quot;, intent, REQUEST_PHOTO);<br />
+    }</p>
+<p>    @Override<br />
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {<br />
+		if(resultCode == Activity.RESULT_OK) {<br />
+			Bundle extras;<br />
+			switch(requestCode) {<br />
+			case REQUEST_PHOTO:<br />
+				extras = data.getExtras();<br />
+				String result = data.toURI();<br />
+				Toast.makeText(IntentsActivity.this, result, Toast.LENGTH_LONG).show();<br />
+			}<br />
+		}<br />
+		super.onActivityResult(requestCode, resultCode, data);<br />
+	}</p>
+<p>	protected void createButton(String label, Intent intent) {<br />
+    	createButton(label, intent, null);<br />
+    }</p>
+<p>    protected void createButton(String label, Intent intent, Integer requestCode) {<br />
+    	 Button btn = new Button(this);<br />
+    	 btn.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));<br />
+    	 btn.setText(label);<br />
+    	 btn.setOnClickListener(new BtnOnClickListener(intent, requestCode));</p>
+<p>    	 mContainer.addView(btn);<br />
+    }</p>
+<p>    class BtnOnClickListener implements OnClickListener  {</p>
+<p>    	private Intent mIntent;<br />
+		private Integer mRequestCode;</p>
+<p>		BtnOnClickListener(Intent intent, Integer requestCode) {<br />
+    		mIntent = intent;<br />
+    		mRequestCode = requestCode;<br />
+    	}</p>
+<p>		public void onClick(View v) {<br />
+			try {<br />
+				if( mRequestCode != null) {<br />
+					startActivityForResult(mIntent, mRequestCode);<br />
+				} else {<br />
+					startActivity(mIntent);<br />
+				}<br />
+			} catch(Exception e) {<br />
+				Toast.makeText(IntentsActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();<br />
+				e.printStackTrace();<br />
+			}<br />
+		}</p>
+<p>    }</p>
+<p>}<br />
+[/code]</p>
+<p><em>Actualización 9-Nov-2011</em></p>
+<p>Subido el código fuente de este proyecto a Github: <a href="https://github.com/francho/francho.org-lab/tree/master/0806-LlamadasIntents">https://github.com/francho/francho.org-lab/tree/master/0806-LlamadasIntents</a></p>

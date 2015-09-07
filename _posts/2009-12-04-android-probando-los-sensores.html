@@ -1,0 +1,32 @@
+---
+layout: post
+title: 'Android: probando los sensores'
+date: 2009-12-04 01:08:51.000000000 +01:00
+categories:
+- General
+tags: []
+status: draft
+type: post
+published: false
+meta:
+  syntaxhighlighter_encoded: '1'
+  _edit_last: '2'
+author:
+  login: francho
+  email: francholab@gmail.com
+  display_name: francho
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p>Como mi ordenador no tiene sensores, para probar el código en el emulador es necesario hacer varios ajustes tal y como se explica en este <a href="http://code.google.com/p/openintents/wiki/SensorSimulator">wiki</a>. Básicamente consiste en:</p>
+<ol>
+<li><a href="http://code.google.com/p/openintents/downloads/list">Descargarse</a> e instalar en el ordenador el SensorsSimulator. De momento solo funciona para Android 1.1 así que nuestras pruebas las he hecho en este entorno (si se intenta instalar OpenItents en la 1.5 saca un error diciendo que le falta una librería)</li>
+<li>Lanzar el simulador de sensores</li>
+<li>Lanzar el emulador</li>
+<li>Abrir la aplicación OpenItents (que hemos instalado en el emulador)</li>
+<li>Configurar OpenItents para que el host / puerto sea el mismo que hemos puesto en el SensorsSimulator</li>
+<li>Lanzar nuestra aplicacion</li>
+<li>Toquitear los parametros de SensorsSimulatos y ver como responde nuestra aplicacion</li>
+</ol>

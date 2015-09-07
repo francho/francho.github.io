@@ -1,0 +1,60 @@
+---
+layout: post
+title: Viendo la TDT en el EEE 901 (Ubuntu 9.04)
+date: 2009-07-02 18:49:55.000000000 +02:00
+categories:
+- linux
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _syntaxhighlighter_encoded: '1'
+  _edit_last: '2'
+author:
+  login: francho
+  email: francholab@gmail.com
+  display_name: francho
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p>Como se  acercan las vacaciones y el apagón analógico me ha dado por desempolvar un sintonizador TDT usb que me dieron hace unos años en una convención.</p>
+<p>La idea es hacerlo funcionar en mi Asus EEE pc 901 (cuando me lo dieron solo conseguí que funcionara en Windows XP, pero eso fue hace muchas versiones del kernel ;-) )</p>
+<p>Según la caja es un Easy TV Usb digital terrestrial.</p>
+<p>Mirando por Internet he visto que el chipset viene soportado de serie en mi kernel de Ubuntu (linux-image-2.6.28-13-generic) asi que no he tenido que hacer nada para instalar drivers.</p>
+<p>Así pues despues de bucear en <a href="http://www.linuxtv.org/wiki/index.php/Main_Page">LinuxTV.org</a> me he puesto a probar programillas para ver la tele.</p>
+<p>Me las prometía muy felices.... :-(</p>
+<p>Resulta que algunos programas (Totem, Vlc, gXine, Me-tv) necesitan un fichero channels.conf con los canales configurados. Así pues hay que usar programas auxiliares para sintonizar (scantv o <a href="http://edafe.org/vdr/w_scan/">w_scan</a> por ejemplo). No me parece una buena solución creo que esto debería estar integrado para facilitar las cosas.</p>
+<p>Otros como xawtv no me reconocian el dispositivo (buscaban en /dev/video0) y no queria perder tiempo en averiguar con cual funcionaban. No se si lo he dicho antes pero huele a vacaciones ;-)</p>
+<p>La solución: instalar Kaffeine. No me apetecia mucho instalar un programa de KDE en el netbook debido a la limitación de disco pero no me ha quedado otra. Kaffeine viene con la lista de canales por provincia precargada y ademas puede escanear el solito en busca de nuevos, todo desde su GUI.</p>
+<p>A la vuelta ya desitalaré y liberaré espacio. He leido por algun lado que la gente se guarda el fichero de canales generado por Kaffeine y luego lo usa con otros programas como Totem</p>
+<p>Tengo que decir el el pequeñin se porta bien y la tele se ve perfectamente a pantalla completa</p>
+<p>En fin, que este verano podré ver las carreras de F1 esté donde esté ;-)<br />
+<!--more--><br />
+Para finalizar algunos detalles extra:</p>
+<p>Cuando lo pincho al USB esto es lo que me sale:</p>
+<p>[bash]$ tail -f /var/log/messages</p>
+<p>Jul  2 17:45:25 macutin kernel: [17977.320240] usb 1-2: new high speed USB device using ehci_hcd and address 13<br />
+Jul  2 17:45:25 macutin kernel: [17977.466906] usb 1-2: configuration #1 chosen from 1 choice<br />
+Jul  2 17:45:25 macutin kernel: [17977.467411] dvb-usb: found a 'WideView WT-220U PenType Receiver (Typhoon/Freecom)' in cold state, will try to load a firmware<br />
+Jul  2 17:45:25 macutin kernel: [17977.467436] usb 1-2: firmware: requesting dvb-usb-wt220u-02.fw<br />
+Jul  2 17:45:25 macutin kernel: [17977.548451] dvb-usb: downloading firmware from file 'dvb-usb-wt220u-02.fw'<br />
+Jul  2 17:45:26 macutin kernel: [17978.581001] usb 1-2: USB disconnect, address 13<br />
+Jul  2 17:45:26 macutin kernel: [17978.581167] dvb-usb: generic DVB-USB module successfully deinitialized and disconnected.<br />
+Jul  2 17:45:27 macutin kernel: [17979.707133] usb 1-2: new high speed USB device using ehci_hcd and address 14<br />
+Jul  2 17:45:27 macutin kernel: [17979.836862] usb 1-2: config 1 interface 0 altsetting 0 bulk endpoint 0x82 has invalid maxpacket 189<br />
+Jul  2 17:45:27 macutin kernel: [17979.838725] usb 1-2: configuration #1 chosen from 1 choice<br />
+Jul  2 17:45:27 macutin kernel: [17979.839514] dvb-usb: found a 'WideView WT-220U PenType Receiver (Typhoon/Freecom)' in warm state.<br />
+Jul  2 17:45:27 macutin kernel: [17979.839827] dvb-usb: will use the device's hardware PID filter (table count: 15).<br />
+Jul  2 17:45:27 macutin kernel: [17979.840989] DVB: registering new adapter (WideView WT-220U PenType Receiver (Typhoon/Freecom))<br />
+Jul  2 17:45:27 macutin kernel: [17979.843047] DVB: registering adapter 0 frontend 0 (WideView USB DVB-T)...<br />
+Jul  2 17:45:27 macutin kernel: [17979.845583] input: IR-receiver inside an USB DVB receiver as /devices/pci0000:00/0000:00:1d.7/usb1/1-2/input/input15<br />
+Jul  2 17:45:27 macutin kernel: [17979.886754] dvb-usb: schedule remote query interval to 300 msecs.<br />
+Jul  2 17:45:27 macutin kernel: [17979.886777] dvb-usb: WideView WT-220U PenType Receiver (Typhoon/Freecom) successfully initialized and connected.<br />
+[/bash]</p>
+<p>Y el usb me lo identifica de la siguiente manera</p>
+<p>[bash]$ lsusb | grep DVBT<br />
+Bus 001 Device 014: ID 14aa:0221 AVerMedia (again) or C&amp;E AVermedia DVBT Tuner Dongle<br />
+[/bash]</p>

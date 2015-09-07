@@ -1,0 +1,52 @@
+---
+layout: post
+title: Como optimizar firefox para el Eee 901
+date: 2009-10-24 23:39:07.000000000 +02:00
+categories:
+- Píldoras
+tags:
+- como
+- eee
+- firefox
+- howto
+- netbook
+- optimizar
+status: publish
+type: post
+published: true
+meta:
+  syntaxhighlighter_encoded: '1'
+  _edit_last: '2'
+  reddit: a:2:{s:5:"count";i:0;s:4:"time";i:1412784582;}
+author:
+  login: francho
+  email: francholab@gmail.com
+  display_name: francho
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p>Los netbooks tienen pantallas reducidas por eso es una buena idea personalizar el aspecto del navegador para que su interfaz ocupe lo menos posible (cuando no se está usando F11):</p>
+<ul>
+<li>Instalamos la extensión <a href="https://addons.mozilla.org/es-ES/firefox/addon/4550">Compact Menu 2</a>. De esta forma el menú se esconde en un icono más de la barra de navegación</li>
+<li>Desactivamos la barra de estado</li>
+<li>Desactivamos la barra de bookmarks</li>
+<li>Instalamos el tema <a href="https://addons.mozilla.org/es-ES/firefox/addon/1529">Pitch Dark</a></li>
+</ul>
+<p>El 901 tiene dos discos duros solidos el primero es bastante rápido, pero el segundo (de más capacidad) donde monto /home es un poco más lento. Además mi home está encriptada (ecryptfs) por lo que los accesos son un poquitín mas lentos todavía.</p>
+<p>Según leí en este <a href="http://www.roytanck.com/2009/04/05/more-eee-pc-firefox-speed-tweaks/">post</a>, Firefox hace mucho uso de disco para el tema de cache, por eso es una buena idea usar la memoria compartida para escribirla:</p>
+<ol>
+<li>Abrimos en una pestaña nueva la url about:config.</li>
+<li>Botón derecho  y elegimos nuevo / entero</li>
+<li>Como nombre ponemos "toolkit.storage.synchronous"</li>
+<li>Como valor ponemos 0. Así conseguimos que el navegador no espere a que se escriban los datos a disco</li>
+<li>De nuevo boton derecho y elegimos nuevo / cadena.</li>
+<li>Como nombre "browser.cache.disk.parent_directory"</li>
+<li>Valor "/dev/shm/firefox-tulogin". Así usará la RAM en vez de SSD.</li>
+</ol>
+<p>Otros ajustes:</p>
+<ul>
+<li>Instalar la extensión <a href="https://addons.mozilla.org/en-US/firefox/addon/1951">Fission</a> que emula el comportamiento de Safari mostrando una barra de progreso en el campo de url.</li>
+<li><a href="https://addons.mozilla.org/es-ES/firefox/addon/9527">Ubiquity</a> para usar comandos dinámicos</li>
+</ul>

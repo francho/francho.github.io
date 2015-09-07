@@ -1,0 +1,188 @@
+---
+layout: post
+title: 'Android: Usando ContactsContract para sacar el listado de teléfonos de la
+  ageda'
+date: 2011-01-11 22:38:59.000000000 +01:00
+categories:
+- Android
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '2'
+  _syntaxhighlighter_encoded: '1'
+  reddit: a:2:{s:5:"count";i:0;s:4:"time";i:1352959864;}
+  twitter_cards_summary_img_size: a:6:{i:0;i:480;i:1;i:800;i:2;i:3;i:3;s:24:"width="480"
+    height="800"";s:4:"bits";i:8;s:4:"mime";s:9:"image/png";}
+  _oembed_ca92b77017281efa5d2556d5f856340d: "{{unknown}}"
+  _oembed_c377dcbda8d967548d1994e092cc23a8: "{{unknown}}"
+  _oembed_c9601e78af04af9aaa48c930175b3d9c: "{{unknown}}"
+author:
+  login: francho
+  email: francholab@gmail.com
+  display_name: francho
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p><img class="aligncenter size-medium wp-image-768" title="choose_a_phone_device" src="/assets/choose_a_phone_device1.png" alt="choose_a_phone_device" width="180" height="300" />Uno de los primeros códigos de Android que teclee fué un <a href="https://franchojoven.files.wordpress.com/2011/01/choose_a_phone_device1.png32/android-buscando-contactos-por-de-telefono/">buscador de contactos</a>... anda que no han pasado cosas desde entonces ;)</p>
+<p>Uno de los principales cambios introducidos en Android 2.0 (Api 5) fue la nueva organización de los contactos y la superclase <a href="http://developer.android.com/reference/android/provider/ContactsContract.html">ContactsContract</a> que permite acceder a los datos de la agenda desde diferentes puntos de vista.</p>
+<p>El siguiente ejemplo ilustra uno de ellos. Se trata de crear una Activity que permita seleccionar un teléfono de la agenda para que sea utilizado por otra. Para ello hemos creado un ListActivity que mediante una consulta a la agenda obtiene el listado de teléfonos disponible junto con el nombre del contacto.</p>
+<p>Cuando el usuario pulsa sobre uno de ellos, la actividad del selector se cierra devolviendo el número de teléfono elegido.</p>
+<p><!--more-->Lo primero es crear la actividad que se encargará de mostrar el listado. Para ello hemos usado un ListActivity que como adapter usa un SimpleCursorAdapter.</p>
+<p>[code lang="java"]<br />
+/**<br />
+ * Simple ActivityList to show the phones of our addressbook<br />
+ *<br />
+ * @author https://franchojoven.files.wordpress.com/2011/01/choose_a_phone_device1.png<br />
+ *<br />
+ */<br />
+package org.francho.test.getphones;</p>
+<p>import android.app.Activity;<br />
+import android.app.ListActivity;<br />
+import android.content.Intent;<br />
+import android.database.Cursor;<br />
+import android.os.Bundle;<br />
+import android.provider.ContactsContract.Data;<br />
+import android.provider.ContactsContract.CommonDataKinds.Phone;<br />
+import android.view.View;<br />
+import android.widget.ListAdapter;<br />
+import android.widget.ListView;<br />
+import android.widget.SimpleCursorAdapter;</p>
+<p>public class ChoosePhoneActivity extends ListActivity {<br />
+	/** Called when the activity is first created. */<br />
+	@Override<br />
+	public void onCreate(Bundle savedInstanceState) {<br />
+		super.onCreate(savedInstanceState);<br />
+		setContentView(R.layout.list);<br />
+		setTitle(&quot;Choose a phone&quot;);</p>
+<p>		// Query: contacts with phone shorted by name<br />
+		Cursor mCursor = getContentResolver().query(<br />
+				Data.CONTENT_URI,<br />
+				new String[] { Data._ID, Data.DISPLAY_NAME, Phone.NUMBER,<br />
+						Phone.TYPE },<br />
+				Data.MIMETYPE + &quot;='&quot; + Phone.CONTENT_ITEM_TYPE + &quot;' AND &quot;<br />
+						+ Phone.NUMBER + &quot; IS NOT NULL&quot;, null,<br />
+				Data.DISPLAY_NAME + &quot; ASC&quot;);</p>
+<p>		startManagingCursor(mCursor);</p>
+<p>		// Setup the list<br />
+		ListAdapter adapter = new SimpleCursorAdapter(this, // context<br />
+				android.R.layout.simple_list_item_2, // Layout for the rows<br />
+				mCursor, // cursor<br />
+				new String[] { Data.DISPLAY_NAME, Phone.NUMBER }, // cursor<br />
+																	// fields<br />
+				new int[] { android.R.id.text1, android.R.id.text2 } // view<br />
+																		// fields<br />
+		);<br />
+		setListAdapter(adapter);<br />
+	}</p>
+<p>	@Override<br />
+	protected void onListItemClick(ListView l, View v, int position, long id) {<br />
+		Intent result = new Intent();</p>
+<p>		// Get the data<br />
+		Cursor c = (Cursor) getListAdapter().getItem(position);<br />
+		int colIdx = c.getColumnIndex(Phone.NUMBER);<br />
+		String phone = c.getString(colIdx);</p>
+<p>		// Save the phone to return it to the caller<br />
+		result.putExtra(&quot;phone&quot;, phone);<br />
+		setResult(Activity.RESULT_OK, result);</p>
+<p>		// Close this activity (return to caller)<br />
+		finish();<br />
+	}<br />
+}<br />
+[/code]</p>
+<p>Un ejemplo de Activity llamadora sería esta (el boton lanza el selector, y cuando este devuelve el teléfono lo muestra en un TextView)</p>
+<p>[code lang="java"]<br />
+package org.francho.test.getphones;</p>
+<p>import android.app.Activity;<br />
+import android.content.Intent;<br />
+import android.os.Bundle;<br />
+import android.view.View;<br />
+import android.view.View.OnClickListener;<br />
+import android.widget.TextView;</p>
+<p>public class MainActivity extends Activity implements OnClickListener {<br />
+	private static final int REQUEST_CHOOSE_PHONE = 1;<br />
+	private TextView vPhone;</p>
+<p>	@Override<br />
+	protected void onCreate(Bundle savedInstanceState) {<br />
+		super.onCreate(savedInstanceState);<br />
+		setContentView(R.layout.main);</p>
+<p>		vPhone = (TextView) findViewById(R.id.TextView01);<br />
+		findViewById(R.id.Button01).setOnClickListener(this);</p>
+<p>	}</p>
+<p>	@Override<br />
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {<br />
+		if ((requestCode == REQUEST_CHOOSE_PHONE)<br />
+				&amp;&amp; (resultCode == Activity.RESULT_OK)) {<br />
+			try {<br />
+				String phone = data.getStringExtra(&quot;phone&quot;);<br />
+				vPhone.setText(phone);<br />
+			} catch (Exception e) {<br />
+				e.printStackTrace();<br />
+			}<br />
+		}<br />
+	}</p>
+<p>	public void onClick(View v) {<br />
+		Intent intent = new Intent(&quot;org.francho.CHOOSE_PHONE&quot;);<br />
+		startActivityForResult(intent, REQUEST_CHOOSE_PHONE);<br />
+	}<br />
+}<br />
+[/code]</p>
+<p>En el AndroidManifest.xml hemos definido las dos Activity, creando un filtro para simplificar la llamada al intent del listado. Además al listado también le hemos aplicado el estilo de Dialog, para que tenga el efecto visual de ventana flotante.<br />
+No debemos olvidarnos de dar permiso para leer los contactos.</p>
+<p>[code lang="xml"]<br />
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;<br />
+&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;<br />
+	package=&quot;org.francho.test.getphones&quot; android:versionCode=&quot;1&quot;<br />
+	android:versionName=&quot;1.0&quot;&gt;<br />
+	&lt;application android:icon=&quot;@drawable/icon&quot; android:label=&quot;@string/app_name&quot;&gt;<br />
+		&lt;activity android:name=&quot;.MainActivity&quot; android:label=&quot;@string/app_name&quot;&gt;<br />
+			&lt;intent-filter&gt;<br />
+				&lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;<br />
+				&lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;<br />
+			&lt;/intent-filter&gt;<br />
+		&lt;/activity&gt;</p>
+<p>		&lt;activity android:name=&quot;.ChoosePhoneActivity&quot; android:label=&quot;@string/app_name&quot;<br />
+			android:theme=&quot;@android:style/Theme.Dialog&quot;&gt;<br />
+			&lt;intent-filter&gt;<br />
+				&lt;action android:name=&quot;org.francho.CHOOSE_PHONE&quot; /&gt;<br />
+				&lt;category android:name=&quot;android.intent.category.DEFAULT&quot; /&gt;<br />
+			&lt;/intent-filter&gt;<br />
+		&lt;/activity&gt;<br />
+	&lt;/application&gt;</p>
+<p>	&lt;uses-permission android:name=&quot;android.permission.READ_CONTACTS&quot; /&gt;<br />
+	&lt;uses-sdk android:minSdkVersion=&quot;5&quot;&gt;&lt;/uses-sdk&gt;<br />
+&lt;/manifest&gt;<br />
+[/code]</p>
+<p>Los layouts utilizados:</p>
+<p>main.xml<br />
+[code lang="xml"]<br />
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;<br />
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;<br />
+    android:orientation=&quot;vertical&quot;<br />
+    android:layout_width=&quot;fill_parent&quot;<br />
+    android:layout_height=&quot;fill_parent&quot; android:gravity=&quot;center_vertical|center_horizontal&quot;&gt;</p>
+<p>&lt;TextView android:layout_height=&quot;wrap_content&quot; android:layout_width=&quot;wrap_content&quot; android:text=&quot;@+id/TextView01&quot; android:id=&quot;@+id/TextView01&quot;&gt;&lt;/TextView&gt;&lt;Button android:id=&quot;@+id/Button01&quot; android:layout_width=&quot;wrap_content&quot; android:layout_height=&quot;wrap_content&quot; android:text=&quot;Choose Phone&quot;&gt;&lt;/Button&gt;</p>
+<p>&lt;/LinearLayout&gt;<br />
+[/code]<br />
+list.xml<br />
+[code lang="xml"]<br />
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;<br />
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;<br />
+    android:orientation=&quot;vertical&quot;<br />
+    android:layout_width=&quot;fill_parent&quot;<br />
+    android:layout_height=&quot;fill_parent&quot;<br />
+    &gt;<br />
+&lt;ListView<br />
+	android:id=&quot;@android:id/list&quot;<br />
+    android:layout_width=&quot;fill_parent&quot;<br />
+    android:layout_height=&quot;wrap_content&quot;    /&gt;</p>
+<p>&lt;TextView<br />
+	android:id=&quot;@android:id/empty&quot;<br />
+    android:layout_width=&quot;fill_parent&quot;<br />
+    android:layout_height=&quot;fill_parent&quot;<br />
+    android:text=&quot;no se han encontrado registros&quot;  /&gt;<br />
+&lt;/LinearLayout&gt;</p>
+<p>[/code]</p>
