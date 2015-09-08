@@ -114,12 +114,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  compass (~> 1.0)
+  compass
   hpricot
-  html-proofer (~> 2.2)
-  jekyll (~> 2.5)
+  html-proofer
+  jekyll
   jekyll-import
-  jekyll-redirect-from (~> 0.7.0)
-  jekyll-sitemap (~> 0.8.1)
+  jekyll-redirect-from
+  jekyll-sitemap
   rake
   scss_lint

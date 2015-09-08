@@ -3,7 +3,7 @@
 
   {% include head.html %}
 
-  <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+  <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" class="home">
 
   {% include navigation.html %}
 
@@ -11,13 +11,13 @@
 
   {% for page in site.pages %}
 
-    {% if page.section-type == "about" %}
-
-      {% include about.html %}
-
-    {% elsif page.section-type == "latest-post" %}
+    {% if page.section-type == "latest-post" %}
 
       {% include latest-post.html %}
+
+    {% elsif page.section-type == "about" %}
+
+      {% include about.html %}
 
     {% elsif page.section-type == "career" %}
 

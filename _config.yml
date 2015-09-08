@@ -8,14 +8,15 @@ url: "https://francho.org" # the base hostname & protocol for your site
 twitter_username: francholab
 github_username:  francho
 permalink: /:year/:month/:day/:title
+google-tracking-id: "UA-299756-5"
+disqus-shortname: "francho"
 
 # Build settings
 markdown: kramdown
 
-
 pages_list:
-  About: 'about'
   Blog: 'blog'
+  About: 'about'
   Career: 'career'
   Contact: 'contact'
 
@@ -39,24 +40,27 @@ reddit-share: True
 # Career variables
 
 events:
-  - image: "/img/career/microsoft.jpg"
-    date: "September 2014 - Today"
-    description: "Software Engineer @ Microsoft Development Center Norway, working @ the <a href=\"http://dev.office.com/officegraph\" target=\"_blank\"> Office Graph</a>"
-  - image: "/img/career/uoa.jpg"
-    date: "October 2012 - August 2014"
-    description: "Master studies @ <a href=\"http://www.di.uoa.gr/eng\" target=\"_blank\">Department of Informatics and Telecommunications</a> on Software Engineering + <a href=\"http://scholar.google.com/citations?user=UtV6LFYAAAAJ&amp;hl=en&amp;oi=ao\" target=\"_blank\">Machine Learning researcher</a> @ <a href=\"http://kddlab.di.uoa.gr\" target=\"_blank\">KDD</a> lab"
-  - image: "/img/career/cern.jpg"
-    date: "October 2011 - September 2012"
-    description: "Security researcher @ <a href=\"http://www.cern.ch\" target=\"_blank\">CERN</a>, developed linux kernel extensions to prevent cyber attacks"
-  - image: "/img/career/writeright.jpg"
-    date: "August 2011 - Today"
-    description: "Released <a href=\"https://play.google.com/store/apps/details?id=panos.sakkos.softkeyboard.writeright\" target=\"_blank\">WriteRight</a>, an adaptive S/W keyboard for Android devices, which  shrinks the unlikely keys to tap next. Currently it holds &gt; 9,000 downloads"
   - image: "/img/career/pwnmail.jpg"
-    date: "June 2010 - November 2010"
-    description: "Released <a href=\"https://www.google.com/search?q=pwn+mail\" target=\"_blank\">Pwn Mail</a>, an iPhone app for spoofing emails. It served &gt; 260,000 emails but it was discontinued after a legal threat by <strike>Steve Jobs</strike> a secretary of Steve Jobs"
-  - image: "/img/career/uoa.jpg"
-    date: "October 2007 - September 2011"
-    description: "Bachelor studies @ <a href=\"http://www.di.uoa.gr/eng\" target=\"_blank\">Department of Informatics and Telecommunications</a> on Computer Science and Telecomunications"
+    date: "2014-Hoy"
+    description: "Programador. <strong>Ruby, Angular</strong>"
+  - image: ""
+    date: "2011-2014"
+    description: "Programador <strong>Android, Objective-c, Php, Angular</strong>"
+  - image: ""
+    date: "2010-2011"
+    description: "Escritor, profesor, programador <strong>C, Java, Android</strong>"
+  - image: ""
+    date: "2009-2010"
+    description: "Necesitaba un cambio de rumbo y <a href='/2010/10/03/hace-dos-anos/'>decidí tomarme un año sabatico</a> (sólo aguanté unos meses). <strong>Python, Java, Android</strong>"
+  - image: ""
+    date: "1999-2009"
+    description: "Programador backend, Administrador de sistemas. <strong>Linux, PHP.</strong>"
+  - image: ""
+    date: "1997-1999"
+    description: "Profesor, programador web. <strong>PHP, C, VisualBasic</strong>"
+  - image: "/img/career/cardiff.png"
+    date: "1993-1997"
+    description: "BSc Business Information Systems (San Valero / Cardiff University)"
 
 # First image of the Career timeline
 career-img: "/img/career/default.jpg"
@@ -66,9 +70,9 @@ social:
   - title: "rss"
     url: "/feed.xml"
   - title: "github"
-    url: "https://github.com/PanosSakkos"
+    url: "https://github.com/francho"
   - title: "linkedin"
-    url: "http://no.linkedin.com/in/PanosSakkos"
+    url: "http://no.linkedin.com/in/francho"
   - title: "youtube"
     url: "http://youtube.com/c/PanosSakkos"
   - title: "soundcloud"
