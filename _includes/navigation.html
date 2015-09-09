@@ -33,7 +33,7 @@
                   <!-- Blog, Post, Tag pages-->
                   {% for p in site.pages_list %}
                     {% if page.section-type == "blog" and p[0] == "Blog" %}
-                      <!-- Blog button in blog.html doesn't refresh the page -->
+                      <!-- Blog button in 01_blog.html doesn't refresh the page -->
                       <li>
                         <a class="page-scroll" href="#blog"> {{ p[0] }} </a>
                       </li>

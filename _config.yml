@@ -17,7 +17,6 @@ markdown: kramdown
 pages_list:
   Blog: 'blog'
   About: 'about'
-  Career: 'career'
   Contact: 'contact'
 
 background-img: "/img/intro-bg.jpg"
@@ -57,13 +56,13 @@ events:
     description: "Programador backend, Administrador de sistemas. <strong>Linux, PHP.</strong>"
   - image: ""
     date: "1997-1999"
-    description: "Profesor, programador web. <strong>PHP, C, VisualBasic</strong>"
+    description: "Profesor, programador web. <strong>PHP, C, VisualBasic</strong> (y otros de cuyo nombre no quiero acordarme)"
   - image: "/img/career/cardiff.png"
     date: "1993-1997"
     description: "BSc Business Information Systems (San Valero / Cardiff University)"
 
 # First image of the Career timeline
-career-img: "/img/career/default.jpg"
+career-img: "/img/me.jpg"
 
 # Social networks variables (many more available: facebook, flickr, dribbble, pinterest, instagram, tumblr etc.)
 social:
