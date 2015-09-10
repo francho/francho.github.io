@@ -16,8 +16,8 @@ markdown: kramdown
 
 pages_list:
   Blog: 'blog'
-  About: 'about'
-  Contact: 'contact'
+  'Acerca de...': 'about'
+  'Contacto': 'contact'
 
 background-img: "/img/intro-bg.jpg"
 
