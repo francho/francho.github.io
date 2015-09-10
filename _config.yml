@@ -12,6 +12,7 @@ google-tracking-id: "UA-299756-5"
 disqus-shortname: "francho"
 
 # Build settings
+highlighter: pygments
 markdown: kramdown
 
 pages_list:
