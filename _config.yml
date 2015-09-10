@@ -15,9 +15,9 @@ disqus-shortname: "francho"
 markdown: kramdown
 
 pages_list:
-  Blog: 'blog'
-  'Acerca de...': 'about'
-  'Contacto': 'contact'
+  'Blog': 'blog'
+  'Acerca de...': 'acerca-de'
+  'Contacto': 'contacto'
 
 background-img: "/img/intro-bg.jpg"
 
@@ -32,9 +32,9 @@ paginate_path: "blog/page:num"
 
 post-preview-words: 128
 
-fb-share: True
-twitter-share: True
-reddit-share: True
+fb-share: true
+twitter-share: true
+reddit-share: false
 
 # Career variables
 

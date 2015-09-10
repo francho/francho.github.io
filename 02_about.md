@@ -1,7 +1,7 @@
 ---
 layout: null
 section-type: career
-title: about
+title: acerca de
 ---
 ## Acerca de
 
