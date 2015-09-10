@@ -104,10 +104,9 @@ a {
         &:hover,
         &:focus,
         &.active {
+          color: $light;
           outline: none;
-          //background-color: fade($light, 30%);
-          border: 1px $light solid;
-          border-radius:20px;
+          background-color: fade($light, 30%);
         }
       }
     }
@@ -128,7 +127,6 @@ a {
   .top-nav-collapse {
     padding: 0;
     background-color: rgba(64, 64, 64, 0.999);
-    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
     a {
       color: $light;
     }
