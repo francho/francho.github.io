@@ -18,7 +18,6 @@ p, li {
   font-size: 1em;
 }
 
-
 html {
   width: 100%;
   height: 100%;
@@ -318,7 +317,11 @@ ul.banner-social-buttons {
 
 footer {
   padding: 50px 0;
+  div {
+    max-width: 300px;
+  }
   p {
+    font-size: 0.8em;
     margin: 0;
   }
 }
