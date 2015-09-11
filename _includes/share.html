@@ -1,22 +1,17 @@
-<div>
-{% if site.fb-share %}
-  <div style="float:left; padding: 0 5px; vertical-align:top">
-    <div class="fb-share-button" data-href="{{ site.url }}{{ page.url }}" data-layout="button_count"></div>
-  </div>
-{% endif %}
+<div class="social-share">
+  {% capture url %}{{ site.url }}{{ page.url }}{% endcapture %}
+  comparte
+  <a class="social-share-element" id="social-twitter" href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ url }}&via=francholab&hashtags={{ tagStr }}" target="_blank" title="Share this post on Twitter">
+    <i class="fa fa-twitter-square"></i>
+  </a>
+  <a class="social-share-element" id="social-facebook" href="https://www.facebook.com/sharer/sharer.php?t={{ page.title }}&u={{ url }}" target="_blank" title="Share this post on Facebook">
+    <i class="fa fa-facebook-square"></i>
+  </a>
+  <a class="social-share-element" id="social-google" href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" target="_blank" title="Share this post on Google Plus">
+    <i class="fa fa-google-plus-square"></i>
+  </a>
+  <a class="social-share-element" id="social-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&title={{ page.title }}&url={{ url }}&source=http%3a%2f%2ffrancho.org" target="_blank" title="Share this post on LinkedIn">
+    <i class="fa fa-linkedin-square"></i>
+  </a>
 
-{% if site.twitter-share %}
-  <div style="float:left; padding: 0 5px; vertical-align:top">
-    <a href="https://twitter.com/share" class="twitter-share-button" data-url="{{ site.url }}{{ page.url }}" data-text="{{ page.title }} {% for tag in page.tags%}#{{ tag }} {% endfor %}"></a>
-</div>
-{% endif %}
-
-{% if site.reddit-share %}
-  <div style="float:left; padding: 0 5px; vertical-align:top">
-    <script type="text/javascript">reddit_newwindow='1'</script>
-    <script type="text/javascript">reddit_title='{{ page.title }}'</script>
-    <script type="text/javascript">reddit_url='{{ site.url }}/{{ page.url }}'</script>
-    <script type="text/javascript" src="//www.redditstatic.com/button/button1.js"></script>
-  </div>
-{% endif %}
 </div>
