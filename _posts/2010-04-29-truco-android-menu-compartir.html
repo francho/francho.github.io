@@ -34,7 +34,7 @@ excerpt: !ruby/object:Hpricot::Doc
 <p>La idea es que cuando el usuario pulse el botón compartir se abra un desplegable con las aplicaciones "sociales" (Twitter, Facebook, email, sms...) que tenga instaladas y a través de ellas suba el contenido (que irá precargado).</p>
 <p>Había empezado a programar esa solución, pero buscando un poco me he encontrado con <a href="http://labs.emich.be/2010/01/23/how-to-send-to-twitter-or-facebook-from-your-android-application/">este post</a> que dá una solución muy sencilla y efectiva.</p>
 <p>Con la idea de reutilizar el código lo he convertido en una clase estática que puedo llamar directamente desde cualquiera de mis "Activity"</p>
-<p>[code lang="java"]<br />
+<p>{% highlight java %}<br />
 /**<br />
  * Share a content using the user's installed apps<br />
  *<br />
@@ -59,4 +59,4 @@ public class Social {<br />
 <p>		 ctx.startActivity(Intent.createChooser(intent, ctx.getString(R.string.tit_share)));<br />
 		}<br />
 }<br />
-[/code]</p>
+{% endhighlight %}</p>

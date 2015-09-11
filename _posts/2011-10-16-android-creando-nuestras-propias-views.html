@@ -40,7 +40,7 @@ excerpt: !ruby/object:Hpricot::Doc
 <p>Veamos como se haría este ejemplo paso a paso...<br />
 <!--more--><br />
 Primero lo que debemos crear es un clase que extienda de View (o de una de sus hijas) y colocarle la lógica necesaria. Yo en mi caso creo una que extiende de RelativeLayout. Mantengo los constructores del padre para asegurarme que funcionará en todos los supuestos.</p>
-<p>[code lang="java"]<br />
+<p>{% highlight java %}<br />
 /**<br />
  * By Francho Joven - http://francho.org/lab/<br />
  *<br />
@@ -149,9 +149,9 @@ public class SubjectMarkView extends RelativeLayout {</p>
 		mMarkNumber.setTextColor(color);</p>
 <p>	}<br />
  }</p>
-<p>[/code]</p>
+<p>{% endhighlight %}</p>
 <p>Aunque el diseño y los objetos View hijos podría haberlos creado con código, para este caso he preferido diseñarlo vía xml e inflar este layout desde mi clase.</p>
-<p>[code lang="xml"]<br />
+<p>{% highlight xml %}<br />
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;<br />
 &lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;<br />
 	android:orientation=&quot;vertical&quot; android:layout_width=&quot;fill_parent&quot;<br />
@@ -173,9 +173,9 @@ public class SubjectMarkView extends RelativeLayout {</p>
 		android:layout_alignParentRight=&quot;true&quot; android:layout_below=&quot;@+id/sm_marknumber&quot;<br />
 		android:layout_alignLeft=&quot;@+id/sm_marknumber&quot; android:gravity=&quot;right&quot; /&gt;<br />
 &lt;/RelativeLayout&gt;<br />
-[/code]</p>
+{% endhighlight %}</p>
 <p>Ya está todo listo, lo único que nos falta es usarlo dentro de nuestras Activity. Para ello primero deberemos maquetarlo dentro de nuestros layout, para ello deberemos usar el nombre completo de la clase (con el paquete y todo):</p>
-<p>[code lang="xml"]<br />
+<p>{% highlight xml %}<br />
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;<br />
 &lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;<br />
     android:orientation=&quot;vertical&quot;<br />
@@ -193,9 +193,9 @@ public class SubjectMarkView extends RelativeLayout {</p>
     android:layout_height=&quot;wrap_content&quot;</p>
 <p>    android:layout_margin=&quot;10dip&quot;/&gt;<br />
 &lt;/LinearLayout&gt;<br />
-[/code]</p>
+{% endhighlight %}</p>
 <p>Y en nuestra Activity usaremos findViewById para localizarlo y asignarle datos:</p>
-<p>[code lang="java"]<br />
+<p>{% highlight java %}<br />
 /**<br />
  * By Francho Joven - http://francho.org/lab/<br />
  *<br />
@@ -219,6 +219,6 @@ import android.os.Bundle;</p>
         mark.setMark(4.5);<br />
     }<br />
 }<br />
-[/code]</p>
+{% endhighlight %}</p>
 <p>El código completo de este ejemplo lo tenéis en el repositorio GitHub:</p>
 <p><a href="https://github.com/francho/francho.org-lab/tree/master/1037-CustomViews">https://github.com/francho/francho.org-lab/tree/master/1037-CustomViews</a></p>

@@ -32,7 +32,7 @@ excerpt: !ruby/object:Hpricot::Doc
 <p>El siguiente ejemplo ilustra uno de ellos. Se trata de crear una Activity que permita seleccionar un teléfono de la agenda para que sea utilizado por otra. Para ello hemos creado un ListActivity que mediante una consulta a la agenda obtiene el listado de teléfonos disponible junto con el nombre del contacto.</p>
 <p>Cuando el usuario pulsa sobre uno de ellos, la actividad del selector se cierra devolviendo el número de teléfono elegido.</p>
 <p><!--more-->Lo primero es crear la actividad que se encargará de mostrar el listado. Para ello hemos usado un ListActivity que como adapter usa un SimpleCursorAdapter.</p>
-<p>[code lang="java"]<br />
+<p>{% highlight java %}<br />
 /**<br />
  * Simple ActivityList to show the phones of our addressbook<br />
  *<br />
@@ -92,9 +92,9 @@ import android.widget.SimpleCursorAdapter;</p>
 		finish();<br />
 	}<br />
 }<br />
-[/code]</p>
+{% endhighlight %}</p>
 <p>Un ejemplo de Activity llamadora sería esta (el boton lanza el selector, y cuando este devuelve el teléfono lo muestra en un TextView)</p>
-<p>[code lang="java"]<br />
+<p>{% highlight java %}<br />
 package org.francho.test.getphones;</p>
 <p>import android.app.Activity;<br />
 import android.content.Intent;<br />
@@ -129,10 +129,10 @@ import android.widget.TextView;</p>
 		startActivityForResult(intent, REQUEST_CHOOSE_PHONE);<br />
 	}<br />
 }<br />
-[/code]</p>
+{% endhighlight %}</p>
 <p>En el AndroidManifest.xml hemos definido las dos Activity, creando un filtro para simplificar la llamada al intent del listado. Además al listado también le hemos aplicado el estilo de Dialog, para que tenga el efecto visual de ventana flotante.<br />
 No debemos olvidarnos de dar permiso para leer los contactos.</p>
-<p>[code lang="xml"]<br />
+<p>{% highlight xml %}<br />
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;<br />
 &lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;<br />
 	package=&quot;org.francho.test.getphones&quot; android:versionCode=&quot;1&quot;<br />
@@ -155,10 +155,10 @@ No debemos olvidarnos de dar permiso para leer los contactos.</p>
 <p>	&lt;uses-permission android:name=&quot;android.permission.READ_CONTACTS&quot; /&gt;<br />
 	&lt;uses-sdk android:minSdkVersion=&quot;5&quot;&gt;&lt;/uses-sdk&gt;<br />
 &lt;/manifest&gt;<br />
-[/code]</p>
+{% endhighlight %}</p>
 <p>Los layouts utilizados:</p>
 <p>main.xml<br />
-[code lang="xml"]<br />
+{% highlight xml %}<br />
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;<br />
 &lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;<br />
     android:orientation=&quot;vertical&quot;<br />
@@ -166,9 +166,9 @@ No debemos olvidarnos de dar permiso para leer los contactos.</p>
     android:layout_height=&quot;fill_parent&quot; android:gravity=&quot;center_vertical|center_horizontal&quot;&gt;</p>
 <p>&lt;TextView android:layout_height=&quot;wrap_content&quot; android:layout_width=&quot;wrap_content&quot; android:text=&quot;@+id/TextView01&quot; android:id=&quot;@+id/TextView01&quot;&gt;&lt;/TextView&gt;&lt;Button android:id=&quot;@+id/Button01&quot; android:layout_width=&quot;wrap_content&quot; android:layout_height=&quot;wrap_content&quot; android:text=&quot;Choose Phone&quot;&gt;&lt;/Button&gt;</p>
 <p>&lt;/LinearLayout&gt;<br />
-[/code]<br />
+{% endhighlight %}<br />
 list.xml<br />
-[code lang="xml"]<br />
+{% highlight xml %}<br />
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;<br />
 &lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;<br />
     android:orientation=&quot;vertical&quot;<br />
@@ -185,4 +185,4 @@ list.xml<br />
     android:layout_height=&quot;fill_parent&quot;<br />
     android:text=&quot;no se han encontrado registros&quot;  /&gt;<br />
 &lt;/LinearLayout&gt;</p>
-<p>[/code]</p>
+<p>{% endhighlight %}</p>

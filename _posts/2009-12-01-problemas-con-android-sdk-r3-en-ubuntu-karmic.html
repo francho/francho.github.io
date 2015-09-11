@@ -38,4 +38,4 @@ excerpt: !ruby/object:Hpricot::Doc
 <p>En concreto no responde el botón de "Install Selected"</p>
 <p>Eclipse lo he instalado desde aptitude y parece ser que es un problema con alguna librería gráfica libswt-gtk-3.5-jni que trae Ubuntu</p>
 <p>La solución que he <a href="http://groups.google.com/group/android-developers/browse_thread/thread/63a44163a8d07cd9">encontrado en unos foros</a> consiste en inicializar una variable de entorno antes de lanzar la aplicación:</p>
-<p>[code lang="bash"]$ export GDK_NATIVE_WINDOWS=true; /opt/android-sdk-linux/tools/android[/code]</p>
+<p>{% highlight bash %}$ export GDK_NATIVE_WINDOWS=true; /opt/android-sdk-linux/tools/android{% endhighlight %}</p>

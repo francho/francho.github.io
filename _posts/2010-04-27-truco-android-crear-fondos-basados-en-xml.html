@@ -30,15 +30,17 @@ excerpt: !ruby/object:Hpricot::Doc
 <p>Basta con colocar un fichero en res/drawable con el nombre que quieras y extenxión xml y definir dentro de el las características.</p>
 <p>Luego en cualquier vista puedes definir el background haciendole referencia (Ej: @drawable/mi_fondo)</p>
 <p>El siguiente ejemplo define un fondo con degradado y bordes redondeados</p>
-<p>[code language="xml"]&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;<br />
-&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</p>
-<p>&gt;<br />
-	&lt;gradient android:startColor=&quot;#3000&quot; android:centerColor=&quot;#f000&quot;<br />
-	android:endColor=&quot;#ff4e2d5c&quot;<br />
-	android:centerY=&quot;0.9&quot;<br />
-		android:angle=&quot;270&quot; /&gt;<br />
-	 &lt;corners android:radius=&quot;4dp&quot; /&gt;<br />
-	 &lt;padding android:left=&quot;7dp&quot; android:top=&quot;7dp&quot;<br />
-            android:right=&quot;7dp&quot; android:bottom=&quot;7dp&quot; /&gt;<br />
-     &lt;margin android:left=&quot;3dp&quot; android:top=&quot;3dp&quot; android:right=&quot;3dp&quot; android:bottom=&quot;3dp&quot;/&gt;<br />
-&lt;/shape&gt;[/code]</p>
+
+{% highlight xml %}
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+	<gradient android:startColor="#3000" android:centerColor="#f000"
+	android:endColor="#ff4e2d5c"
+	android:centerY="0.9"
+		android:angle="270" />
+  <corners android:radius="4dp" />
+  <padding android:left="7dp" android:top="7dp"
+            android:right="7dp" android:bottom="7dp" />
+  <margin android:left="3dp" android:top="3dp" android:right="3dp" android:bottom="3dp"/>
+</shape>
+{% endhighlight %}

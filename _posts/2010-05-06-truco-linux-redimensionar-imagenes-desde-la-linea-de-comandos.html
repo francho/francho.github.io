@@ -27,9 +27,9 @@ excerpt: !ruby/object:Hpricot::Doc
 ---
 <p>Convert es un comando del paquete ImageMagic que nos permite manipular imágenes desde la línea de comandos, lo que lo hace muy útil para hacer scripts.</p>
 <p>Una de las cosas para las que lo suelo usar más es para redimensionar lotes de imágenes</p>
-<p>[code lang="bash"]<br />
+<p>{% highlight bash %}<br />
 # Primero instalatelo (sin no lo tienes ya)<br />
 aptitude install imagemagick</p>
 <p># Redimensiona todos los archivos png del directorio actual (sin entrar en los subdirectorios) a un máximo de 32 pixeles de ancho</p>
 <p>find . -maxdepth 1 -name &quot;*.png&quot; -exec convert -resize 32x {} {} \;<br />
-[/code]</p>
+{% endhighlight %}</p>

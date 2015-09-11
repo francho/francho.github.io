@@ -29,7 +29,7 @@ En uno de los proyectos Android del trabajo tenemos que incorporar pagos a trav�
 <p>La idea es que la librería debe inicializarse en segundo plano, ya que conectacon los servidores de Paypal. Una vez todo está ok, creamos un boton de pago, que al ser pulsado lanza una Activity que incorpora la propia librería pasando los datos del pedido, y esperamos su respuesta.</p>
 <p>Para configurar el entorno de pruebas (sandbox) deberemos seguir las instrucciones de este <a href="https://cms.paypal.com/cms_content/US/en_US/files/developer/PP_Sandbox_UserGuide.pdf">manual</a>.<br />
 <!--more--><br />
-[code lang="java"]<br />
+{% highlight java %}<br />
 package com.paypal.android.mplexample;</p>
 <p>import java.math.BigDecimal;</p>
 <p>import android.app.Activity;<br />
@@ -252,4 +252,4 @@ public class CheckOutActivity extends Activity implements OnClickListener {</p>
 		}</p>
 <p>	}</p>
 <p>}</p>
-<p>[/code]</p>
+<p>{% endhighlight %}</p>

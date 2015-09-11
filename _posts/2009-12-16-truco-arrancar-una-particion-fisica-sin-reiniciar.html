@@ -27,17 +27,17 @@ excerpt: !ruby/object:Hpricot::Doc
   options: {}
 ---
 <p>En Linux ya no es necesario reiniciar el ordenador para arrancar desde otra partición (por ejemplo si estás en Ubuntu y quieres arrancar tu partición Windows). Basta con instalar Virtualbox (que viene en aptitude) y crear un disco de la siguiente forma:</p>
-<p>[code language="bash"]<br />
+{% highlight bash %}
 $ VBoxManage internalcommands createrawvmdk -filename /path/to/file.vmdk -rawdisk /dev/sda -relative -register<br />
-[/code]</p>
+{% endhighlight %}
 <p>Acuerdate de cambiar el path de -filename con la ruta donde quieres guardar el disco virtual y colocar detrás -rawdisk el dispositivo físico o partición de la que creamos arrancar.</p>
 <p>Nota: tienes que tener permisos de escritura sobre el dispositivo. Una forma de hacer esto es añadir tu usuario al grupo "disk" (recuerda que debes cerrar la sesión y volverla a abrir para que se hagan efectivos)</p>
 <p>En mi caso la partición windows que quería arrancar estaba en /dev/sda3 y tenia rastros de un antiguo "Grub" mal borrado así que ha sido necesario afinar un poco mas:</p>
-<p>[code language="bash"]<br />
-# sudo aptitude install mbr<br />
-$ install-mbr --force /tmp/mi.mbr<br />
-$ VBoxManage internalcommands createrawvmdk -filename ~/.VirtualBox/HardDisks/WinXP_Rawdisk.vmdk -rawdisk /dev/sda -partitions 3 -mbr /tmp/mi.mbr -register -relative<br />
-[/code]</p>
+{% highlight bash %}
+# sudo aptitude install mbr
+$ install-mbr --force /tmp/mi.mbr
+$ VBoxManage internalcommands createrawvmdk -filename ~/.VirtualBox/HardDisks/WinXP_Rawdisk.vmdk -rawdisk /dev/sda -partitions 3 -mbr /tmp/mi.mbr -register -relative
+{% endhighlight %}</p>
 <p>Una vez tienes creado el disco virtual, en VirtualBox debes crear una máquina virtual que lo use.</p>
 <p>Si l arrancar la nueva máquina se te queda colgada en una pantalla negra, prueba a activar las casillas "IO Apic" y  "SATA driver" de las propiedades de la máquina virtual.</p>
 <p><a href="https://franchojoven.files.wordpress.com/2009/12/virtualbox-propiedades1.png"><img class="aligncenter size-medium wp-image-492" title="virtualbox-propiedades" src="/assets/virtualbox-propiedades1.png" alt="virtualbox-propiedades" width="300" height="185" /></a></p>

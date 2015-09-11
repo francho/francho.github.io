@@ -30,6 +30,6 @@ excerpt: !ruby/object:Hpricot::Doc
 ---
 <p>Gimp (de momento) no soporta imágenes con esquemas de color CMYK. Si nos pasan una imagen de este tipo (por ejemplo una creada con Photoshop) deberemos convertirla antes de poder usarla.</p>
 <p>Para esto es muy útil la utilidad convert de ImageMagic. Con el siguiente comando ejecutado desde una consola podremos hacer esta tarea:</p>
-<p>[code language="shell"]</p>
-<p>convert -depth 8 -colorspace RGB imagen_original.psd nueva_imagen.tif</p>
-<p>[/code]</p>
+{% highlight bash %}
+convert -depth 8 -colorspace RGB imagen_original.psd nueva_imagen.tif
+{% endhighlight %}

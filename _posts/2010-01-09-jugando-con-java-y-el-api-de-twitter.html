@@ -32,7 +32,7 @@ excerpt: !ruby/object:Hpricot::Doc
 <p><a href="http://apiwiki.twitter.com/">Twitter tiene un API</a> muy completa que nos permite interactuar con su servicio desde nuestras aplicaciones. Esta tarde he estado enredando un poco con ella y la verdad es que se me ocurren un montón de aplicaciones prácticas(logueos, análisis automáticos, integración en servicios de noticias, estadísticas, seguimiento de usuarios, actualizaciones automáticas del perfil, etc...)</p>
 <p>Existen librerías en un montón de lenguajes que facilitan aún mas su uso. Pero en este caso yo he preferido programar un servicio desde cero (lo cual, gracias a la <a href="http://apiwiki.twitter.com/Twitter-API-Documentation">documentación del API</a> no ha sido nada complicado).</p>
 <p>El siguiente ejemplo es una aproximación sencilla que permite actualizar nuestro estado (enviar un post) desde aplicación Java.</p>
-<p>[code lang="java"]<br />
+<p>{% highlight java %}<br />
 /*<br />
  *   http://creativecommons.org/licenses/by-nc/3.0/deed.es<br />
  */</p>
@@ -128,9 +128,9 @@ public class Twitter {</p>
         return response;<br />
     }<br />
 }<br />
-[/code]</p>
+{% endhighlight %}</p>
 <p>Este sería un ejemplo de uso de nuestra clase:</p>
-<p>[code lang="java"]<br />
+<p>{% highlight java %}<br />
 /*<br />
  *   http://creativecommons.org/licenses/by-nc/3.0/deed.es<br />
  */</p>
@@ -148,4 +148,4 @@ public class Test {<br />
         System.out.println(twitter.getResponse());<br />
     }<br />
 }<br />
-[/code]</p>
+{% endhighlight %}</p>

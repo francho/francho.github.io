@@ -26,8 +26,8 @@ excerpt: !ruby/object:Hpricot::Doc
   options: {}
 ---
 <p>Este código sirve para obtener el nombre de la versión y revisión de nuestra app. Muy útil para ponerlo en los dialog de "About".</p>
-<p>[code lang="java"]<br />
+<p>{% highlight java %}<br />
 Context appContext = getContext().getApplicationContext();<br />
 PackageInfo info = appContext.getPackageManager().getPackageInfo(appContext.getPackageName(), 0);<br />
 String version = info.versionName + &quot; (release &quot; + info.versionCode + &quot;)&quot;;<br />
-[/code]</p>
+{% endhighlight %}</p>

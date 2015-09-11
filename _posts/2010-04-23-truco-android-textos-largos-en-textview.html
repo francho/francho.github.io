@@ -27,8 +27,10 @@ excerpt: !ruby/object:Hpricot::Doc
 ---
 <p>A veces tenemos que colocar un texto demasiado largo en un TextView con lo que o no se ve completo o salta de linea con lo que rompe el diseño.</p>
 <p>Una solución es activar el "marquee" para que se muestre solo lo que quepa y al recibir el foco haga automáticamente un scroll horizontal para mostrar el resto.</p>
-<p>[code language="xml"]<br />
-&lt;TextView<br />
+
+{% highlight xml %}
+
+  &lt;TextView<br />
   android:text=&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lorem quam, laoreet scelerisque egestas ornare&quot;<br />
  android:id=&quot;@+id/Text11&quot;<br />
  android:layout_width=&quot;wrap_content&quot; android:layout_height=&quot;fill_parent&quot;</p>
@@ -37,6 +39,6 @@ excerpt: !ruby/object:Hpricot::Doc
  android:focusableInTouchMode=&quot;true&quot;<br />
  android:lines=&quot;1&quot;<br />
 /&gt;<br />
-[/code]</p>
+{% endhighlight %}</p>
 <p>No hay que olvidarse de ponerlo como "focusable" (el movimiento empezará cuando reciba el foco) y forzar la linea simple.</p>
 <p>Visto <a href="http://groups.google.com/group/android-developers/browse_thread/thread/08f09e0fdb9d25e0/2ab50ff5dcc83109?show_docid=2ab50ff5dcc83109">aquí</a></p>
