@@ -384,3 +384,18 @@ body {
     }
   }
 }
+
+.page-navigation {
+  font-size: 14px;
+  display: block;
+  width: auto;
+  overflow: hidden;
+  text-align: center;
+
+  padding-top: 100px;
+
+  a {
+    margin: 1em;
+    font-size: 1.3em;
+  }
+}
