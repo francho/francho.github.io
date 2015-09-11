@@ -24,14 +24,14 @@
           <h4>
               <a href="{{ paginator.previous_page_path }}" class="previous">Newer Posts</a>  <a href="{{ paginator.next_page_path }}" class="next">Older Posts</a>
           </h4>
-        {% endif %}
+        {% else %}
+          {% if paginator.previous_page %}
+            <h4><a href="{{ paginator.previous_page_path }}" class="previous">Newer Posts</a></h4>
+          {% endif %}
 
-        {% if paginator.previous_page %}
-          <h4><a href="{{ paginator.previous_page_path }}" class="previous">Newer Posts</a></h4>
-        {% endif %}
-
-        {% if paginator.next_page %}
-          <h4><a href="{{ paginator.next_page_path }}" class="next">Older Posts</a></h4>
+          {% if paginator.next_page %}
+            <h4><a href="{{ paginator.next_page_path }}" class="next">Older Posts</a></h4>
+          {% endif %}
         {% endif %}
 
         </div>
