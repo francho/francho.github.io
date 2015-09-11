@@ -405,6 +405,14 @@ body {
   font-size: 1em;
 };
 
+.next {
+  color: $light;
+}
+
+.prev {
+  color: lighten($light, 25%);
+}
+
 .social-share {
   text-align: center;
   padding-bottom: 30px;
