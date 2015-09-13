@@ -2,10 +2,6 @@
 layout: post
 title: Las portadas de los periodicos en una página
 date: 2006-05-30 08:55:33.000000000 +02:00
-categories:
-- Internet
-tags:
-- Internet
 status: publish
 type: post
 published: true
@@ -14,12 +10,9 @@ meta:
   _edit_last: '2'
 author:
   login: francho
-
   display_name: francho
   first_name: ''
   last_name: ''
-excerpt: !ruby/object:Hpricot::Doc
-  options: {}
 ---
-<p>En esta página puedes ver todas las portadas de los periodicos actualizadas diariamente.</p>
-<p><a href="http://www.hhmmss.com/kiosko/">Kiosco</a></p>
+En esta página puedes ver todas las portadas de los periodicos actualizadas diariamente.
+http://www.hhmmss.com/kiosko/
