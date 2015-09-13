@@ -30,7 +30,7 @@ author:
   last_name: ''
 
 ---
-[![spines_team](/assets/spines_team.png)](/images/spines_team.png)
+![spines_team](/assets/spines_team.png)
 
 Empecé el 2014 sabiendo que iba a haber cambios en mi vida laboral, pero con demasiadas incertidumbres y cosas sin cerrar del todo, lo que he de reconocer que me producía una sensación de vértigo que rayaba el pánico (sobre todo por que podían afectar a mi familia).
 
