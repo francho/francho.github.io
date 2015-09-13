@@ -439,9 +439,27 @@ body {
   }
 }
 
+.my-social {
+  margin: 0 0 35px;
+  img {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    margin: 0px auto;
+    border: 4px solid #fff;
+    border-radius: 100%;
+    overflow: hidden;
+    -moz-transition: all .51s;
+    -o-transition: all .51s;
+    -webkit-transition: all .51s;
+    transition: all .51s;
+  }
+}
+
 iframe {
   display: block;
   border: 0px;
   padding:0px;
   margin:0px auto;
 }
+
