@@ -11,6 +11,7 @@
         </h4>
 
         {{ post.content | truncatewords: site.post-preview-words | strip_html | markdownify }}
+        <p class="latest-post-more"><a href="{{ post.url }}">leer más</a></p>
 
         <a href="/blog/index.html"><h4><strong>ver mas posts</strong></h4></a>
 
