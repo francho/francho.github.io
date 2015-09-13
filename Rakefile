@@ -16,7 +16,12 @@ end
 
 desc 'Run html tests'
 task :html_lint => [:build] do
-  HTML::Proofer.new('./_site --only-4xx --check-favicon --check-html').run
+  HTML::Proofer.new('./_site', {
+                               typhoeus: {ssl_verifypeer: false, ssl_verifyhost: 0},
+                               only_4xx: true,
+                               check_html: true,
+                               parallel: {in_processes: 3}
+                             }).run
 end
 
 desc 'Run scss-lint tests'
