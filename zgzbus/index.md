@@ -38,7 +38,7 @@ Tambien puedes fijar alarmas para que el móvil te avise antes de que llegue tu 
 ¡Estate atent@ a las actualizaciones!
 
 **¿Como me la instalo?**
-[![qr_zgzbus](../assets/qr_zgzbus1.png "qr_zgzbus")](/index.html/details?id=org.francho.android.zgzbus)
+[![qr_zgzbus](../assets/qr_zgzbus1.png "qr_zgzbus")](https://play.google.com/store/apps/details?id=org.francho.android.zgzbus&hl=es)
 ![device](../assets/device1.png "device")
 
 
