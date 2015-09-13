@@ -3,9 +3,7 @@ layout: post
 title: Instructables, una web de inventos
 date: 2006-05-26 11:23:40.000000000 +02:00
 categories:
-- Internet
 tags:
-- Internet
 status: publish
 type: post
 published: true
