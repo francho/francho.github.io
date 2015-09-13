@@ -26,6 +26,7 @@ Creia que iba a ser mucho mas complicada, pero al final ha sido mucho más senci
 9. Me aseguré de ajustar el config.yml, crear los ficheros necesarios y alguna redirección (con [jekyll-redirect-from](https://github.com/jekyll/jekyll-redirect-from)) para no perder las urls que ya tenía indexadas.
 10. Conloqué un [fichero CNAME](https://help.github.com/articles/adding-a-cname-file-to-your-repository/) en la raiz del proyecto y edité los DNS para que apuntaran a Github y ponerlo en producción
 11. Poco a poco voy revisando los posts anteriores y los voy convirtiendo a markdown usando una [herramienta online](http://domchristie.github.io/to-markdown/)
+12. He instalado la gema html-proofer y he configurado travis para que la pase cada vez que haya un commit
 
 ##Conclusión
 
