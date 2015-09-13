@@ -17,14 +17,14 @@
 
               <li class="{{ class }}">
                   <div class="timeline-image">
-                      <img class="img-circle img-responsive" src="{{ event.image }}" alt="">
+                      <img class="img-circle img-responsive" src="{{ event.image }}" alt="{{ event.date }}">
                   </div>
                   <div class="timeline-panel">
                       <div class="timeline-heading">
                           <h4>{{ event.date }}</h4>
                       </div>
-                      <div class="timeline-body">
-                          <p class="text-muted">{{ event.description | markdownify }}</p>
+                      <div class="timeline-body text-muted">
+                        {{ event.description | markdownify }}
                       </div>
                   </div>
               </li>
@@ -32,10 +32,10 @@
 
             <li class="timeline-inverted">
               <div class="timeline-image">
-                <img class="img-circle img-responsive" src="{{ site.career-img }}" alt="">
+                <img class="img-circle img-responsive" src="{{ site.career-img }}" alt="me">
               </div>
             </li>
-	    
+
           </ul>
         </div>
     </div>
