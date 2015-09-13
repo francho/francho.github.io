@@ -7,7 +7,7 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://francho.org" # the base hostname & protocol for your site
 twitter_username: francholab
 github_username:  francho
-permalink: /:year/:month/:day/:title
+permalink: /:year/:month/:day/:title/
 google-tracking-id: "UA-299756-5"
 disqus-shortname: "francho"
 
