@@ -19,7 +19,7 @@ author:
 excerpt: !ruby/object:Hpricot::Doc
   options: {}
 ---
-![zgzbus_live](../assets/zgzbus_live1.jpg "zgzbus_live")Evita plantones inecesarios, consulta la información de la parada antes de salir de casa o de la oficina.
+![zgzbus_live](/assets/zgzbus_live1.jpg)Evita plantones inecesarios, consulta la información de la parada antes de salir de casa o de la oficina.
 
 ZgzBus es una aplicación para móviles Android que te permite consultar cuando va a llegar un autobús a una determinada parada.
 
