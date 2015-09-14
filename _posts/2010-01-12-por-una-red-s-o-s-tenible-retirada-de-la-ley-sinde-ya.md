@@ -18,9 +18,7 @@ author:
 excerpt: !ruby/object:Hpricot::Doc
   options: {}
 ---
-![Red SOStenible](/assets/sosred1.png)
-
-Leo en el [blog de Enrique Dans](http://www.enriquedans.com/2010/01/a-partir-de-hoy-red-y-libertad.html) que se ha creado una plataforma para luchar contra la "[Ley Sinde](http://www.makarras.org/2010/01/09/la-ley-sinde-para-torpes-y-periodistas-que-se-la-tragan-dobla/)" llamada [Red S@Stenible](http://red-sostenible.net). También se ha creado la campaña bajo el lema [Internet NO será otra tele](http://internetnoseraotratv.net/2010/01/11/hola-mundo/) que llevará a cabo diversas acciones ciudadanas durante todo el periodo de la presidencia española de la UE.
+Leo en el [blog de Enrique Dans](http://www.enriquedans.com/2010/01/a-partir-de-hoy-red-y-libertad.html) que se ha creado una plataforma para luchar contra la "[Ley Sinde](http://www.makarras.org/2010/01/09/la-ley-sinde-para-torpes-y-periodistas-que-se-la-tragan-dobla/)" llamada [Red S@Stenible](http://red-sostenible.net). También se ha creado la campaña bajo el lema "Internet NO será otra tele" http://internetnoseraotratv.net/2010/01/11/hola-mundo/ que llevará a cabo diversas acciones ciudadanas durante todo el periodo de la presidencia española de la UE.
 
 Desde estas líneas quiero dar mi apoyo a estas iniciativas al igual que ya hice con el #manifiesto.
 
@@ -52,7 +50,7 @@ Después del salto tenéis el texto íntegro de la reivindicación, copiarlo y 
 > 4.  La ciudadanía debe poder disfrutar libremente de los derechos exclusivos de los bienes públicos que se pagan con su dinero, con el dinero publico (referencia punto 2 "[Demandas legales](http://fcforum.net/es/charter_extended#legal)", párrafo C "Conocimiento común y dominio público", de la [Carta](http://fcforum.net/es/charter_extended));
 > 5.  Consideramos necesaria una reforma en profundidad del sistema de las entidades de gestión y la abolición del canon digital (referencia punto 2 "[Demandas legales](http://fcforum.net/es/charter_extended#legal)", párrafo B. "Estímulo de la creatividad y la innovación", de la [Carta](http://fcforum.net/es/charter_extended)).
 >
-> Por todo ello hoy se inicia la campaña [INTERNET NO SERA OTRA TELE](http://internetnoseraotratv.net) y se llevarán a cabo diversas acciones ciudadanas durante todo el periodo de la presidencia española de la UE.
+> Por todo ello hoy se inicia la campaña INTERNET NO SERA OTRA TELE y se llevarán a cabo diversas acciones ciudadanas durante todo el periodo de la presidencia española de la UE.
 >
 > Consideramos particularmente importantes en el calendario de la presidencia de turno española el II Congreso de Economía de la Cultura (29 y 30 de marzo en Barcelona), Reunión Informal de ministros de Cultura (30 y 31 de marzo en Barcelona) y la reunión de ministros de Telecomunicaciones (18 a 20 de abril en Granada).
 >
