@@ -61,9 +61,9 @@ Permite escanear códigos de barras (reconoce también los [códigos QR]). Una v
 **![android_andando](/assets/android_andando11.jpg "android_andando") 5º [AndAndo](http://andando.javielinux.com/)**
 (útil / uso eventual)
 
-Saca partido al GPS, guarda tus rutas, haz fotos geolocalizadas, añade textos, compartelas... Lo uso para mis excursiones en bici.  Encima es "producto nacional", desde que lo probé ya no he vuelto a arrancar  [MyTracks](http://mytracks.appspot.com/)
+Saca partido al GPS, guarda tus rutas, haz fotos geolocalizadas, añade textos, compartelas... Lo uso para mis excursiones en bici.  Encima es "producto nacional", desde que lo probé ya no he vuelto a arrancar  MyTracks http://mytracks.appspot.com/
 
-**![android_skymap](/assets/android_skymap1.png "android_skymap") 6º [Google Sky Map](http://www.google.com/sky/skymap.html)**
+**![android_skymap](/assets/android_skymap1.png "android_skymap") 6º [Google Sky Map](https://play.google.com/store/apps/details?id=com.google.android.stardroid)**
 (útil / uso eventual)
 
 Colocate bajo un cielo estrellado, activa el GPS de tu móvil, enciende el Google Sky Map, enfoca al cielo y podrás saber como se llama cualquier estrella. Con detección de movimiento, cuando te mueves, el mapa se mueve contigo.
