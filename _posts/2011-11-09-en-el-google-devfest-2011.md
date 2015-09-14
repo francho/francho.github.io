@@ -79,12 +79,12 @@ Para terminar aquí van algunas de las urls que he recopilado y que tengo que re
 
 *   [updates.html5rocks.com](http://updates.html5rocks.com)
 *   [https://developers.google.com/+/api](https://developers.google.com/+/api/)/
-*   [http://code.google.com/android/c2dm](http://code.google.com/android/c2dm)
-*   [http://code.google.com/intl/es/apis/inapppayments/docs/jsreference.html](http://code.google.com/intl/es/apis/inapppayments/docs/jsreference.html)
+*   http://code.google.com/android/c2dm
+*   http://code.google.com/intl/es/apis/inapppayments/docs/jsreference.html
 *   [http://www.guidetotheappgalaxy.com/#/developersguide/](http://www.guidetotheappgalaxy.com/#/developersguide/)
 *   [http://code.google.com/p/android-scripting/](http://code.google.com/p/android-scripting/)
-*   [http://code.google.com/intl/es/apis/shopping/search/](http://code.google.com/intl/es/apis/shopping/search/)
-*   [http://code.google.com/intl/es/apis/shopping/content/](http://code.google.com/intl/es/apis/shopping/content/)
+*   http://code.google.com/intl/es/apis/shopping/search/
+*   http://code.google.com/intl/es/apis/shopping/content/
 *   [http://google.com/merchants/](http://google.com/merchants/)
 *   [http://www.samdutton.com/barcelona/#1](http://www.samdutton.com/barcelona/#1)
 
