@@ -11,6 +11,13 @@ $(window).scroll(function() {
   } else {
     $(".navbar-fixed-top").removeClass("top-nav-collapse");
   }
+
+  var factor = $(window).height();
+  var scrollVar = $(window).scrollTop();
+  if(scrollVar < factor) {
+    $('header.intro').css({'opacity': ( factor - scrollVar ) / factor});
+  }
+
 });
 
 // jQuery for page scrolling feature - requires jQuery Easing plugin
