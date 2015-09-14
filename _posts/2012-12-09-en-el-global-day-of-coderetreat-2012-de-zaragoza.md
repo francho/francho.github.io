@@ -26,7 +26,7 @@ excerpt: !ruby/object:Hpricot::Doc
 ---
 ![gdcr12](/assets/gdcr12.jpg)
 
-Ayer sábado, a pesar de ser puente era el [Global Day of Code Retreat](http://coderetreat.org/), un envento al que [ya asistí el año pasado](francho.org/2011/12/06/en-el-global-day-of-coderetreat-2011-gdcr11-aragon/) y que este año en Zaragoza lo organizaba [Ágile Aragon](http://agile-aragon.org/2012/11/08/gdcr-en-pleno-puente-que-pasa/).
+Ayer sábado, a pesar de ser puente era el [Global Day of Code Retreat](http://coderetreat.org/), un envento al que [ya asistí el año pasado](/2011/12/06/en-el-global-day-of-coderetreat-2011-gdcr11-aragon/) y que este año en Zaragoza lo organizaba [Ágile Aragon](http://agile-aragon.org/2012/11/08/gdcr-en-pleno-puente-que-pasa/).
 
 Así que un grupo de intrepid@s developers y developars nos juntamos en el [BSSC](http://www.bssc.es/) para pasarnos el día programando por amor al arte y practicar nuestro Kung fu. Se trata de hacer programación en parejas sobre un mismo problema en iteraciones de unos 45minutos. Después de cada iteración se borra todo el código, se cambia de pareja e se vuelve a empezar.
 
