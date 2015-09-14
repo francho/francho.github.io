@@ -22,7 +22,7 @@ excerpt: !ruby/object:Hpricot::Doc
 ---
 ![htc dream](/assets/android1.jpg)Acabo de recibir un mail de la gente de Movilforum confirmándome que he sido uno de los ganadores del I concurso de Ideas HTC Movistar - [Movilforum](http://www.movilforum.es/noticias?p_p_id=EXT_WWW_NOTICIAS&p_p_action=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_EXT_WWW_NOTICIAS_struts_action=%2Fext%2Flatam%2Fwww_noticias-view_detalle&_EXT_WWW_NOTICIAS_idNoticia=244&_EXT_WWW_NOTICIAS_backURL=%2Fweb%2Fchile%2Fnoticias)
 
-El premio: un [HTC Dream](http://www.htc.com/es/product/dream/overview.html) !!!! (no me lo creo hasta que no lo tenga en mis manos, y es que no estoy acostumbrado a esto de ganar concursos)
+El premio: un HTC Dream !!!! (no me lo creo hasta que no lo tenga en mis manos, y es que no estoy acostumbrado a esto de ganar concursos)
 
 Mi idea ganadora  ha sido "Familias Conectadas", un conjunto de herramientas orientadas a facilitar el contacto ente los miembros de una familia.
 
