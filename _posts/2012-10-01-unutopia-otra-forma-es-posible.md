@@ -35,7 +35,7 @@ He dejado de juntarme y mirar a las ramas moribundas y centrarme en las verdes o
 
 Por eso, cuando me invitaron a participar en [unutopia](http://unutopia.es/) no me lo pensé dos veces y me apunté sin pensarlo. Y seguro que os preguntáis ¿que es unutopia?... pués para seros sincero llevo dos semanas tratando de terminar este artículo, y cualquier definición que escribo se queda corta.
 
-Solo os diré que después de parar un fin de semana inolvidable con una treintena de [personas de lo más interesante](https://twitter.com/i/#!/francho_lab/unutopia) he vuelto sintiéndome una de las hojas más verdes del árbol, con una sabia renovada. Pero lo mejor de todo, he visto que no estoy solo, que hay más hojas como yo con ideas muy interesantes. Entre todos hemos sentado las bases lo que puede ser un esqueje de los buenos.
+Solo os diré que después de parar un fin de semana inolvidable con una treintena de [personas de lo más interesante](https://twitter.com/search?q=francholab+unutopia) he vuelto sintiéndome una de las hojas más verdes del árbol, con una sabia renovada. Pero lo mejor de todo, he visto que no estoy solo, que hay más hojas como yo con ideas muy interesantes. Entre todos hemos sentado las bases lo que puede ser un esqueje de los buenos.
 
 Solo me queda decir a tod@s los unutópicos: GRACIAS, GRACIAS, GRACIAS... es un honor andar este camino con vosotr@s
 
