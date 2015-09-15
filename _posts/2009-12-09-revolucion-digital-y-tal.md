@@ -19,7 +19,7 @@ excerpt: !ruby/object:Hpricot::Doc
 ---
 ![pc_evolution](/assets/pc_evolution1.jpg "pc_evolution")
 
-La movida que se ha montado estos días con el tema del [manifiesto](https://franchojoven.files.wordpress.com/2009/12/pc_evolution1.jpg2009/12/en-defensa-de-los-derechos-fundamentales-en-internet/) me ha hecho pensar mucho sobre como Internet ha cambiado mi vida en estos 15 años que llevo usándola.
+La movida que se ha montado estos días con el tema del manifiesto me ha hecho pensar mucho sobre como Internet ha cambiado mi vida en estos 15 años que llevo usándola.
 
 <modo_abuelo>
 
