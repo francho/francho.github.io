@@ -151,6 +151,7 @@ a {
   color: $light;
   background: url(/img/intro-bg.jpg) no-repeat bottom center scroll;
   background-color: $bg;
+  background-attachment: fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
