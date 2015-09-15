@@ -161,4 +161,4 @@ Por otro lado me ha gustado mucho la experiencia de los cursos online, así que 
 _Y tu... ¿por qué no te animas a preparar tu propio curso unutopico?_
 
 <small style="padding-top:30px;">
-  (monico pensador by [law_keven](http://www.fotopedia.com/redirect?u=http%3A%2F%2Fwww.flickr.com%2Fphotos%2F66164549%40N00))</small>
+  (monico pensador by [law_keven](https://www.flickr.com/photos/kevenlaw/))</small>
