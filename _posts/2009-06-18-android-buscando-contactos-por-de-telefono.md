@@ -20,7 +20,6 @@ author:
 excerpt: !ruby/object:Hpricot::Doc
   options: {}
 ---
-![android-buscatelefonos](/assets/android-buscatelefonos-189x300.jpg)
 Esta es mi primera aplicación con Android. Se trata de un buscador de contactos a través de su número de teléfono.
 
 Los contactos se van filtrando conforme se va tecleando el número de teléfono. Si pulsamos sobre un item del resultado se abrirá su ficha de contacto.
