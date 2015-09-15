@@ -88,3 +88,6 @@ favicon: "/img/favicon.ico"
 exclude: ["Rakefile", "LICENSE", "readme.markdown", "vendor"]
 gems:
   - jekyll-redirect-from
+
+sass:
+    sass_dir: _sass
