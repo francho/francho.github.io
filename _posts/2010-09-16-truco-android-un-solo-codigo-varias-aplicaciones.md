@@ -50,7 +50,7 @@ En los casos necesarios se crean nuevas layouts (más limitadas) para la versió
 
 **2º Configurar ANT para crear la versión Lite**
 
-Siguiendo las instrucciones del [manual de Android (capítulo desarrollando con otros IDE)](http://developer.android.com/guide/developing/other-ide.html) se genera un proyecto temporal vacío:
+Siguiendo las instrucciones del manual de Android (capítulo desarrollando con otros IDE) se genera un proyecto temporal vacío:
 
 1.  Si no lo tenemos ya, añadimos la ruta de las herramientas Android a nuestro path: {% highlight bash %}export PATH=$PATH:/opt/android-sdk-linux_86/tools/{% endhighlight %}
 2.  Creamos un proyecto temporal {% highlight bash %}android create project --target 8 --name dummyname --package dummy.package --activity DummyActivity --path ./dummy_project{% endhighlight %}
