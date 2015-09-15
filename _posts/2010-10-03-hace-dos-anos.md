@@ -35,7 +35,7 @@ Hace dos años yo era administrador de sistemas y programador web.
 
 [Gané el I concurso de Ideas Movistar-Movilforum](/2009/05/19/he-ganado-el-primer-concurso-de-ideas-android/)  
  Lancé mi primera aplicación al Android Market: [ZgzBus](/zgzbus/)  
- Incluso aparecí en el [periódico](/2010/03/01/zgzbus-en-el-periodico-de-aragon/) y la [tele](/2010/03/01/entrevista-en-globbtv-francho-joven-programador-android/) hablando de Android  
+ Incluso aparecí en el [periódico](/2010/01/03/zgzbus-en-el-periodico-de-aragon/) y la [tele](/2010/08/20/entrevista-en-globbtv-francho-joven-programador-android/) hablando de Android  
  Pero, lo mas importante de todo: a día de hoy me gano la vida programando Android :)
 
 Sirva este artículo mostrar mi agradecimiento a toda la la gente que me ayudó y apoyó de una u otra forma en este momento tan decisivo de mi vida.
