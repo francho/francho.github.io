@@ -42,7 +42,7 @@ Este fin de semana se ha celebrado el [Agile Open Space 2012](http://aos2012.agi
 
 ... el AOS es el mejor lugar para iniciar a tus compañer@s de trabajo en el mundo del agilismo y conseguir que se unan a "la secta"
 
-... en el AOS puedes aprender de enfoques de vida tan interesantes como los de [@hello3610](https://twitter.com/#!/hell03610), [@Xavi1uzz](https://twitter.com/#!/XaV1uzz) y el resto de gente de [beCode](http://www.becodemyfriend.com/)
+... en el AOS puedes aprender de enfoques de vida tan interesantes como los de [@hello3610](https://twitter.com/#!/hell03610), [@Xavi1uzz](https://twitter.com/#!/XaV1uzz) y el resto de gente de beCode http://www.becodemyfriend.com/
 
 ... en el AOS puedes participar en debates de posturas totalmente opuestas, llevados de una forma sana y constructiva
 
