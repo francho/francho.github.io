@@ -85,35 +85,31 @@ a {
     &:focus {
       outline: none;
     }
-    .navbar-toggle {
-      color: $dark;
-      font-size: 16px;
-      padding: 4px 6px;
-      &:active,
-      &:focus {
-        outline: none;
-      }
+  }
+  .navbar-toggle {
+    color: $dark;
+    font-size: 16px;
+    padding: 4px 6px;
+    &:active,
+    &:focus {
+      outline: none;
     }
   }
   a {
     color: $light;
+    transition: all .3s ease-in-out;
+    &.active,
+    &:focus,
+    &:hover {
+      background-color: fade($light, 30%);
+      color: $light;
+      outline: none;
+    }
   }
-  .nav {
-    li {
-      &.active {
-        background-color: fade($light, 30%);
-        outline: none;
-      }
-      a {
-        transition: all .3s ease-in-out;
-        &.active,
-        &:focus,
-        &:hover {
-          background-color: fade($light, 30%);
-          color: $light;
-          outline: none;
-        }
-      }
+  li {
+    &.active {
+      background-color: fade($light, 30%);
+      outline: none;
     }
   }
 }
@@ -180,37 +176,6 @@ a {
   }
 }
 
-.btn-circle {
-  background: transparent;
-  border: 2px solid $light;
-  border-radius: 35px;
-  color: $light;
-  font-size: 40px;
-  height: 70px;
-  margin-top: 15px;
-  padding: 7px 16px;
-  transition: background .3s ease-in-out;
-  width: 70px;
-  &:hover,
-  &:focus {
-    background: fade($light, 10%);
-    color: $light;
-    outline: none;
-  }
-  i.animated {
-    transition-duration: 1s;
-    transition-property: transform;
-  }
-  &:hover {
-    i.animated {
-      animation-duration: 1.5s;
-      animation-iteration-count: infinite;
-      animation-name: pulse;
-      animation-timing-function: linear;
-    }
-  }
-}
-
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -273,29 +238,6 @@ a {
   }
 }
 
-ul.banner-social-buttons {
-  margin-top: 0;
-}
-
-@media(max-width: 1199px) {
-  ul.banner-social-buttons {
-    margin-top: 15px;
-  }
-}
-
-@media(max-width: 767px) {
-  ul.banner-social-buttons {
-    li {
-      display: block;
-      margin-bottom: 20px;
-      padding: 0;
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
-}
-
 footer {
   padding: 50px 0;
   div {
@@ -338,6 +280,10 @@ img::selection {
     a {
       color: $navbar-link-color;
     }
+
+    a:hover {
+      color: $light;
+    }
   }
 
   .top-nav-collapse {
@@ -377,8 +323,8 @@ img::selection {
 }
 
 .social-share {
-  text-align: center;
   padding-bottom: 30px;
+  text-align: center;
 
   .fa-twitter-square {
     color: $twitter-color;
@@ -393,12 +339,15 @@ img::selection {
     color: $linkedin-color;
   }
 
-  .a {
+  i {
     transition: all .3s ease-in-out;
-  }
-
-  .a:hover {
-    font-size: 2em;
+    &.active,
+    &:focus,
+    &:hover {
+      background-color: fade($light, 0);
+      color: $light;
+      outline: none;
+    }
   }
 }
 
