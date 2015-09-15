@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Una de desksurfing (tú a Pocketwidget y yo a Frogtek)
-date: 2011-07-27 00:11:03.000000000 +02:00
+date: 2011-07-26 00:11:03.000000000 +02:00
 tags:
   - desksurfing
 status: publish
