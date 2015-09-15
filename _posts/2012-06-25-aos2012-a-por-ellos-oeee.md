@@ -20,7 +20,7 @@ author:
 excerpt: !ruby/object:Hpricot::Doc
   options: {}
 ---
-[![](/assets/548667_432509236781914_100552994_n.jpeg "548667_432509236781914_100552994_n")](http://www.facebook.com/photo.php?fbid=432509236781914&set=a.432505003449004.104288.130152583684249&type=3&theater)
+[![oeee](/assets/548667_432509236781914_100552994_n.jpeg "548667_432509236781914_100552994_n")](http://www.facebook.com/photo.php?fbid=432509236781914&set=a.432505003449004.104288.130152583684249&type=3&theater)
 
 Este fin de semana se ha celebrado el [Agile Open Space 2012](http://aos2012.agile-spain.org). ¿Como? ¿Qué no sabes lo que es el AOS?
 
