@@ -34,7 +34,7 @@ La ocasión se presentó cuando cuando invitamos a [@Ujue](https://twitter.com/
 
 Así que Ujue se vino un día a trabajar a [Centraldereservas.com](http://centraldereservas.com) y Ricardo (mi jefe) y yo les devolvimos la visita acudiendo a sus oficinas de Pamplona.
 
-Si mi [primer desksurfing](/2011/07/27/una-de-desksurfing-tu-a-pocketwidget-y-yo-a-frogtek/) me dejó buen sabor de boca, este no se ha quedado atrás y me ha cargado las pilas con nuevas ideas y metas: fueron dos días muy intensos, llenos de reuniones y charlas sin desperdicio.
+Si mi [primer desksurfing](/2011/07/26/una-de-desksurfing-tu-a-pocketwidget-y-yo-a-frogtek/) me dejó buen sabor de boca, este no se ha quedado atrás y me ha cargado las pilas con nuevas ideas y metas: fueron dos días muy intensos, llenos de reuniones y charlas sin desperdicio.
 
 Nosotros tratamos de enseñar a Ujue por qué somos una empresa diferente: le hablamos de nuestra UFI (unidad facilitadora interna), le enseñamos como es nuestro día a día y hasta nos la llevamos a Yoga (una de las actividades que tiene el programa SANA)
 
