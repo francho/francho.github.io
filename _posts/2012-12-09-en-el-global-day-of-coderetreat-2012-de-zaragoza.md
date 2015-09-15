@@ -32,7 +32,7 @@ Así que un grupo de intrepid@s developers y developars nos juntamos en el [BSS
 
 Yo, en la primera iteración hice de maestro de ceremonias a [@merybere](https://twitter.com/merybere) (que era la primera vez que venía a un sarao de estos), la hicimos en PHP y me sirvió para probar el ide [PHPStorm](http://www.jetbrains.com/phpstorm/)
 
-La segunda la hice con [@semurat](https://twitter.com/semurat) de [beCode](http://www.becodemyfriend.com/), usamos Groovy. El enfoque "mistico" que planteo Jorge me sirvió para atacar el problema desde un punto de vista totalmente diferente que luego traté de desarrollar en el resto de iteraciones. También me reafirmó la idea de que [Groovy](http://groovy.codehaus.org/) + [Grails](http://grails.org/) va a ser el próximo lenguaje de programación con el que me meta.
+La segunda la hice con [@semurat](https://twitter.com/semurat) de beCode http://www.becodemyfriend.com/, usamos Groovy. El enfoque "mistico" que planteo Jorge me sirvió para atacar el problema desde un punto de vista totalmente diferente que luego traté de desarrollar en el resto de iteraciones. También me reafirmó la idea de que [Groovy](http://groovy.codehaus.org/) + [Grails](http://grails.org/) va a ser el próximo lenguaje de programación con el que me meta.
 
 En la tercera formamos un trío: [@uncurioso](https://twitter.com/uncurioso) quería probar IntellyJ y [@Shantydroid](https://twitter.com/Shantydroid) Java así que unimos esfuerzos. Plantamos un nuevo enfoque basado en observers que, aunque no nos dio tiempo de desarrollar, pinta bien (a ver si tengo un rato y trato de sacarlo).
 
@@ -48,4 +48,4 @@ Resumiendo: ha sido un día cojonudo (como diría uno que yo me sé). Buena comp
 
 Por cierto una mención especial a [@ferpega_](https://twitter.com/ferpega_) por como se ha currado la organización y a [@dani_latorre](https://twitter.com/dani_latorre) por presentarse "voluntario" y responder de esta forma al brown dispatching :) ¡un 10!
 
-Nota: estuve tan ocupado programando que se me olvidó hacer fotos, así que la que ilustra este artículo se la he mangado a @semurat [de su twitter](https://twitter.com/i/#!/semurat/media/slideshow?url=http%3A%2F%2Ftwitpic.com%2Fbk347d) :)
+Nota: estuve tan ocupado programando que se me olvidó hacer fotos, así que la que ilustra este artículo se la he mangado a @semurat de su twitter
