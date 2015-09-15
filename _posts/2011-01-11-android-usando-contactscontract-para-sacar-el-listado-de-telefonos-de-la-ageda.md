@@ -27,7 +27,7 @@ author:
 excerpt: !ruby/object:Hpricot::Doc
   options: {}
 ---
-![choose_a_phone_device](/assets/choose_a_phone_device1.png)Uno de los primeros códigos de Android que teclee fué un [buscador de contactos](/2009/05/19/android-buscando-contactos-por-de-telefono/)... anda que no han pasado cosas desde entonces ;)
+![choose_a_phone_device](/assets/choose_a_phone_device1.png)Uno de los primeros códigos de Android que teclee fué un [buscador de contactos](/2009/06/18/android-buscando-contactos-por-de-telefono/)... anda que no han pasado cosas desde entonces ;)
 
 Uno de los principales cambios introducidos en Android 2.0 (Api 5) fue la nueva organización de los contactos y la superclase [ContactsContract](http://developer.android.com/reference/android/provider/ContactsContract.html) que permite acceder a los datos de la agenda desde diferentes puntos de vista.
 
