@@ -27,7 +27,7 @@ excerpt: !ruby/object:Hpricot::Doc
 
 Estos días he podido asistir al [APPCity 2012](http://www.appcity2012.com/) que se ha celebrado en Zaragoza, un evento para desarrolladores iPhone que ha tenido sus luces y sus sobras...
 
-El evento era la primera vez que se celebraba e inicialmente se promocionó como "[Un _puente_ de conocimiento entre _Cupertino_ (USA) y Europa](http://www.appcity2012.com/index.php/archives/1023)" en el que iban a acudir _"ponentes de reconocido prestigio"_ y _"muchos visitantes extranjeros dentro de los 1000 asistentes previstos"_. A pesar de que siempre me tomo este tipo de cosas con cierta distancia  yo me imaginaba un evento al estilo de los [Google Devfests](/2011/11/09/en-el-google-devfest-2011/)...pero nada más lejos de la realidad:
+El evento era la primera vez que se celebraba e inicialmente se promocionó como "Un _puente_ de conocimiento entre _Cupertino_ (USA) y Europa http://www.appcity2012.com/index.php/archives/1023" en el que iban a acudir _"ponentes de reconocido prestigio"_ y _"muchos visitantes extranjeros dentro de los 1000 asistentes previstos"_. A pesar de que siempre me tomo este tipo de cosas con cierta distancia  yo me imaginaba un evento al estilo de los [Google Devfests](/2011/11/09/en-el-google-devfest-2011/)...pero nada más lejos de la realidad:
 
 Algo me empecé a oler desde con el plantón que nos dieron el primer día: en teoría el check-in se abría a las 7:30 pero las puertas del [WTC](http://www.wtczaragoza.com/) (la sede cambió a última hora ya que iba a ser en el [Palacio de Congresos de la Expo](http://www.pcexpoaragon.com/)) estuvieron cerradas hasta las 8.30 sin que nadie avisara nada (ni en la web, ni por email...) así que ahí nos tuvieron a los madrugadores pasmados de frío (estos días por Zaragoza hemos tenido una sensación térmica de varios grados bajo cero).
 
@@ -41,7 +41,7 @@ Otro aspecto importante en este tipo de eventos es el networking. Yo, además de
 
 Resumiendo que han sido cuatro días muy intensos en los que he conseguido pasar del "hola mundo" en Objective-C e introducirme en el mundo de la programación iPhone (esto se merece otro post) y conocer a gente muy interesante por lo que los doy por aprovechados. De todas formas no me gustaría acabar este artículo sin resaltar los puntos positivos y hacer unas críticas constructivas que espero lea la organización:
 
-[![](/assets/appcity-imagen-reunion-zaragoza.jpg "appcity-Imagen-reunion-Zaragoza")](https://franchojoven.files.wordpress.com/2012/02/appcity-imagen-reunion-zaragoza.jpg)
+![appcity](/assets/appcity-imagen-reunion-zaragoza.jpg "appcity-Imagen-reunion-Zaragoza")
 
 :) Anunciar ponentes de calidad
 
