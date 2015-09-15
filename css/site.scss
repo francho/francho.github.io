@@ -2,6 +2,13 @@
 ---
 @charset "utf-8";
 
+$primary: #219AB3;
+$dark: #000;
+$light: #777;
+$lightest: #fefefe;
+$bg: #F2F2F2;
+
+
 // Our variables
 $base-font-family: Helvetica, Arial, sans-serif;
 $base-font-size: 16px;
@@ -43,7 +50,5 @@ $post-border-color: #444;
 
 @import url(https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Open+Sans:300,400,600,700,300italic,400italic,600italic,700italic);
 
-@import 'variables';
-@import 'mixins';
 @import 'francho';
 //@import "syntax-highlighting";
