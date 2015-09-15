@@ -20,7 +20,7 @@ author:
 excerpt: !ruby/object:Hpricot::Doc
   options: {}
 ---
-[![](/assets/800px-greengrapes.jpg "800px-GreenGrapes")]
+[![uvas](/assets/800px-greengrapes.jpg "800px-GreenGrapes")]
 
 El 2011 llega a su fin, y como todos los fines de año llega el momento de hacer balance y preparar una lista de propósitos para el año que viene. Esta costumbre la tengo desde hace unos años y suelo hacerla en la intimidad, pero este año los blogs de [Teresa Oliver](http://www.teresaoliver.com/2011/12/23/bonillameme/), [Daniel Torres](http://www.torresburriel.com/weblog/2011/12/25/se-acaba-2011-resumen-del-ano-en-este-weblog/) y [David Bonilla](http://www.bonillaware.com/objetivos-2012) me han dado la idea de hacer esta lista en “voz alta” para ver si de esta forma me comprometo más.
 
