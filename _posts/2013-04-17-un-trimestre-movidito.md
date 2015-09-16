@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Un trimestre movidito
-date: 2013-04-17 00:39:25.000000000 +02:00
+date: 2013-04-17 08:39:25
 categories: []
 tags: []
 status: publish
