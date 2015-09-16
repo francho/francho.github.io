@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Android: buscando contactos por de teléfono'
-date: 2009-06-18 01:23:17.000000000 +02:00
+date: 2009-06-18 09:23:17
 tags:
 - android
 status: publish
