@@ -58,6 +58,6 @@ Después del salto tenéis el texto íntegro de la reivindicación, copiarlo y 
 >
 > Firmado Red SOStenible
 >
-> [http://Red-SOStenible.net](http://Red-SOStenible.net)
+> http://Red-SOStenible.net http://Red-SOStenible.net
 >
 > La Red Sostenible somos todo. Si quieres adherirte a este texto, cópialo, blogguéalo, difúndelo.
