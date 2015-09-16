@@ -5,9 +5,12 @@ description: >
   Francho Joven Araus (aka @francholab). Unutopico, maño, geek, artesano de software, aprendiz ágil, programador en activo, sysop retirado, emocionado con Zagales Hacklab, papá a tiempo completo...
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://francho.org" # the base hostname & protocol for your site
+timezone: Europe/Madrid
+
+permalink: /:year/:month/:day/:title/
+
 twitter_username: francholab
 github_username:  francho
-permalink: /:year/:month/:day/:title/
 google-tracking-id: "UA-299756-5"
 disqus-shortname: "francho"
 
