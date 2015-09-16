@@ -1,24 +1,9 @@
----
+  ---
 layout: post
 title: "¡ He ganado el primer concurso de ideas Android !"
-date: 2009-05-19 00:18:12.000000000 +02:00
+date: 2009-05-19 00:18:12
 tags:
 - android
-status: publish
-type: post
-published: true
-meta:
-  syntaxhighlighter_encoded: '1'
-  _edit_last: '2'
-  reddit: a:2:{s:5:"count";i:0;s:4:"time";i:1413386276;}
-author:
-  login: francho
-
-  display_name: francho
-  first_name: ''
-  last_name: ''
-excerpt: !ruby/object:Hpricot::Doc
-  options: {}
 ---
 ![htc dream](/assets/android1.jpg)Acabo de recibir un mail de la gente de Movilforum confirmándome que he sido uno de los ganadores del I concurso de Ideas HTC Movistar - [Movilforum](http://www.movilforum.es/noticias?p_p_id=EXT_WWW_NOTICIAS&p_p_action=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_EXT_WWW_NOTICIAS_struts_action=%2Fext%2Flatam%2Fwww_noticias-view_detalle&_EXT_WWW_NOTICIAS_idNoticia=244&_EXT_WWW_NOTICIAS_backURL=%2Fweb%2Fchile%2Fnoticias)
 
