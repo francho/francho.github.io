@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hace dos años...
-date: 2010-10-03 01:43:13.000000000 +02:00
+date: 2010-10-03 08:43:13
 categories:
 - General
 tags: []
