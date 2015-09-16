@@ -30,7 +30,7 @@ Creia que iba a ser mucho mas complicada, pero al final ha sido mucho más senci
 
 _Actualización 16/9/2015_
 
-Gracias a travis he detectado que algunos posts cambiaban de url (día arriba, día abajo). El problema era que tenían la fecha muy cerca de las 00:00 con un offset de tiempo. Lo [he solucionado simplificando la fecha de estos posts](https://github.com/francho/francho.github.io/commit/825740fa5cbcd11b1404082320fbc10123e5c48c)
+Gracias a travis he detectado que algunos posts cambiaban de url (día arriba, día abajo). El problema era que tenían la fecha muy cerca de las 00:00 con un offset de tiempo. Lo [he solucionado simplificando la fecha de estos posts](https://github.com/francho/francho.github.io/commit/825740fa5cbcd11b1404082320fbc10123e5c48c) y [poniendo el timezone en el config](https://github.com/francho/francho.github.io/compare/e9c9b2c03a33...e1d34e16eb03)
 
 ##Conclusión
 
