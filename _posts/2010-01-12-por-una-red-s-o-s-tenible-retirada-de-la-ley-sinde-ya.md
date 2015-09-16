@@ -18,7 +18,7 @@ author:
 excerpt: !ruby/object:Hpricot::Doc
   options: {}
 ---
-Leo en el [blog de Enrique Dans](http://www.enriquedans.com/2010/01/a-partir-de-hoy-red-y-libertad.html) que se ha creado una plataforma para luchar contra la "[Ley Sinde](http://www.makarras.org/2010/01/09/la-ley-sinde-para-torpes-y-periodistas-que-se-la-tragan-dobla/)" llamada [Red S@Stenible](http://red-sostenible.net). También se ha creado la campaña bajo el lema "Internet NO será otra tele" http://internetnoseraotratv.net/2010/01/11/hola-mundo/ que llevará a cabo diversas acciones ciudadanas durante todo el periodo de la presidencia española de la UE.
+Leo en el [blog de Enrique Dans](http://www.enriquedans.com/2010/01/a-partir-de-hoy-red-y-libertad.html) que se ha creado una plataforma para luchar contra la "[Ley Sinde](http://www.makarras.org/2010/01/09/la-ley-sinde-para-torpes-y-periodistas-que-se-la-tragan-dobla/)" llamada Red S@Stenible http://red-sostenible.net. También se ha creado la campaña bajo el lema "Internet NO será otra tele" http://internetnoseraotratv.net/2010/01/11/hola-mundo/ que llevará a cabo diversas acciones ciudadanas durante todo el periodo de la presidencia española de la UE.
 
 Desde estas líneas quiero dar mi apoyo a estas iniciativas al igual que ya hice con el #manifiesto.
 
