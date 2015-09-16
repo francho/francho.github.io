@@ -28,6 +28,10 @@ Creia que iba a ser mucho mas complicada, pero al final ha sido mucho más senci
 11. Poco a poco voy revisando los posts anteriores y los voy convirtiendo a markdown usando una [herramienta online](http://domchristie.github.io/to-markdown/)
 12. He instalado la gema html-proofer y he configurado travis para que la pase cada vez que haya un commit
 
+_Actualización 16/9/2015_
+
+Gracias a travis he detectado que algunos posts cambiaban de url (día arriba, día abajo). El problema era que tenían la fecha muy cerca de las 00:00 con un offset de tiempo. Lo [he solucionado simplificando la fecha de estos posts](https://github.com/francho/francho.github.io/commit/825740fa5cbcd11b1404082320fbc10123e5c48c)
+
 ##Conclusión
 
 Todavía me quedan algunos ajustes, pero la verdad es que estoy muy contento con el cambio. Comparando los pros y contras la balanza claramente se inclina a los pros:
