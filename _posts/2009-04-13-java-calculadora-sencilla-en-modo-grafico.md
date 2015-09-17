@@ -6,21 +6,9 @@ status: publish
 type: post
 published: true
 meta:
-_edit_last: '239693'
-_syntaxhighlighter_encoded: '1'
-_wpas_skip_twitter: '1'
-_oembed_2e137ee4647d725605cfd9d8c093a668: "{{unknown}}"
-_oembed_333c813adfa60e0b05ae7dc72e8e099c: "{{unknown}}"
-twitter_cards_summary_img_size: a:6:{i:0;i:364;i:1;i:414;i:2;i:3;i:3;s:24:"width="364"
-height="414"";s:4:"bits";i:8;s:4:"mime";s:9:"image/png";}
-author:
-login: francho
-
 display_name: francho
 first_name: ''
 last_name: ''
-excerpt: !ruby/object:Hpricot::Doc
-options: {}
 ---
 Esta es una calculadora sencilla en modo gráfico escrita en Java.
 
@@ -30,50 +18,49 @@ Implementa las operaciones básicas: sumar, restar, multiplicar y dividir
 
 {% highlight java %}
 /**
-* By Francho Joven - http://francho.org/lab/
-*
-* This work is licensed under the Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License.
-* To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/3.0/
-* or send a letter to Creative Commons, 171 Second Street, Suite 300, San Francisco, California, 94105, USA.
-*
-*/
+ * By Francho Joven - http://francho.org/lab/
+ *
+ * This work is licensed under the Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License. 
+ * To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/3.0/ 
+ * or send a letter to Creative Commons, 171 Second Street, Suite 300, San Francisco, California, 94105, USA.
+ *
+ */
 
 package org.francho.java.calculadora;
 
 /**
-* Ejercicio: Calculadora sencilla - Implementar la Interfaz de usuario -
-* Implementar los mtodos siguientes a través de los listeners adecuados: -
-* Sumar - Restar - Multiplicar - Dividir
-*
-* @author: $Author: franchux $
-* @version: $Rev: 70 $
-* @date: $Date: 2009-04-13 13:06:00 +0200 (lun 13 de abr de 2009) $ $Id:
-* Main.java 70 2009-04-13 11:06:00Z franchux $
-*/
+ * Ejercicio: Calculadora sencilla - Implementar la Interfaz de usuario -
+ * Implementar los mtodos siguientes a través de los listeners adecuados: -
+ * Sumar - Restar - Multiplicar - Dividir
+ * 
+ * @author: $Author: franchux $
+ * @version: $Rev: 70 $
+ * @date: $Date: 2009-04-13 13:06:00 +0200 (lun 13 de abr de 2009) $ $Id:
+ *        Main.java 70 2009-04-13 11:06:00Z franchux $
+ */
 public class Main {
 
-/**
-* @param args the command line arguments
-*/
-public static void main(String[] args) {
-VentanaCalculadora calculadora = new VentanaCalculadora();
-calculadora.setVisible(true);
+	/**
+	 * @param args the command line arguments
+	 */
+	public static void main(String[] args) {
+		VentanaCalculadora calculadora = new VentanaCalculadora();
+		calculadora.setVisible(true);
+	}
 }
-}
-
 {% endhighlight %}
 
 **VentanaCalculadora.java**
 
 {% highlight java %}
 /**
-* By Francho Joven - http://francho.org/lab/
-*
-* This work is licensed under the Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License.
-* To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/3.0/
-* or send a letter to Creative Commons, 171 Second Street, Suite 300, San Francisco, California, 94105, USA.
-*
-*/
+ * By Francho Joven - http://francho.org/lab/
+ *
+ * This work is licensed under the Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License. 
+ * To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/3.0/ 
+ * or send a letter to Creative Commons, 171 Second Street, Suite 300, San Francisco, California, 94105, USA.
+ *
+ */
 package org.francho.java.calculadora;
 
 import java.awt.BorderLayout;
@@ -91,185 +78,185 @@ import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 
 /**
-*
-* Interfaz para nuestra calculadora sencilla
-*
-* @author: $Author: franchux $
-* @version: $Rev: 75 $
-* @date: $Date: 2009-04-14 00:21:18 +0200 (mar 14 de abr de 2009) $ $Id:
-* VentanaCalculadora.java 75 2009-04-13 22:21:18Z franchux $
-*/
+ * 
+ * Interfaz para nuestra calculadora sencilla
+ * 
+ * @author: $Author: franchux $
+ * @version: $Rev: 75 $
+ * @date: $Date: 2009-04-14 00:21:18 +0200 (mar 14 de abr de 2009) $ $Id:
+ *        VentanaCalculadora.java 75 2009-04-13 22:21:18Z franchux $
+ */
 public class VentanaCalculadora extends JFrame {
 
-/**
-* generado
-*/
-private static final long serialVersionUID = 1583724102189855698L;
+	/**
+	 * generado
+	 */
+	private static final long serialVersionUID = 1583724102189855698L;
 
-/** numero tecleado */
-JTextField pantalla;
+	/** numero tecleado */
+	JTextField pantalla;
 
-/** guarda el resultado de la operacion anterior o el número tecleado */
-double resultado;
+	/** guarda el resultado de la operacion anterior o el número tecleado */
+	double resultado;
 
-/** para guardar la operacion a realizar */
-String operacion;
+	/** para guardar la operacion a realizar */
+	String operacion;
 
-/** Los paneles donde colocaremos los botones */
-JPanel panelNumeros, panelOperaciones;
+	/** Los paneles donde colocaremos los botones */
+	JPanel panelNumeros, panelOperaciones;
 
-/** Indica si estamos iniciando o no una operación */
-boolean nuevaOperacion = true;
+	/** Indica si estamos iniciando o no una operación */
+	boolean nuevaOperacion = true;
 
-/**
-* Constructor. Crea los botones y componentes de la calculadora
-*/
-public VentanaCalculadora() {
-super();
-setSize(250, 300);
-setTitle("Calculadora Simple");
-setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-setResizable(false);
+	/**
+	 * Constructor. Crea los botones y componentes de la calculadora
+	 */
+	public VentanaCalculadora() {
+		super();
+		setSize(250, 300);
+		setTitle("Calculadora Simple");
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		setResizable(false);
 
-// Vamos a dibujar sobre el panel
-JPanel panel = (JPanel) this.getContentPane();
-panel.setLayout(new BorderLayout());
+		// Vamos a dibujar sobre el panel
+		JPanel panel = (JPanel) this.getContentPane();
+		panel.setLayout(new BorderLayout());
 
-pantalla = new JTextField("0", 20);
-pantalla.setBorder(new EmptyBorder(4, 4, 4, 4));
-pantalla.setFont(new Font("Arial", Font.BOLD, 25));
-pantalla.setHorizontalAlignment(JTextField.RIGHT);
-pantalla.setEditable(false);
-pantalla.setBackground(Color.WHITE);
-panel.add("North", pantalla);
+		pantalla = new JTextField("0", 20);
+		pantalla.setBorder(new EmptyBorder(4, 4, 4, 4));
+		pantalla.setFont(new Font("Arial", Font.BOLD, 25));
+		pantalla.setHorizontalAlignment(JTextField.RIGHT);
+		pantalla.setEditable(false);
+		pantalla.setBackground(Color.WHITE);
+		panel.add("North", pantalla);
 
-panelNumeros = new JPanel();
-panelNumeros.setLayout(new GridLayout(4, 3));
-panelNumeros.setBorder(new EmptyBorder(4, 4, 4, 4));
+		panelNumeros = new JPanel();
+		panelNumeros.setLayout(new GridLayout(4, 3));
+		panelNumeros.setBorder(new EmptyBorder(4, 4, 4, 4));
 
-for (int n = 9; n >= 0; n--) {
-nuevoBotonNumerico("" + n);
-}
+		for (int n = 9; n >= 0; n--) {
+			nuevoBotonNumerico("" + n);
+		}
 
-nuevoBotonNumerico(".");
+		nuevoBotonNumerico(".");
 
-panel.add("Center", panelNumeros);
+		panel.add("Center", panelNumeros);
 
-panelOperaciones = new JPanel();
-panelOperaciones.setLayout(new GridLayout(6, 1));
-panelOperaciones.setBorder(new EmptyBorder(4, 4, 4, 4));
+		panelOperaciones = new JPanel();
+		panelOperaciones.setLayout(new GridLayout(6, 1));
+		panelOperaciones.setBorder(new EmptyBorder(4, 4, 4, 4));
 
-nuevoBotonOperacion("+");
-nuevoBotonOperacion("-");
-nuevoBotonOperacion("*");
-nuevoBotonOperacion("/");
-nuevoBotonOperacion("=");
-nuevoBotonOperacion("CE");
+		nuevoBotonOperacion("+");
+		nuevoBotonOperacion("-");
+		nuevoBotonOperacion("*");
+		nuevoBotonOperacion("/");
+		nuevoBotonOperacion("=");
+		nuevoBotonOperacion("CE");
 
-panel.add("East", panelOperaciones);
+		panel.add("East", panelOperaciones);
 
-validate();
-}
+		validate();
+	}
 
-/**
-* Crea un boton del teclado numérico y enlaza sus eventos con el listener
-* correspondiente
-*
-* @param digito
-* boton a crear
-*/
-private void nuevoBotonNumerico(String digito) {
-JButton btn = new JButton();
-btn.setText(digito);
-btn.addMouseListener(new MouseAdapter() {
+	/**
+	 * Crea un boton del teclado numérico y enlaza sus eventos con el listener
+	 * correspondiente
+	 * 
+	 * @param digito
+	 *            boton a crear
+	 */
+	private void nuevoBotonNumerico(String digito) {
+		JButton btn = new JButton();
+		btn.setText(digito);
+		btn.addMouseListener(new MouseAdapter() {
 
-@Override
-public void mouseReleased(MouseEvent evt) {
-JButton btn = (JButton) evt.getSource();
-numeroPulsado(btn.getText());
-}
-});
+			@Override
+			public void mouseReleased(MouseEvent evt) {
+				JButton btn = (JButton) evt.getSource();
+				numeroPulsado(btn.getText());
+			}
+		});
 
-panelNumeros.add(btn);
-}
+		panelNumeros.add(btn);
+	}
 
-/**
-* Crea un botón de operacion y lo enlaza con sus eventos.
-*
-* @param operacion
-*/
-private void nuevoBotonOperacion(String operacion) {
-JButton btn = new JButton(operacion);
-btn.setForeground(Color.RED);
+	/**
+	 * Crea un botón de operacion y lo enlaza con sus eventos.
+	 * 
+	 * @param operacion
+	 */
+	private void nuevoBotonOperacion(String operacion) {
+		JButton btn = new JButton(operacion);
+		btn.setForeground(Color.RED);
 
-btn.addMouseListener(new MouseAdapter() {
+		btn.addMouseListener(new MouseAdapter() {
 
-@Override
-public void mouseReleased(MouseEvent evt) {
-JButton btn = (JButton) evt.getSource();
-operacionPulsado(btn.getText());
-}
-});
+			@Override
+			public void mouseReleased(MouseEvent evt) {
+				JButton btn = (JButton) evt.getSource();
+				operacionPulsado(btn.getText());
+			}
+		});
 
-panelOperaciones.add(btn);
-}
+		panelOperaciones.add(btn);
+	}
 
-/**
-* Gestiona las pulsaciones de teclas numéricas
-*
-* @param digito
-* tecla pulsada
-*/
-private void numeroPulsado(String digito) {
-if (pantalla.getText().equals("0") || nuevaOperacion) {
-pantalla.setText(digito);
-} else {
-pantalla.setText(pantalla.getText() + digito);
-}
-nuevaOperacion = false;
-}
+	/**
+	 * Gestiona las pulsaciones de teclas numéricas
+	 * 
+	 * @param digito
+	 *            tecla pulsada
+	 */
+	private void numeroPulsado(String digito) {
+		if (pantalla.getText().equals("0") || nuevaOperacion) {
+			pantalla.setText(digito);
+		} else {
+			pantalla.setText(pantalla.getText() + digito);
+		}
+		nuevaOperacion = false;
+	}
 
-/**
-* Gestiona el gestiona las pulsaciones de teclas de operación
-*
-* @param tecla
-*/
-private void operacionPulsado(String tecla) {
-if (tecla.equals("=")) {
-calcularResultado();
-} else if (tecla.equals("CE")) {
-resultado = 0;
-pantalla.setText("");
-nuevaOperacion = true;
-} else {
-operacion = tecla;
-if ((resultado > 0) && !nuevaOperacion) {
-calcularResultado();
-} else {
-resultado = new Double(pantalla.getText());
-}
-}
+	/**
+	 * Gestiona el gestiona las pulsaciones de teclas de operación
+	 * 
+	 * @param tecla
+	 */
+	private void operacionPulsado(String tecla) {
+		if (tecla.equals("=")) {
+			calcularResultado();
+		} else if (tecla.equals("CE")) {
+			resultado = 0;
+			pantalla.setText("");
+			nuevaOperacion = true;
+		} else {
+			operacion = tecla;
+			if ((resultado > 0) && !nuevaOperacion) {
+				calcularResultado();
+			} else {
+				resultado = new Double(pantalla.getText());
+			}
+		}
 
-nuevaOperacion = true;
-}
+		nuevaOperacion = true;
+	}
 
-/**
-* Calcula el resultado y lo muestra por pantalla
-*/
-private void calcularResultado() {
-if (operacion.equals("+")) {
-resultado += new Double(pantalla.getText());
-} else if (operacion.equals("-")) {
-resultado -= new Double(pantalla.getText());
-} else if (operacion.equals("/")) {
-resultado /= new Double(pantalla.getText());
-} else if (operacion.equals("*")) {
-resultado *= new Double(pantalla.getText());
-}
+	/**
+	 * Calcula el resultado y lo muestra por pantalla
+	 */
+	private void calcularResultado() {
+		if (operacion.equals("+")) {
+			resultado += new Double(pantalla.getText());
+		} else if (operacion.equals("-")) {
+			resultado -= new Double(pantalla.getText());
+		} else if (operacion.equals("/")) {
+			resultado /= new Double(pantalla.getText());
+		} else if (operacion.equals("*")) {
+			resultado *= new Double(pantalla.getText());
+		}
 
-pantalla.setText("" + resultado);
-operacion = "";
-}
+		pantalla.setText("" + resultado);
+		operacion = "";
+	}
 }
 {% endhighlight %}
 

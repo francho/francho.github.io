@@ -40,6 +40,10 @@ p {
   margin: 0 0 25px;
 }
 
+%vertical-rhythm {
+  margin-bottom: 35px;
+}
+
 @media(min-width: 767px) {
   p,
   ul {
