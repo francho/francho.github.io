@@ -89,8 +89,10 @@ favicon: "/img/favicon.ico"
 
 # Exclusion list from the generated _site
 exclude: ["Rakefile", "LICENSE", "readme.markdown", "vendor"]
+
 gems:
   - jekyll-redirect-from
+  - jekyll-feed
 
 sass:
     sass_dir: _sass

@@ -150,5 +150,6 @@ PLATFORMS
 DEPENDENCIES
   github-pages
   html-proofer
+  jekyll-feed
   rake
   scss_lint
