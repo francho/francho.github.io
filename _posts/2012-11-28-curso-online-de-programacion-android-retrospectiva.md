@@ -21,7 +21,7 @@ author:
   first_name: ''
   last_name: ''
 excerpt: !ruby/object:Hpricot::Doc
-  options: {}
+  
 ---
 ![retro](/assets/flickr-2260970300-original.jpg "assets/flickr-2260970300-original")
 

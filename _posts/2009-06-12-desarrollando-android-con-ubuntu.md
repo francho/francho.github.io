@@ -25,7 +25,7 @@ author:
   first_name: ''
   last_name: ''
 excerpt: !ruby/object:Hpricot::Doc
-  options: {}
+  
 ---
 Una de las mejores cosas que tiene Android es su entorno de desarrollo o SDK. Funciona bajo Linux, Mac y Windows y puede descargarse gratuitamente desde http://developer.android.com/sdk/
 

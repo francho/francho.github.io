@@ -24,7 +24,7 @@ author:
   first_name: ''
   last_name: ''
 excerpt: !ruby/object:Hpricot::Doc
-  options: {}
+  
 ---
 ![device](/assets/device-2011-10-16-170223.png "device-2011-10-16-170223")
 

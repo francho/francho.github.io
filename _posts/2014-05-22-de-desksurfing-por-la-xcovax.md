@@ -34,7 +34,7 @@ author:
   first_name: ''
   last_name: ''
 excerpt: !ruby/object:Hpricot::Doc
-  options: {}
+  
 ---
 ![spines_en_lacova](/assets/spines_en_lacova.jpg)
 

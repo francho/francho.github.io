@@ -32,7 +32,7 @@ author:
   first_name: ''
   last_name: ''
 excerpt: !ruby/object:Hpricot::Doc
-  options: {}
+  
 ---
 ![gdcr2014](/assets/gdcr2014.png)
 

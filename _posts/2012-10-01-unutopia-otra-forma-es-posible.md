@@ -15,7 +15,7 @@ author:
   first_name: ''
   last_name: ''
 excerpt: !ruby/object:Hpricot::Doc
-  options: {}
+  
 ---
 ![sauce](/assets/sauce.jpg)]
 

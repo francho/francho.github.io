@@ -18,7 +18,7 @@ author:
   first_name: ''
   last_name: ''
 excerpt: !ruby/object:Hpricot::Doc
-  options: {}
+  
 ---
 Convert es un comando del paquete ImageMagic que nos permite manipular imágenes desde la línea de comandos, lo que lo hace muy útil para hacer scripts.
 

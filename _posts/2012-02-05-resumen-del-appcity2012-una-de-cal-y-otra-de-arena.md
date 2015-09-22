@@ -21,7 +21,7 @@ author:
   first_name: ''
   last_name: ''
 excerpt: !ruby/object:Hpricot::Doc
-  options: {}
+  
 ---
 ![appcity](/assets/appcity-logo-469x336.jpg "appcity-logo-469x336")
 

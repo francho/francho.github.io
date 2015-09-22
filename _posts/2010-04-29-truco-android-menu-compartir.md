@@ -18,7 +18,7 @@ display_name: francho
 first_name: ''
 last_name: ''
 excerpt: !ruby/object:Hpricot::Doc
-options: {}
+
 ---
 Hoy en día para ser un 2.0 auténtico hace falta compartir todo ;-) por eso, he decidido añadir esta funcionalidad a alguna de mis aplicaciones Android.
 

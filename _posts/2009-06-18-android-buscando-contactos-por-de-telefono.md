@@ -18,7 +18,7 @@ author:
   first_name: ''
   last_name: ''
 excerpt: !ruby/object:Hpricot::Doc
-  options: {}
+  
 ---
 Esta es mi primera aplicación con Android. Se trata de un buscador de contactos a través de su número de teléfono.
 

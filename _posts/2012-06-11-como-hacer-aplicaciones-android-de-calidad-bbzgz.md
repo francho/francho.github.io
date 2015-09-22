@@ -21,7 +21,7 @@ author:
   first_name: ''
   last_name: ''
 excerpt: !ruby/object:Hpricot::Doc
-  options: {}
+  
 ---
 La semana pasada me invitaron a participar como ponente en el [II Betabeers de Zaragoza](http://dir.betabeers.com/event/ii-betabeers-zaragoza-8-junio-2012-300/), como no tenía mucho tiempo para preparar el evento se me ocurrió utilizar las notas que tenía del pasado [Google Devfest](http://francho.org/2011/11/09/en-el-google-devfest-2011/) y mis propias experiencias para preparar una charla sobre como mejorar nuestras aplicaciones Android y de la necesidad de incorporar diseñadores en nuestros desarrollos.
 

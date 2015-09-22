@@ -24,7 +24,7 @@ author:
   first_name: ''
   last_name: ''
 excerpt: !ruby/object:Hpricot::Doc
-  options: {}
+  
 ---
 ![i_love_desksurfing](/assets/i_love_desksurfing.png)
 

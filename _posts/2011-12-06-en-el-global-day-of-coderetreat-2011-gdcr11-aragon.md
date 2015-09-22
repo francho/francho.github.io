@@ -19,7 +19,7 @@ author:
   first_name: ''
   last_name: ''
 excerpt: !ruby/object:Hpricot::Doc
-  options: {}
+  
 ---
 El pasado sábado participé en el Global Day of Coderetreat 2011 de Aragón (organizado por [Teresa Oliver](http://www.teresaoliver.com/) ([@tolivern](https://twitter.com/#!/tolivern)),  la gente de [Frogtek](http://developing.frogtek.org/2011/11/08/global-day-of-code-retreat-en-aragon/) y [Walqa](http://www.walqa.com/).
 

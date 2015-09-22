@@ -15,7 +15,7 @@ author:
   first_name: ''
   last_name: ''
 excerpt: !ruby/object:Hpricot::Doc
-  options: {}
+  
 ---
 ![pc_evolution](/assets/pc_evolution1.jpg "pc_evolution")
 
