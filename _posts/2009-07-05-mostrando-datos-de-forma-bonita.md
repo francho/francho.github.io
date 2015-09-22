@@ -15,7 +15,7 @@ author:
   first_name: ''
   last_name: ''
 excerpt: !ruby/object:Hpricot::Doc
-  options: {}
+  
 ---
 Google a través de su http://code.google.com/intl/es/apis/visualization/documentation/gadgetgallery.html Visualization API Gadget Gallery nos ofrece unas librerías JavaScript con las que podemos mostrar fácilmente los datos de una manera mucho mas amigable al usuarios.
 

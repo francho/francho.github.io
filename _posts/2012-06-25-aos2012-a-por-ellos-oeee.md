@@ -18,7 +18,7 @@ author:
   first_name: ''
   last_name: ''
 excerpt: !ruby/object:Hpricot::Doc
-  options: {}
+  
 ---
 [![oeee](/assets/548667_432509236781914_100552994_n.jpeg "548667_432509236781914_100552994_n")](http://www.facebook.com/photo.php?fbid=432509236781914&set=a.432505003449004.104288.130152583684249&type=3&theater)
 

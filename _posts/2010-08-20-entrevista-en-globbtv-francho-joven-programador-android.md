@@ -16,7 +16,7 @@ author:
   first_name: ''
   last_name: ''
 excerpt: !ruby/object:Hpricot::Doc
-  options: {}
+  
 ---
 Hace unas semanas en [GlobbTV](http://www.globbtv.com/175/videos/Francho-Joven,-de-Pocket-Widget) me hicieron una entrevista en la que hablamos de [ZgzBus](/zgzbus/), la empresa en la que trabajo ([Pocketwidget)](http://www.pocketwidget.com/) y la programación Android en general.
 

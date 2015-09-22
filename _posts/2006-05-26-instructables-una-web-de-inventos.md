@@ -17,7 +17,7 @@ author:
   first_name: ''
   last_name: ''
 excerpt: !ruby/object:Hpricot::Doc
-  options: {}
+  
 ---
 Según se definen ellos, Instructables es una comunidad para:
 

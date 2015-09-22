@@ -23,7 +23,7 @@ author:
   first_name: ''
   last_name: ''
 excerpt: !ruby/object:Hpricot::Doc
-  options: {}
+  
 ---
 ![calendario](/assets/calendario.jpg)
 

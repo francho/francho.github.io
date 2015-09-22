@@ -18,7 +18,7 @@ author:
   first_name: ''
   last_name: ''
 excerpt: !ruby/object:Hpricot::Doc
-  options: {}
+  
 ---
 ![periodico_20100301G0101PAR](/assets/periodico_20100301g0101par1.jpg) Zgzbus es una aplicación Android que me hice para uso personal. Permite consultar las frecuencias de los autobuses urbanos de Zaragoza (por mi barrio son malas y prefiero esperar en casa que en la parada). Un amigo me vio usarla y me pidió una copia y ahí empezó todo...
 

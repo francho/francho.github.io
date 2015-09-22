@@ -17,7 +17,7 @@ author:
   first_name: ''
   last_name: ''
 excerpt: !ruby/object:Hpricot::Doc
-  options: {}
+  
 ---
 ![desksurfing1](/assets/desksurfing111.png "desksurfing1")
 

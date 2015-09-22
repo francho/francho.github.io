@@ -18,7 +18,7 @@ author:
   first_name: ''
   last_name: ''
 excerpt: !ruby/object:Hpricot::Doc
-  options: {}
+  
 ---
 [![uvas](/assets/800px-greengrapes.jpg "800px-GreenGrapes")]
 

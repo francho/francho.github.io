@@ -18,7 +18,7 @@ author:
   first_name: ''
   last_name: ''
 excerpt: !ruby/object:Hpricot::Doc
-  options: {}
+  
 ---
 Hoy me he instalado las XGL + Compiz en la Ubuntu de mi portatil. Os recomiendo que veais los videos que hay en la [pagina oficial](http://www.novell.com/linux/xglrelease/ "XGL").
 

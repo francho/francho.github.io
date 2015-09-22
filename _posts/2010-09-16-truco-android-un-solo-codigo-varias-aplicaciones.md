@@ -17,7 +17,7 @@ author:
   first_name: ''
   last_name: ''
 excerpt: !ruby/object:Hpricot::Doc
-  options: {}
+  
 ---
 ![android_compilando_ant](/assets/android_compilando_ant.png "android_compilando_ant")
 En muchas situaciones necesitamos generar varias aplicaciones a partir de un mismo código fuente. El caso típico es cuando queremos sacar una versión lite, con menos funcionalidades para abrir boca y que los usuarios se animen a comprar la versión pro que es de pago ;)

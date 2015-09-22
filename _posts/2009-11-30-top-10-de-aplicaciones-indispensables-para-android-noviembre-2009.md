@@ -22,7 +22,7 @@ author:
   first_name: ''
   last_name: ''
 excerpt: !ruby/object:Hpricot::Doc
-  options: {}
+  
 ---
 ![android_top](/assets/android_top1.png "android_top")
 

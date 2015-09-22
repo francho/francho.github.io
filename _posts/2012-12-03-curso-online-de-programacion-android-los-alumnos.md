@@ -22,7 +22,7 @@ author:
   first_name: ''
   last_name: ''
 excerpt: !ruby/object:Hpricot::Doc
-  options: {}
+  
 ---
 Terminó el [curso de programación Android](http://francho.org/2012/10/03/curso-gratuito-para-desempleados-de-programacion-android/). Pero esta vez no va a haber entrega de diplomas. A cambio os voy a presentar a l@s alumn@s del curso. Tod@s ell@s son personas muy motivadas y que se han esforzado durante el curso. Desde luego si estáis buscando programadores Android pueden ser una buena opción.
 

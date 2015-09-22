@@ -36,7 +36,7 @@ author:
   first_name: ''
   last_name: ''
 excerpt: !ruby/object:Hpricot::Doc
-  options: {}
+  
 ---
 ![IMG_20111108_130843](/assets/img_20111108_130843.jpg)
 Acabo de volver del [DevFest que Google ha organizado en Barcelona](https://sites.google.com/site/barcelonadevfest/). Ha sido un día muy intenso que tardaré en asimilar (demasiada información en tan poco tiempo)...

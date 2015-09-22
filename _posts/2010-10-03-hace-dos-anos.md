@@ -18,7 +18,7 @@ author:
   first_name: ''
   last_name: ''
 excerpt: !ruby/object:Hpricot::Doc
-  options: {}
+  
 ---
 ![cumpleAndroid](/assets/cumpleandroid1.png)  
 Hace dos años yo era administrador de sistemas y programador web.  

@@ -20,7 +20,7 @@ author:
   first_name: ''
   last_name: ''
 excerpt: !ruby/object:Hpricot::Doc
-  options: {}
+  
 ---
 Un buen día unos periodistas de [RTVE](http://www.rtve.es/) llamaron a Pocketwidget (la empresa donde trabajo) preguntando por Francho Joven. Habían visto la entrevista que me hicieron en GlobTV y querían saber si estaríamos dispuestos a mostrar la vida de un programador de aplicaciones para móviles en su programa [Comando Actualidad](http://www.rtve.es/noticias/20110221/comando-actualidad-usar-tirar/410046.shtml).
 

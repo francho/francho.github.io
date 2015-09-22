@@ -28,7 +28,7 @@ author:
   first_name: ''
   last_name: ''
 excerpt: !ruby/object:Hpricot::Doc
-  options: {}
+  
 ---
 ![IMG_20140222_115610](/assets/img_20140222_115610.jpg)
 

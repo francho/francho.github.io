@@ -19,7 +19,7 @@ author:
   first_name: ''
   last_name: ''
 excerpt: !ruby/object:Hpricot::Doc
-  options: {}
+  
 ---
 ![zgtug_android](/assets/zgtug_android1.jpg "zgtug_android")
 Pedro Fraca (Señor X) y Jose Cortes (@[jbeerdev](http://twitter.com/jbeerdev)), dos de los cracks de [Frogtek](http://frogtek.org), me comentaron que estaban organizado el [Grupo de Usuarios de Tecnologías Google en Zaragoza](http://zaragoza.gtugs.org/) (@[gtug_zaragoza](http://twitter.com/gtug_zaragoza)) y que habían pensado en montar algo referente a Android para el primer evento. Viniendo de donde venía la propuesta no me lo pensé dos veces y enseguida me subí al barco.

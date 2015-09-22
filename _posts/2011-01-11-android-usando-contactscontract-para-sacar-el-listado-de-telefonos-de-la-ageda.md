@@ -25,7 +25,7 @@ author:
   first_name: ''
   last_name: ''
 excerpt: !ruby/object:Hpricot::Doc
-  options: {}
+  
 ---
 ![choose_a_phone_device](/assets/choose_a_phone_device1.png)Uno de los primeros códigos de Android que teclee fué un [buscador de contactos](/2009/06/18/android-buscando-contactos-por-de-telefono/)... anda que no han pasado cosas desde entonces ;)
 

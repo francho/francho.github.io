@@ -22,7 +22,7 @@ author:
   first_name: ''
   last_name: ''
 excerpt: !ruby/object:Hpricot::Doc
-  options: {}
+  
 ---
 ![gdcr12](/assets/gdcr12.jpg)
 

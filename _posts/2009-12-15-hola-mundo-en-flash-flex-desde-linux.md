@@ -16,7 +16,7 @@ author:
   first_name: ''
   last_name: ''
 excerpt: !ruby/object:Hpricot::Doc
-  options: {}
+  
 ---
 Para un experimento que quiero hacer tengo que retocar un código hecho en Flex. Como nunca he programado Flex ni ActionScript  me ha tocado bucear en la red. Siguiendo este [post](http://netpatia.blogspot.com/2009/09/flash-development-on-linux.html) y este [otro](http://netpatia.blogspot.com/2009/09/flash-development-on-linux-ii.html), he conseguido montar el entorno de desarrollo.
 
