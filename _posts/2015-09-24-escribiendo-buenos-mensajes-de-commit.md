@@ -11,14 +11,14 @@ Con el paso del tiempo entre todo el equipo hemos ido perfeccionando una regla q
 
 Los mandamientos de Spines para escribir commits son:
 
-1. Haz commits atómicos. (Un olor para detectar esto es la cantidad de ficheros que vas a mandar, nosotros no solemos incluir mas de uno o dos por cada commit)
-2. Escribe el mensaje del commit en inglés
-3. Empieza en mayúsculas
-4. Escribe en presente (me gusta la regla de completar esta frase:
+1. Haz **commits atómicos**. (Un olor para detectar esto es la cantidad de ficheros que vas a mandar, nosotros no solemos incluir mas de uno o dos por cada commit)
+2. Escribe el mensaje del commit **en inglés**
+3. **Empieza en mayúsculas**
+4. Escribe **en presente** (me gusta la regla de completar esta frase:
 _If applied, this commit will **your subject line here**_
-5. El subject (la primera línea) no debe tener más de 50
+5. El subject (la primera línea) **no debe tener más de 50 caracteres**
 6. Si es una issue añade [la coletilla con el id para que se cierre automáticamente en github](https://help.github.com/articles/closing-issues-via-commit-messages/)
-7. Separado con una linea en blanco pon el enlace a la tarjeta de Trello en la que estas trabajando
+7. Separado con una linea en blanco pon el **enlace a la tarjeta de Trello** en la que estas trabajando
 8. Si es necesario, debajo del link, puedes poner alguna explicación extra
 
 Con esto estamos consiguiendo un log del proyecto muy claro que da gusto leer.
