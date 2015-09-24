@@ -6,7 +6,8 @@ date:   2015-09-25 9:00
 ![github branches](/assets/branches.png)
 
 Una de las ventajas del pair programming es que se te acaban pegando los buenos vicios del compañero. Cuando empezamos con [Spines](http://spines.me), [@leptom](https://twitter.com/leptom) era muy estricto con los commits: hacía varios commits donde yo hubiera hecho uno solo y pensaba mucho el texto del mensaje. 
-Con el paso del tiempo entre todo el equipo hemos ido perfeccionando una regla que cumplimos a rajatabla y que me recuerda mucho al [post que ha recomendado hoy @nestorsaceda](http://chris.beams.io/posts/git-commit/):
+Con el paso del tiempo entre todo el equipo hemos ido perfeccionando una regla que cumplimos a rajatabla y que me recuerda mucho al [post que ha recomendado hoy @nestorsaceda](http://chris.beams.io/posts/git-commit/)
+Los mandamientos de Spines para escribir commits son:
 
 1. Haz commits atómicos
 2. Escribe el mensaje del commit en inglés
