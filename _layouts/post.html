@@ -13,12 +13,18 @@
 
         <h1 class="text-center"><strong>{{ page.title }}</strong></h1>
         <h4 class="text-center">by <strong>Francho Joven</strong></h4>
-      	<h4 class="text-center"><strong>{{ page.date | date_to_string }}</strong>
-          <small> . {{ page.category }} . <a href="{{ page.url }}#disqus_thread">Comments</a>
-          {% for tag in page.tags %}
-            <a href="/tag/{{ tag }}/">#{{ tag }}</a>
-          {% endfor %}
+      	<h4 class="text-center">
+          <strong>{{ page.date | date_to_string }}</strong>
+          <p><small>
+            {% if page.tags %}
+              {% for tag in page.tags %}
+              <a href="/tag/{{ tag }}/">#{{ tag }}</a>
+              {% endfor %}
+            {% endif %}
+            .
+            <a href="{{ page.url }}#disqus_thread">Comments</a>
           </small>
+          </p>
         </h4>
 
       	{{ content }}
