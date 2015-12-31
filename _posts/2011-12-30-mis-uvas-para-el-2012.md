@@ -2,7 +2,7 @@
 layout: post
 title: Mis uvas para el 2012
 date: 2011-12-30 12:00:37.000000000 +01:00
-tags:
+tags: [retros]
 status: publish
 type: post
 published: true

@@ -4,7 +4,7 @@ title: Hace dos años...
 date: 2010-10-03 08:43:13
 categories:
 - General
-tags: []
+tags: [retros]
 status: publish
 type: post
 published: true
