@@ -2,7 +2,7 @@
 layout: post
 title:  '"Asin" nos va :-('
 date: 2016-03-17 22:20
-tags: [opinión]
+tags: [opinion]
 ---
 ![asín nos va](/assets/frustated.gif)
 
