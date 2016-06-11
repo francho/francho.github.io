@@ -16,7 +16,7 @@ Los primeros pasos fueron bastante bien pero llegados a un punto nos quedamos at
 
 Tratamos de recular, pero el tiempo se nos echó encima, así que me fui a casa con la mosca detrás de la oreja. 
 
-Como me conozco y sabía que no iba a poder dormir si no me la quitaba decidí hacer de nuevo la kata. Con la música sonando a todo trapo en los cascos traté de dejar la mente en blanco, olvidando cualquier solución previa que pudiera condicionarme, y fui avanzando en pequeños pasos, optando primero por el paso más sencillo o el más evidente. Esto me permitió retrasar decisiones de diseño hasta los últimos commits. 
+Como me conozco y sabía que no iba a poder dormir si no me la quitaba decidí hacer de nuevo la kata. Con la música sonando a todo trapo en los cascos traté de dejar la mente en blanco, olvidando cualquier solución previa que pudiera condicionarme, y fui avanzando en pequeños pasos, optando primero por el paso más sencillo o el más evidente. Esto me permitió retrasar decisiones de diseño hasta los (últimos commits)[https://github.com/francho/kata-gilded-rose-ruby/commits/francho-solution]. 
 
 [![](/assets/kata-gilded-rose-history.png)](https://github.com/francho/kata-gilded-rose-ruby/commits/francho-solution)
 
