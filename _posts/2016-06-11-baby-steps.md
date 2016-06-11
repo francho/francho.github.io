@@ -20,6 +20,6 @@ Como me conozco y sabía que no iba a poder dormir si no me la quitaba decidí h
 
 [![](/assets/kata-gilded-rose-history.png)](https://github.com/francho/kata-gilded-rose-ruby/commits/francho-solution)
 
-El [código resultante](https://github.com/francho/kata-gilded-rose-ruby/tree/francho-solution) me gusta bastante y es mucho mas bonito que el que tenía en mente cuando acudí al dojo. 
+El [código resultante](https://github.com/francho/kata-gilded-rose-ruby/tree/francho-solution) me gusta bastante y es mucho mas bonito que el que tenía en mente cuando acudí al dojo. Está claro que cuando nos enfrentamos a problemas de este tipo, con código mostruoso los "baby steps" ayudan mucho... ¡lección aprendida!
 
 ¿Y a vosotr@s que os parece el código?... se admiten code reviews ;)
