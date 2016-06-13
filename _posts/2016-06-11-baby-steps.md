@@ -22,4 +22,4 @@ Como me conozco y sabía que no iba a poder dormir si no me la quitaba decidí h
 
 El [código resultante](https://github.com/francho/kata-gilded-rose-ruby/tree/francho-solution) me gusta bastante y es mucho mas bonito que el que tenía en mente cuando acudí al dojo. Está claro que cuando nos enfrentamos a problemas de este tipo, con código mostruoso los "baby steps" ayudan mucho... ¡lección aprendida!
 
-¿Y a vosotr@s que os parece [como ha quedado](https://github.com/francho/kata-gilded-rose-ruby/commits/francho-solution)?... se admiten code reviews ;)
+¿Y a vosotr@s que os parece [como ha quedado](https://github.com/francho/kata-gilded-rose-ruby/tree/francho-solution)?... se admiten code reviews ;)
