@@ -95,5 +95,8 @@ gems:
   - jekyll-feed
   - jekyll-paginate
 
+whitelist:
+  - jekyll-redirect-from
+
 sass:
     sass_dir: _sass
