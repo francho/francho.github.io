@@ -1,4 +1,4 @@
-require 'html/proofer'
+require 'html-proofer'
 require 'scss_lint/rake_task'
 
 desc 'Test everything: build, html and sass'
