@@ -7,20 +7,7 @@ categories:
 tags: []
 status: publish
 type: post
-published: true
-meta:
-  _edit_last: '2'
-  reddit: a:2:{s:5:"count";i:0;s:4:"time";i:1352959840;}
-  twitter_cards_summary_img_size: a:7:{i:0;i:1024;i:1;i:768;i:2;i:2;i:3;s:25:"width="1024"
-    height="768"";s:4:"bits";i:8;s:8:"channels";i:3;s:4:"mime";s:10:"image/jpeg";}
-author:
-  login: francho
-
-  display_name: francho
-  first_name: ''
-  last_name: ''
-excerpt: !ruby/object:Hpricot::Doc
-  
+published: true  
 ---
 Un buen día unos periodistas de [RTVE](http://www.rtve.es/) llamaron a Pocketwidget (la empresa donde trabajo) preguntando por Francho Joven. Habían visto la entrevista que me hicieron en GlobTV y querían saber si estaríamos dispuestos a mostrar la vida de un programador de aplicaciones para móviles en su programa [Comando Actualidad](http://www.rtve.es/noticias/20110221/comando-actualidad-usar-tirar/410046.shtml).
 
