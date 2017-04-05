@@ -55,3 +55,7 @@ La retro que hicimos al final me inspiró este artículo con el que quiero agra
 Pero también quiero animarte a ti a que pruebes a salir de tu cueva, mézclate, asiste a los eventos de tu localidad, y si no hay comunidad... pues la creas tú. Seguro que no te arrepientes.
 
 Nos vemos en el próximo evento ;)
+
+PD: si todavía te lo estas pensando... te recomiendo que te veas este vídeo
+
+{% include youtube.html video="0SARbwvhupQ" %}
