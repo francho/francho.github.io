@@ -125,7 +125,7 @@ a {
   }
 
   .top-nav-collapse {
-    background-color: rgba(64, 64, 64, .999);
+    background-color: $topbar;
     padding: 0;
     a {
       color: $light;
@@ -325,8 +325,8 @@ img::selection {
 
 .social-share {
   color: $light;
-  padding-top: 20px;
   padding-bottom: 30px;
+  padding-top: 20px;
   text-align: center;
 
   p {
