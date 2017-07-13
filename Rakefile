@@ -16,11 +16,12 @@ end
 
 desc 'Run html tests'
 task :html_lint => [:build] do
-  HTML::Proofer.new('./_site', {
-                               typhoeus: {ssl_verifypeer: false, ssl_verifyhost: 0},
-                               only_4xx: true,
-                               parallel: {in_processes: 5}
-                             }).run
+  options = {
+    typhoeus: { ssl_verifypeer: false, ssl_verifyhost: 0 },
+    only_4xx: true,
+    parallel: { in_processes: 5 }
+  }
+  HTMLProofer.check_directory('./_site', options)
 end
 
 desc 'Run scss-lint tests'
