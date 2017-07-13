@@ -84,7 +84,6 @@ social:
   - title: "linkedin"
     url: "http://no.linkedin.com/in/francho"
 
-404-img: "/img/labtocat.png"
 favicon: "/img/favicon.ico"
 
 # Exclusion list from the generated _site
