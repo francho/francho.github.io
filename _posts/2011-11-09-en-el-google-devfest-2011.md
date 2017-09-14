@@ -7,35 +7,12 @@ tags:
 status: publish
 type: post
 published: true
-meta:
-  _edit_last: '239693'
-  _wpas_done_twitter: '1'
-  reddit: a:2:{s:5:"count";i:0;s:4:"time";i:1352959846;}
-  _oembed_2c76d8220d202375ecdc5db7fdf41f12: "{{unknown}}"
-  _oembed_9cde402eafa5a933bd9e298d13241bb4: "{{unknown}}"
-  _oembed_1c39b6dc7d597df77fba9a5f8017669e: "{{unknown}}"
-  _oembed_f75c80a93efb108116602337cbe4a5c2: "{{unknown}}"
-  _oembed_8c59f9555922ca8de9930e2a1438e9d4: "{{unknown}}"
-  _oembed_d0ac227bc996cde3117badc3bdc56b97: "{{unknown}}"
-  _oembed_36abf49a0d6ca90317bd715cb8ba9fd3: "{{unknown}}"
-  _oembed_8d228170e24fff92df4368fb8e23cd6f: "{{unknown}}"
-  _oembed_448ee0e4d1193f841380e4367ca947a7: "{{unknown}}"
-  _oembed_849faa5df0c33ecf5fe0c2afe3721c07: "{{unknown}}"
-  _oembed_17eb99e312e8f68f1bd08cc22a6f5ef6: "{{unknown}}"
-  _oembed_15c6325c15cbc842173449e65414a177: "{{unknown}}"
-  _oembed_2f24de84b66821e32a64356cdb2d3b2f: "{{unknown}}"
-  _oembed_2ca1d81b89cbc7435104ac79e12de612: "{{unknown}}"
-  _oembed_632e94868a0bdf3815562ee49bad3d29: "{{unknown}}"
-  _oembed_f10cdee34503a2c6ae4b6fec1f1853e6: "{{unknown}}"
-  _oembed_490410996e0dd7e1906e0ef18dbe171d: "{{unknown}}"
-  _oembed_b1afb7a4734f9270ac8c493f6872ad51: "{{unknown}}"
 author:
   login: francho
 
   display_name: francho
   first_name: ''
   last_name: ''
-excerpt: !ruby/object:Hpricot::Doc
   
 ---
 ![IMG_20111108_130843](/assets/img_20111108_130843.jpg)
@@ -81,7 +58,7 @@ Para terminar aquí van algunas de las urls que he recopilado y que tengo que re
 *   [https://developers.google.com/+/api](https://developers.google.com/+/api/)/
 *   http://code.google.com/android/c2dm
 *   http://code.google.com/intl/es/apis/inapppayments/docs/jsreference.html
-*   [http://www.guidetotheappgalaxy.com/#/developersguide/](http://www.guidetotheappgalaxy.com/#/developersguide/)
+*   http://www.guidetotheappgalaxy.com/#/developersguide/
 *   [http://code.google.com/p/android-scripting/](http://code.google.com/p/android-scripting/)
 *   http://code.google.com/intl/es/apis/shopping/search/
 *   http://code.google.com/intl/es/apis/shopping/content/
