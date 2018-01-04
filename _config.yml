@@ -39,9 +39,12 @@ post-preview-words: 128
 # Career variables
 
 events:
+  - image: "/assets/career/frogtek.png"
+    date: "2018 - actualmente"
+    description: "El círculo se cierra, programador Android en <a href='http://fogtek.org'>Frogtek</a>  "
   - image: "/assets/career/spines.png"
-    date: "2014-Hoy"
-    description: "Quería trabajar en una empresa ágil de verdad, una con un proyecto interesante, así que me alisté en <a href='/2014/12/31/mi-2014-el-ano-del-cambio/'>Spines</a>. Programador. <strong>Ruby, Angular</strong>"
+    date: "2014-2018"
+    description: "Quería trabajar en una empresa ágil de verdad, una con un proyecto interesante y crear un producto desde cero así que me alisté en <a href='/2014/12/31/mi-2014-el-ano-del-cambio/'>Spines</a>. Devop. Product Manager <strong>Ruby, Angular</strong>"
   - image: "/assets/career/zagales.png"
     date: "2012"
     description: "Preocupados por la educación tecnológica de nuestros hijos montamos <a href='http://zagales-hacklab.org/quienes-somos/'>Zagales Hacklab</a>"
