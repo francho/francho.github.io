@@ -260,20 +260,23 @@ img::selection {
 }
 
 .blog-post img {
-  border: 7px solid $light;
-  border-radius: 100%;
+  border: 1px solid $light;
   display: block;
-  height: 200px;
   margin: 0 auto;
-  overflow: hidden;
-  transition: all .51s;
-  width: 200px;
 }
 
-.blog-post img:hover {
-  border-radius: 0;
-  height: 100%;
-  width: 100%;
+.blog-post p:nth-of-type(1) img:nth-of-type(1) {
+    border: 7px solid $light;
+    border-radius: 100%;
+    height: 200px;
+    overflow: hidden;
+    transition: all .51s;
+    width: 200px;
+    &:hover {
+      border-radius: 0;
+      height: 100%;
+      width: 100%;
+    }
 }
 
 .home {
@@ -387,3 +390,10 @@ iframe {
   padding: 0;
 }
 
+table {
+  margin-bottom: 35px;
+}
+
+th, td {
+  border-bottom: 1px solid $grey-color;
+}

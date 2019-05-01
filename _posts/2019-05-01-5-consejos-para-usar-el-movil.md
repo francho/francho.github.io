@@ -1,0 +1,120 @@
+---
+layout: post
+title: 5 consejos usar el móvil de forma consciente y responsable
+date: 2019-05-01 9:00
+tags: [vida]
+---
+![5 consejos usar el móvil de forma consciente y responsable](/assets/post_mobile.jpg)
+Hace una década llegó a mis manos mi primer smartphone. Echando la mirada atrás parece mentira lo que ha cambiado nuestras vidas un aparatico tan pequeño. La ha cambiado tan rápido y de tal forma que me empieza a dar un poco de miedo...
+
+…me da miedo ver cómo cedemos nuestra privacidad sin importarnos, ver cómo nos convertimos en adictos a las pantallas, cómo modificamos nuestro hábitos para que encajen en las redes sociales,  cómo consumimos contenido de forma compulsiva, cómo [regalamos nuestro tiempo](http://francho.org/uso-movil/) sin pensar en qué lo invertimos...
+
+No me entendáis mal. Creo que, la tecnología, los smartphones y las redes sociales son buenas, pero en su justa medida. Deben ser herramientas a nuestro servicio y no al revés (la mayoría de las veces somos nosotros quienes estamos a su servicio).
+
+Por eso hace unos años decidí emprender mi lucha personal para tratar de recuperar el control y aprender a usar la tecnología de forma consciente y responsable.
+
+Estos son algunos de de los trucos que mejor me han funcionado:
+
+## 1º. Controla tú a las notificaciones, que no sean ellas las que te controlan a ti
+
+Cuando empecé con esto me dí cuenta de que mi móvil estába continuamente llamándome: alguien me mencionaba en twitter… sonidito, un nuevo email… lucecica, una llamada de teléfono… cancioncica rockera… Todas estas "alertas" (la mayoría eran chorradas) hacían que continuamente dejara lo que estuviera haciendo (da igual lo imporante que fuera) y acudiera a mirar que es lo que quería mi móvi (como acude una polilla a la luz).
+
+Así que las notificaciones fueron lo primero que ataqué. Estuve revistando todos los ajustes de sistema y de mis aplicaciones para que sólo lo realmente importante captara mi atención.
+
+Ahora:
+
+- Llevo el móvil en silencio… ¡SIEMPRE! (con la vibración del móvil y la pulsera Mi Fit me basta para enterarme cuando es necesario).
+- Tengo desactivado el cualquier opción que haga que la pantalla se ilume automáticamente (al levantarlo, al recibir una aviso…) para ser yo el que conscientemente enciende el móvil pulsando un botón.
+- Trato de tener las notificaciones justas y sin sonido. Para ello las categorizo en tres tipos y siempre que instalo una app la configuro para que esté en uno de ellos.
+
+| tipo                           | ejemplo                                                      | acción                                                       |
+| ------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Notificaciones importantes     | "Llamada telefónica"<br />"Evento importante en el calendario" | Vibración móvil<br />Vibración pulsera fit                   |
+| Avisos importantes             | "Tienes un Telegram de un grupo importante"                  | Vibración móvil<br />Notificación de sistema<br />Notificación de sistema en pantalla de bloqueo (si el móvil está desbloqueado) |
+| Otros avisos<br />(la mayoría) | "Te han mencionado en twitter"<br />"Hay un nuevo podcast"   | Sin vibración<br />Sin notificaciones de sistema<br />Desactivada la actualización en segundo plano, de esta forma sólo se ven los avisos en la propia app cuando yo decido abrirla. |
+
+
+## 2º. En el móvil lleva sólo las apps necesarias, ni una más, ni una menos
+
+Lo siguiente que me di cuenta es que tenía demasiadas aplicaciones instaladas y la mayoría no las usaba (eso no impedía que siguieran generando distracciones y consumiendo recursos). Así que decidí hacer una criba.
+
+Ahora:
+
+- No tengo juegos en el móvil. Cuando quiero jugar uso la tablet, la consola o el ordenador.
+- Me quité la mayoría de las redes sociales, solo mantengo la app de Twitter, al resto accedo a través de su web o con el ordenador.
+- [Desde hace unos años](<http://francho.org/2014/02/03/adios-whatsapp-hola-telegram/>) no tengo WhatsApp y no me ha pasado nada y he reducido mucho el ruido (quien esté en algún grupo whatsapp de madres y padres sabrá de lo que hablo ;P). [Telegram](https://telegram.org/) sigue siendo mi herramienta de mensajería, y la mayoría de los chats los tengo silenciados.
+- Continuamente destilo las aplicaciones y si veo alguna que ya no uso o que no me aporta nada la desinstalo sin miramientos (me encanta la opción "Desinstala apps no utilizadas" del iPhone)
+
+## 3º. Usa periodos de desconexión voluntarios
+
+Antes, lo primero que hacía nada mas levantarme y lo último que hacía antes de dormir era coger el móvil para mirar si tenía alguna notificación. Cualquier pausa que hacía, la aprovechaba para mirarlo. Tenía que llevarlo siempre encima y si por lo que fuera me lo dejaba, me sentía "desnudo" y tenía que volver a por él.
+
+Ahora:
+
+- De vez en cuando me "olvido" de forma voluntaria el móvil. Creerme, no pasa nada por salir de casa o ir al baño sin el móvil… yo lo he probado y he sobrevivido ;)
+- En mi familia tenemos una regla: los móviles se quedan fuera de la mesa mientras comemos, cenamos o desayunamos (aunque sea sólos). La hemos exportado a las reuniones familiares, así que ahora cuando nos juntamos a comer con los abuelos, todos dejamos el móvil en una cómoda antes de sentarnos a la mesa (curioso que la mayor resistencia a esto la recibí de las personas adultas… da que pensar)
+- Trato de no llevar el móvil a reuniones o quedadas de amigos y si lo llevo lo dejo en el bolsillo o  encima de la mesa, boca abajo. Y  he dejado de fotografiar y compartir todo lo que como ;-)
+- En el trabajo, también trato de no hacerle caso. Si no es una llamada o un mensaje de un grupo de los importantes (los relacionados con mi familia) lo ignoro completamente.
+- Si me toca esperar (en un bar, en la cola del super, el bus, etc…) intento distraerme con otra cosa y no sacarlo del bolsillo
+- Cuando estoy en casa o haciendo algo lo dejo siempre el móvil en otro cuarto o en una mochila, de esta forma es mas fácil centrarse, sin distracciones. Este simple truco hizo que mi número de desbloqueos diarios del móvil bajara a menos de la mitad.
+- Tengo activado el modo "no molestar al conducir" (hasta que no lo activé no me dí cuenta lo que me distraía el móvil en el coche) y los periodos de descanso, para que mientras duermo sólo me suenen las llamadas.
+- Ahh, y mi móvil no entra en mi habitación, él duerme en el salón.
+
+## 4º. Lleva el minimalismo visual a tu móvil
+
+La última vuelta de tuerca la he dado tratando de aplicar la filosofía minimalista en mi móvil, para tratar de reducir los estímulos visuales.
+
+Ahora:
+
+- Tengo los iconos organizados siguiendo unas reglas sencillas:
+  - Uso 4 escritorios temáticos (uso diario, utilidades, cajón desastre, apps de configuración de dispositivos)
+  - En cada escritorio no hay mas de dos filas de iconos (8 iconos máximo por pantalla) + los 4 de atajo (en los que tengo las 4 apps que más uso: teléfono, Telegram, Spotify y el navegador)
+  - Las aplicaciones secundarias (las que uso menos o más me distraen) estan agrupadas en carpetas, lo que me obliga a hacer un "click" extra para llegar a ellas y oculta sus indicadores de notificación
+- Trato de usar fondos estáticos en escala de grises. Nada de fondos animados.
+- No uso widgets que continuamente se están actualizando a excepción de la de calendario para saber mis próximas citas.
+- Fuera el color: llevo pantalla en escala de grises la mayoría del tiempo. Parece una tontería, pero el esto  me ayuda a ignorar las notificaciones y a usar el móvil solo cuando lo necesito realmente o quiero dedicarle un rato. Para las apps que necesito color (por ejemplo cámara de fotos) tengo un atajo configurado, de esta forma una triple pulsación del botón cambie de color a B/N y viceversa.
+
+![](/assets/post_mobile2.webp)
+
+## 5º. Trata de ser consciente
+
+He de reconocer que durante mucho tiempo he sido un consumidor compulsivo de apps, contenido, redes, hardware… Pero cada vez más trato de frenarme y ser consciente de lo que hago y las implicaciones que tiene mi uso de tecnología.
+
+Ahora:
+
+- Reviso diariamente la app de "Tiempo de uso", intentando adivinar antes de mirar cuanto he usado el móvil (a día de hoy rondo de media 1 hora y cuarto de uso diario, lo cual todavía me parece mucho)
+- Me lo pienso bien antes de instalar nada. Si decido hacerlo reviso las condiciones del servicio, repaso sus opciones de configuracion y le restrinjo los permisos el máximo posible.
+- Por norma tengo desactivada la localización GPS y sólo la activo cuando es estrictamente necesario.
+- Tengo desactivados todos los asistentes de voz (Siri y similares), nunca dicto textos y estoy tratando de reducir mi consumo de apps del universo Google, Facebook y Amazon en un intento de empezar a recuperar mi privacidad.
+- Navego la mayoría de las veces usando ventanas de navegacion privada
+- No me conecto a ninguna red wifi con el móvil (sólo a la de mi casa). El saber que estoy gastando datos me ayuda a contenerme en el consumo de contenido
+- Tengo un [iPhone SE](https://es.wikipedia.org/wiki/IPhone_SE) (quién me lo iba a decir a mí, que siempre he sido un defensor de Android). Lo elegí hace más de un año tras mucho analizar alternativas. Lo que me convenció es:
+  - Su sistema operativo facilita el consumo responsable y la privacidad. Sí, es cierto que en Android podrías llegar a hacer lo mismo a base de apps externas. Incluso algunas de las opciones que he comentado han sido incorporadas en las últimas versiones de Android, pero es que iOS las trae todas de serie. Pensaba que me iba a costar más el cambio, pero la verdad es que no echo nada de menos.
+  - Hay un tema filosófico de la empresa que hay detrás. Apple es una empresa que vive de vender hardware y software mientras, que no hay que olvidar que Android está desarrollado por Google principalmente y que la mayor fuente de ingresos de Google es la publicidad, publicidad que es tan buena por el conocimiento que tiene Google de nosotros… pero esto es otra historia que merece otro post ;)
+  - Me encanta el tamaño de pantalla (ahora no hay muchas alternativas para los que buscamos un móvil pequeño).
+  - Estaba en el rango de precio que me quería gastar. El comprarlo cuando empezaba a estar descatalogado ayudó (hoy en día se pueden conseguir reacondicionados a un precio más que interesante)
+  - Es un buen móvil a nivel de hardware y software, de hecho creo que es el mejor móvil que he tenido (y mira que he tenido móviles desde ese Android1 de 2009)
+- Llevo siempre puesta una pulsera [Xiaomi Mi Band 2](https://www.mi.com/es/miband2/), que es el complemento ideal para mi móvil. También fué una elección consciente, tras mucho mirar me decidí porque:
+  - Funciona bien con el iPhone
+  - La duración de la batería (la cargo cada 3 o 4 semanas)
+  - Vibra cuando alguien me llama por teléfono
+  - Hace de despertador (aunque mi móvil esté cargando en otra habitación).
+  - No tiene notificaciones mas allá del zumbido (no quiero recibir textos en mi muñeca). De hecho hace poco evalué cambiarme a la Mi fit 3, pero la descarté por esto mismo.
+  - Su precio (que más se puede pedir por 20€)
+- Uso otros dispositivos siempre que es posible. Por ejemplo, veo las series en la tele o el ordenador, juego con la consola, navego con el ordenador o el tablet… por supuesto tratando de controlarme también el tiempo que paso en ellos.
+- Ya que está tan integrada en mi vida, trato de estar al día de las noticias tecnológicas leyendo blogs o escuchando podcasts.
+
+### Conclusión
+
+Me ha costado, pero creo que poco a poco voy encontrando el equilibrio y, aunque todavía me queda (en especial en la parte de privacidad), es cierto que me siento mucho más feliz.
+
+¿Y tú, tienes algun otro truco que te ayude a mantener el móvil a raya?
+
+### Relacionados:
+
+- ¿Realmente eres consciente del tiempo que pasas delante del móvil?… [Prueba esta calculadora que he preparado](http://francho.org/uso-movil/)
+- [Center for humane technology](http://humanetech.com/), un interesante movimiento iniciado por gente muy relevante del mundo tech que pretende realinear la tecnología para que esté a nuestro servicio. Muy chulo [su vídeo donde lo explican](https://vimeo.com/193299995)
+- Este episodio del podcast Mas allá de Orion, [Persuasión a gran escala](https://open.spotify.com/episode/7gieQevcoZPRa7ymsbNvME),  donde [Aritz](https://twitter.com/ArtziS), [Carlos](https://twitter.com/patxangas) y  [Ujue](https://twitter.com/ujue) hablan de como la psicología y la persuasión se está aplicando en los principales servicios de internet para manipularnos (la calidad del sonido de este capítulo no es muy buena, peo merece la pena escucharlo)
+- [Qualitity Time](http://www.qualitytimeapp.com/) una app para Android que te ayuda a saber cuánto tiempo pasas realmente delante de tu móvil. También cuenta las veces que lo desbloqueas.
+- Para aprender a tener periodos de desconexión (por ejemplo mientras estudias o comes) puedes usar la app [Forest](https://www.forestapp.cc/) que está disponible para Android e iOS
+- [Mixxio](https://cuonda.com/mixxio), un podcast diario sobre la actualidad tecnológica apto para los profanos
