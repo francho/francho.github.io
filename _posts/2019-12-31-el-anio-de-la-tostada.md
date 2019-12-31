@@ -26,6 +26,6 @@ También quiero agradecer a mis amig@s (no os nombro para no dejarme a nadie) po
 
 ¿y para el 2020?
 
-Pues este año lo empiezo cargado de ilusión, con un nuevo proyecto profesional que, aunque me saca por completo de mi zona de confort, me plantea retos profesionales muy interesantes con los que creo que voy a crecer como profesional.
+Pues este año lo empiezo cargado de ilusión, con un nuevo proyecto profesional que, aunque me saca por completo de mi zona de confort, me plantea retos profesionales muy interesantes con los que creo que voy a crecer como profesional trabajando con un equipazo con el que creo que puedo aprender mucho... voy a ser un Plain Concepts
 
 Solo me voy a poner tres propósitos para este año: disfrutar, seguir aprendiendo y evolucionado.. Ahí es nada :)
