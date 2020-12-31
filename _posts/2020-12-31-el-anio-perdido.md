@@ -4,8 +4,6 @@ title: 2020, el año ¿perdido?
 date: 2020-12-31 13:00
 tags: [retros]
 ---
-# 2020, el año ¿perdido?
-
 ![2020, puto covid](/assets/mask.jpg)
 
 Está claro que ha sido un año de mierda a nivel global, en el que el puto bicho ha puesto todo nuestro mundo patas arriba creando un escenario de novela apocalíptica.
