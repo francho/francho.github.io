@@ -1,29 +1,101 @@
 import type { GatsbyConfig } from "gatsby";
+import remarkGfm from "remark-gfm";
 
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `francho.org`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://francho.org`,
   },
-  // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
-  // If you use VSCode you can also use the GraphQL plugin
-  // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
-  plugins: ["gatsby-plugin-postcss", "gatsby-plugin-image", "gatsby-plugin-sitemap", "gatsby-plugin-mdx", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "images",
-      "path": "./src/images/"
+  plugins: [
+    "gatsby-plugin-image",
+    "gatsby-plugin-sitemap",
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        mdxOptions: {
+          // TODO: Fix this
+          // remarkPlugins: [remarkGfm],
+        },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200,
+              linkImagesToOriginal: false,
+            },
+          },
+        ],
+      },
     },
-    __key: "images"
-  }, {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "pages",
-      "path": "./src/pages/"
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: [`webp`, `auto`],
+          placeholder: `dominantColor`,
+          quality: 50,
+          breakpoints: [750, 1080, 1366, 1920],
+          backgroundColor: `transparent`,
+          blurredOptions: {},
+          jpgOptions: {},
+          pngOptions: {},
+          webpOptions: {},
+          avifOptions: {},
+        },
+      },
     },
-    __key: "pages"
-  }]
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-postcss",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: "./src/images/",
+      },
+      __key: "images",
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "pages",
+        path: "./src/pages/",
+      },
+      __key: "pages",
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "i-like",
+        path: "./src/i-like/",
+      },
+      __key: "ilike",
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "content",
+        path: `./src/content/`,
+      },
+      __key: "content",
+    },
+    {
+      resolve: `gatsby-plugin-react-svg`,
+      options: {
+        rule: {
+          include: /images\/.*\.svg/,
+          omitKeys: [
+            "xmlnsDc",
+            "xmlnsCc",
+            "xmlnsRdf",
+            "xmlnsSvg",
+            "xmlnsSodipodi",
+            "xmlnsInkscape",
+          ],
+        },
+      },
+    },
+  ],
 };
 
 export default config;
