@@ -1,0 +1,45 @@
+.showcase {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.categories {
+  text-align: center;
+  padding: 1rem;
+}
+
+.card {
+  display: flex;
+  gap: 1rem;
+
+  color: var(--color-terciary);
+
+  & > div {
+    flex: 1;
+
+    &:first-of-type {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &:last-of-type {
+      flex: 2;
+    }
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+}
+
+.card:nth-of-type(odd) {
+  flex-direction: row-reverse;
+}
+
+.image {
+  box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+}
