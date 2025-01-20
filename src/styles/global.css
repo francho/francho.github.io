@@ -43,6 +43,27 @@ body {
   color: var(--color-primary);
 }
 
+@media screen and (min-width: 1024px) {
+  body {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+
+  .home {
+    .gatsby-resp-image-image {
+      object-fit: cover;
+      border-radius: 50%;
+      border: 10px solid var(--color-terciary);
+    }
+
+    .gatsby-resp-image-wrapper,
+    .gatsby-resp-image-image {
+      height: 300px !important;
+      width: 300px !important;
+    }
+  }
+}
+
 article {
   padding: 1rem;
 

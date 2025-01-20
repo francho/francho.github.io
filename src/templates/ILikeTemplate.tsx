@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { graphql, Link, PageProps } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 import "../styles/global.css"
