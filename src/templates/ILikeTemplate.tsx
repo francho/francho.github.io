@@ -14,6 +14,7 @@ const mdxComponents = { Link, Section }
 const BookPageTemplate: React.FC<PageProps<{ mdx: Queries.Mdx }>> = ({ data, children }) => {
   const meta = data.mdx.frontmatter;
   const image = getImage(meta!.image!.childImageSharp!.gatsbyImageData)
+  let url = !!meta?.isbn ? `https://openlibrary.org/isbn/${meta?.isbn}` : meta!.url
 
   return (
     <MDXProvider components={mdxComponents}>
@@ -21,7 +22,7 @@ const BookPageTemplate: React.FC<PageProps<{ mdx: Queries.Mdx }>> = ({ data, chi
       <PageTitle title='Me gusta' />
       <div className={css.iLike}>
         <div className={css.info}>
-          {image && <a href={`https://openlibrary.org/isbn/${meta?.isbn}`} target="_new">
+          {image && <a href={url || "#"} target="_new">
             <GatsbyImage image={image} alt={meta?.title || ""} className={css.image}></GatsbyImage>
           </a>}
           <h2>{meta?.title}</h2>
@@ -55,7 +56,8 @@ export const query = graphql`
           childImageSharp {
               gatsbyImageData(width: 180)
           }
-        }
+        },
+        url
       }
     }
   }

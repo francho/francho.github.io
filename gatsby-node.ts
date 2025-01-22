@@ -43,7 +43,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
         .replace(/\.mdx$/, "")
         .toLowerCase();
 
-    const template = slug.match(/^(libros|podcasts)/)
+    const template = slug.match(/^(libros|podcasts|series|peliculas)/)
       ? iLikeTemplate
       : pageTemplate;
 
