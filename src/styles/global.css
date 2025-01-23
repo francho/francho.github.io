@@ -65,7 +65,7 @@ body {
 }
 
 article {
-  padding: 1rem;
+  padding: 1rem 0.5rem;
 
   &.home {
     padding: 0;
@@ -116,6 +116,10 @@ h1 {
     font-size: 0.75rem;
     color: var(--color-highlight);
   }
+}
+
+h3 {
+  margin-top: 1rem;
 }
 
 ul {
