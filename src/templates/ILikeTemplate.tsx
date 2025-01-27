@@ -22,8 +22,8 @@ const BookPageTemplate: React.FC<PageProps<{ mdx: Queries.Mdx }>> = ({ data, chi
       <PageTitle title='Me gusta' />
       <div className={css.iLike}>
         <div className={css.info}>
-          {image && <a href={url || "#"} target="_new">
-            <GatsbyImage image={image} alt={meta?.title || ""} className={css.image}></GatsbyImage>
+          {image && <a href={url || "#"} target="_new" view-transition-name="main-image" >
+            <GatsbyImage image={image} alt={meta?.title || ""} className={css.image} ></GatsbyImage>
           </a>}
           <h2>{meta?.title}</h2>
           {!!meta?.author && <p>{meta?.author}</p>}
@@ -37,7 +37,7 @@ const BookPageTemplate: React.FC<PageProps<{ mdx: Queries.Mdx }>> = ({ data, chi
         </div>
       </div>
       <Footer date={meta?.date} />
-    </MDXProvider>
+    </MDXProvider >
   );
 };
 
@@ -46,6 +46,7 @@ export default BookPageTemplate;
 export const query = graphql`
   query($id: String!) {
     mdx(id: { eq: $id }) {
+      id
       frontmatter {
         title,
         isbn,

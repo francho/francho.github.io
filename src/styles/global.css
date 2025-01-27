@@ -125,3 +125,56 @@ h3 {
 ul {
   margin: 1rem;
 }
+
+@view-transition {
+  navigation: auto;
+  transition-duration: 15s;
+  transition-timing-function: ease-in-out;
+}
+
+@supports (view-transition-name: title) {
+  @keyframes adjust-title {
+    from {
+      font-size: 2.25rem;
+    }
+    to {
+      font-size: 1.5rem;
+    }
+  }
+
+  h1 {
+    animation: adjust-title linear both;
+    animation-timeline: scroll();
+    animation-range: 0 200px;
+  }
+}
+
+@supports (view-transition-name: main-image) {
+  @keyframes move-out {
+    from {
+      transform: translateY(0%);
+    }
+
+    to {
+      transform: translateY(-100%);
+    }
+  }
+
+  @keyframes move-in {
+    from {
+      transform: translateY(100%);
+    }
+
+    to {
+      transform: translateY(0%);
+    }
+  }
+
+  ::view-transition-old(main-image) {
+    animation: 54s ease-in both move-out;
+  }
+
+  ::view-transition-new(main-image) {
+    animation: cubic-bezier(0.39, 0.575, 0.565, 1) ease-in both move-in;
+  }
+}

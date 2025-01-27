@@ -38,7 +38,7 @@ const PagesList: FC<PagesListProps> = ({ tags }) => {
       .filter((p: PageInfo) => tags.every(tag => (p.tags || []).includes(tag)))
       .sort((a: PageInfo, b: PageInfo) => {
         const dateSort = b?.timestamp - a?.timestamp
-        return (dateSort === 0) ? a?.title?.localeCompare(b?.title) : dateSort
+        return (dateSort === 0) ? a?.title?.localeCompare(b?.title, "es-ES") : dateSort
       })
     setVisiblePages(items)
   }, [allSitePage])
