@@ -128,8 +128,7 @@ ul {
 
 @view-transition {
   navigation: auto;
-  transition-duration: 15s;
-  transition-timing-function: ease-in-out;
+  types: bounce slide;
 }
 
 @supports (view-transition-name: title) {
@@ -177,4 +176,8 @@ ul {
   ::view-transition-new(main-image) {
     animation: cubic-bezier(0.39, 0.575, 0.565, 1) ease-in both move-in;
   }
+}
+
+@view-transition {
+  navigation: auto;
 }

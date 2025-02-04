@@ -20,9 +20,9 @@ const BookPageTemplate: React.FC<PageProps<{ mdx: Queries.Mdx }>> = ({ data, chi
     <MDXProvider components={mdxComponents}>
       <Header back="/me-gusta/" />
       <PageTitle title='Me gusta' />
-      <div className={css.iLike}>
+      <article className={css.iLike}>
         <div className={css.info}>
-          {image && <a href={url || "#"} target="_new" view-transition-name="main-image" >
+          {image && <a href={url || "#"} target="_new" view-transition-name={`image-${data.mdx.id}`} >
             <GatsbyImage image={image} alt={meta?.title || ""} className={css.image} ></GatsbyImage>
           </a>}
           <h2>{meta?.title}</h2>
@@ -35,7 +35,8 @@ const BookPageTemplate: React.FC<PageProps<{ mdx: Queries.Mdx }>> = ({ data, chi
             meta?.tags?.map(tag => <span className={css.tag} key={`tag-${tag}`}>{tag}</span>)
           }
         </div>
-      </div>
+      </article>
+
       <Footer date={meta?.date} />
     </MDXProvider >
   );

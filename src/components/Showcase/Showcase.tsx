@@ -69,7 +69,7 @@ const Showcase: FC = () => {
           let image = getImage(frontmatter?.image?.childImageSharp?.gatsbyImageData || null)
           return (
             <Link to={getPath(node)} key={node.id} className={css.card}>
-              <div view-transition-name="main-image">
+              <div view-transition-name={`image-${node.id}`}>
                 <GatsbyImage image={image!} alt={frontmatter!.title || ""} className={css.image} />
               </div>
             </Link>
