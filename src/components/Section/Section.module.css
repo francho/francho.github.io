@@ -5,6 +5,10 @@
   p:last-of-type {
     margin-block: 1rem 0;
   }
+
+  :global(.gatsby-resp-image-image) {
+    border-radius: 0.5rem;
+  }
 }
 
 .hello {
