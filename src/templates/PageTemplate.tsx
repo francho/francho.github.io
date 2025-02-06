@@ -35,6 +35,8 @@ const PageTemplate: React.FC<PageProps<{ mdx: Queries.Mdx }>> = ({ data, childre
 
 export default PageTemplate;
 
+export const Head = () => <html lang="en" />
+
 export const query = graphql`
   query($id: String!) {
     mdx(id: { eq: $id }) {

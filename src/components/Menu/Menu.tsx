@@ -28,7 +28,7 @@ const Menu: FC<MenuProps> = ({ back, isOpen }) => {
 
   return (
     <nav className={`${css.menu} ${isMenuOpened && css.active}`}>
-      {back && <Link to={back} className={css.back}><BackIcon /></Link>}
+      {back && <Link to={back} className={css.back} aria-label="volver"><BackIcon /></Link>}
       {jsMenu && <>
         <input type="checkbox" id="overlay-input" onChange={(e) => setMenuOpened((v) => !v)} checked={isOpen} />
         <label className={css.overlayButton} htmlFor="overlay-input">

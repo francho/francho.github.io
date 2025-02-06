@@ -44,6 +44,8 @@ const BookPageTemplate: React.FC<PageProps<{ mdx: Queries.Mdx }>> = ({ data, chi
 
 export default BookPageTemplate;
 
+export const Head = () => <html lang="en" />
+
 export const query = graphql`
   query($id: String!) {
     mdx(id: { eq: $id }) {
