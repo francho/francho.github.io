@@ -8,8 +8,9 @@ import Header from '../components/Header/Header';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import * as css from "./ILikeTemplate.module.css"
 import PageTitle from '../components/PageTitle/PageTitle';
+import Gif from '../components/Gif/Gif';
 
-const mdxComponents = { Link, Section }
+const mdxComponents = { Link, Section, Gif }
 
 const BookPageTemplate: React.FC<PageProps<{ mdx: Queries.Mdx }>> = ({ data, children }) => {
   const meta = data.mdx.frontmatter;

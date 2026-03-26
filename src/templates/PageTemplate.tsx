@@ -8,6 +8,7 @@ import Header from '../components/Header/Header';
 import Showcase from '../components/Showcase/Showcase';
 import PagesList from '../components/PagesList/PagesList';
 import PageTitle from '../components/PageTitle/PageTitle';
+import Gif from '../components/Gif/Gif';
 import * as css from "./PageTemplate.module.css"
 
 const shortcodes = { 
@@ -15,6 +16,7 @@ const shortcodes = {
   Section, 
   Showcase, 
   PagesList,
+  Gif,
   table: ({ children }: any) => (
       <table className={css.table}>{children}</table>
   ),
