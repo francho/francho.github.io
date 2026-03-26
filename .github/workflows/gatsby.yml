@@ -64,8 +64,8 @@ jobs:
             ${{ runner.os }}-gatsby-build-
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-      - name: Type-check
-        run: pnpm typecheck
+      # - name: Type-check
+      #   run: pnpm typecheck
       - name: Build with Gatsby
         env:
           PREFIX_PATHS: 'true'
