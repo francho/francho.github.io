@@ -8,3 +8,5 @@ allowBuilds:
   lmdb: true
   msgpackr-extract: true
   sharp: true
+  
+minimunReleaseAge: 1440
