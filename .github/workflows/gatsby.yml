@@ -69,7 +69,7 @@ jobs:
       - name: Build and type-check
         env:
           PREFIX_PATHS: 'true'
-        run: pnpm ci
+        run: pnpm run ci
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
