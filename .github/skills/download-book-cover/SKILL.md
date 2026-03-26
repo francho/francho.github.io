@@ -1,16 +1,26 @@
 ---
-description: "Download and place a book cover under src/i-like/libros from a book title, optionally using a provided image URL first"
-name: "download-book-cover"
-agent: "agent"
-model: "GPT-5.4"
+name: download-book-cover
+description: "Download and place a book cover under src/i-like/libros from a book title, optionally using a provided image URL first. Use when asked to fetch, download, or update a book cover image for a libros entry. Searches Open Library, downloads the cover, converts it to WebP at 180px width, and saves it with the sanitized book-title filename."
 argument-hint: "Book title [image URL]"
+user-invocable: true
 ---
 
+# Download Book Cover
+
+## When to Use
+
+- Fetching and placing a cover image for a new or existing book entry in `src/i-like/libros/`.
+- Converting a downloaded cover to WebP at the correct size for the site.
+- The user provides a book title and optionally an explicit image URL to use as the cover source.
+
+## Inputs
+
+- Book title (required).
+- Image URL (optional): if provided, try this source first before any lookup.
+
+## Step-by-Step Workflow
+
 Use tool: `optimize-web-image` for the resize, conversion, and validation steps after the image has been obtained.
-
-Goal: using the provided book title argument, and optionally a second argument with an image URL, find a usable cover image, convert it to WebP, resize it to a width of 180 pixels while preserving aspect ratio, and save it in `src/i-like/libros` with the sanitized book-title filename.
-
-Required flow:
 
 1. Use the provided book title as the primary input.
 2. If a second argument with an image URL is provided, try that URL first.
@@ -30,11 +40,16 @@ Required flow:
 9. Try to obtain a usable cover from Open Library first.
 10. If Open Library does not provide a usable cover, look for an official fallback source such as the publisher page or the official store product page.
 11. Prefer official sources over blogs, review sites, or marketplaces.
-12. Download the chosen image to a temporary local file.
+12. Download the chosen image to a temporary local file using the following priority:
+    a. Use the internal `fetch_webpage` tool with the image URL. If it returns usable binary content, save it to a temporary file (e.g., `/tmp/<slug>-cover.jpg`). This is the preferred approach.
+    b. Fall back to `curl` in the terminal only if the internal fetch tool cannot retrieve binary image data:
+       ```bash
+       curl -L -o /tmp/<slug>-cover.jpg "<image-url>"
+       ```
 13. Use tool: `optimize-web-image` with that local file and target width `180` to convert it to WebP, resize it while preserving aspect ratio, and save it at `src/i-like/libros/<slug>.webp`.
-14. Do not create or edit the MDX review file in this prompt.
+14. Do not create or edit the MDX review file in this skill.
 
-Source-selection rules:
+## Source-Selection Rules
 
 - If the user provides an explicit image URL, try that source first before any lookup.
 - A user-provided image URL does not need to come from Open Library, but it must resolve to a usable image.
@@ -43,15 +58,15 @@ Source-selection rules:
 - If the image URL includes size parameters, prefer a larger source when available.
 - If no usable official cover is available after checking Open Library and official fallback sources, stop and explain the blocker instead of inventing an image URL.
 
-Repository editing rules:
+## Repository Editing Rules
 
 - Make the smallest change that solves the task.
-- For this repository, the correct destination for a local downloaded book cover is `src/i-like/libros/<slug>.webp`.
+- The correct destination for a local downloaded book cover is `src/i-like/libros/<slug>.webp`.
 - Validate that the generated file is a real WebP image after conversion.
 - Validate that the generated image has a width of 180 pixels and preserves the original aspect ratio.
 - Use tool: `optimize-web-image` with the exact verified conversion and validation flow instead of inventing a different image-processing flow.
 
-Expected outcome:
+## Expected Outcome
 
 1. A WebP cover exists at `src/i-like/libros/<slug>.webp`.
 2. The generated image has a width of 180 pixels and keeps the original aspect ratio.

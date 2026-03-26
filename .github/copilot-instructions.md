@@ -40,4 +40,4 @@
 ## Definition of done
 - Prefer the smallest change that fully solves the task.
 - If dependencies are added, removed, or changed, run `pnpm install` first and ensure it succeeds.
-- Do not consider any task complete until the site build has been verified to succeed without errors.
+- Before doing a commit, verify that the site build succeeds without errors with `pnpm run ci`.

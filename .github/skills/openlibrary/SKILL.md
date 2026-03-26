@@ -2,7 +2,7 @@
 name: openlibrary
 description: "Fetch book metadata from Open Library by title. Use when you need ISBN, author, cover image, subjects, or publication year for a book. Use for looking book entries, looking up ISBNs, or downloading cover art. Use when tool `openlibrary` is explicitly invoked or when you need to fill metadata for a new book entry."
 argument-hint: "Book title to search for"
-compatibility: "Requires network access. Uses fetch_webpage for API calls and curl + magick (ImageMagick) for cover download/optimization."
+compatibility: "Requires network access. Uses fetch_webpage for API calls and cover downloads; falls back to curl + magick (ImageMagick) only when fetch_webpage cannot retrieve binary image data."
 ---
 
 # Open Library Book Lookup
@@ -93,11 +93,15 @@ Append `?default=false` to get a 404 instead of a blank image if no cover exists
 
 Only download the cover when the user explicitly asks for it. Skip this step otherwise.
 
-```bash
-curl -sfL -o OUTPUT_PATH 'https://covers.openlibrary.org/b/id/{cover_i}-M.jpg?default=false'
-```
+Use the following priority to download the cover:
 
-Check the HTTP status — a non-zero exit means no cover is available.
+1. **Preferred — internal fetch tool**: Use the `fetch_webpage` tool with the cover URL. If it returns usable binary image content, save it to a temporary file (e.g. `/tmp/<slug>-cover.jpg`).
+2. **Fallback — curl**: Only if the internal fetch tool cannot retrieve binary image data, use `curl` in the terminal:
+   ```bash
+   curl -sfL -o /tmp/<slug>-cover.jpg 'https://covers.openlibrary.org/b/id/{cover_i}-M.jpg?default=false'
+   ```
+
+A 404 or empty response means no cover is available.
 If no cover is found, note it and suggest the user find one manually from a publisher or bookstore page.
 
 After a successful download, invoke the `optimize-web-image` skill to convert the image to WebP and resize it to the target dimensions required by the caller.
