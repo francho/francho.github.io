@@ -8,8 +8,22 @@ import Header from '../components/Header/Header';
 import Showcase from '../components/Showcase/Showcase';
 import PagesList from '../components/PagesList/PagesList';
 import PageTitle from '../components/PageTitle/PageTitle';
+import * as css from "./PageTemplate.module.css"
 
-const shortcodes = { Link, Section, Showcase, PagesList }
+const shortcodes = { 
+  Link, 
+  Section, 
+  Showcase, 
+  PagesList,
+  table: ({ children }: any) => (
+      <table className={css.table}>{children}</table>
+  ),
+  thead: ({ children }: any) => <thead className={css.thead}>{children}</thead>,
+  tbody: ({ children }: any) => <tbody className={css.tbody}>{children}</tbody>,
+  tr: ({ children }: any) => <tr className={css.tr}>{children}</tr>,
+  th: ({ children }: any) => <th className={css.th}>{children}</th>,
+  td: ({ children }: any) => <td className={css.td}>{children}</td>,
+}
 
 const PageTemplate: React.FC<PageProps<{ mdx: Queries.Mdx }>> = ({ data, children }) => {
   const meta = data.mdx.frontmatter;

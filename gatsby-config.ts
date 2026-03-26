@@ -1,5 +1,6 @@
 import type { GatsbyConfig } from "gatsby";
 import remarkGfm from "remark-gfm";
+import remarkFrontmatter from "remark-frontmatter";
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -14,8 +15,7 @@ const config: GatsbyConfig = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         mdxOptions: {
-          // TODO: Fix this
-          // remarkPlugins: [remarkGfm],
+          remarkPlugins: [remarkFrontmatter, remarkGfm],
         },
         gatsbyRemarkPlugins: [
           {
