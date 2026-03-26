@@ -15,6 +15,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
+    "ci": "pnpm build && pnpm typecheck",
     "audit": "pnpm audit --audit-level=high",
     "postinstall": "pnpm audit --audit-level=high"
   },

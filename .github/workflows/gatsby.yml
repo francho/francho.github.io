@@ -66,12 +66,10 @@ jobs:
         run: pnpm install --frozen-lockfile
       - name: Audit dependencies
         run: pnpm audit --audit-level=high
-      - name: Build with Gatsby
+      - name: Build and type-check
         env:
           PREFIX_PATHS: 'true'
-        run: pnpm build
-      - name: Type-check
-        run: pnpm typecheck
+        run: pnpm ci
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
