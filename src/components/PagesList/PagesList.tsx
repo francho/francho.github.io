@@ -9,6 +9,16 @@ interface PageInfo {
   timestamp: number
 }
 
+interface PageFrontmatter {
+  title?: string
+  tags?: string[]
+  date?: string
+}
+
+interface PageContext {
+  frontmatter?: PageFrontmatter
+}
+
 interface PagesListProps {
   tags: string[]
 }
@@ -28,13 +38,16 @@ const PagesList: FC<PagesListProps> = ({ tags }) => {
 
   const [visiblePages, setVisiblePages] = useState<PageInfo[]>([])
   useEffect(() => {
-    const items = allSitePage?.nodes?.map((node: Queries.SitePage): PageInfo => ({
-      id: node?.id,
-      path: node.path,
-      title: node?.pageContext?.frontmatter?.title,
-      tags: node?.pageContext?.frontmatter?.tags,
-      timestamp: Date.parse(node?.pageContext?.frontmatter?.date || "1970/01/01")
-    }))
+    const items = allSitePage?.nodes?.map((node: Queries.SitePage): PageInfo => {
+      const ctx = node?.pageContext as PageContext | null
+      return {
+        id: node?.id,
+        path: node.path,
+        title: ctx?.frontmatter?.title ?? "",
+        tags: ctx?.frontmatter?.tags ?? [],
+        timestamp: Date.parse(ctx?.frontmatter?.date || "1970/01/01")
+      }
+    })
       .filter((p: PageInfo) => tags.every(tag => (p.tags || []).includes(tag)))
       .sort((a: PageInfo, b: PageInfo) => {
         const dateSort = b?.timestamp - a?.timestamp

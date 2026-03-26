@@ -33,10 +33,12 @@ export const createPages: GatsbyNode["createPages"] = async ({
     return;
   }
 
-  result.data.allMdx.nodes.forEach((node) => {
+  const data = result.data as Queries.Query;
+  data.allMdx.nodes.forEach((node) => {
+    const contentFilePath = node.internal.contentFilePath ?? "";
     const slug: string =
       node.frontmatter?.path ||
-      node.internal.contentFilePath
+      contentFilePath
         .replace(/.*\/content\//, "")
         .replace(/.*\/pages\//, "")
         .replace(/.*\/i-like\//, "")
@@ -49,7 +51,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
 
     createPage({
       path: slug ?? "/",
-      component: `${template}?__contentFilePath=${node.internal.contentFilePath}`, // La plantilla que se usará
+      component: `${template}?__contentFilePath=${contentFilePath}`, // La plantilla que se usará
       context: {
         id: node.id,
       },

@@ -7,7 +7,9 @@ const config: GatsbyConfig = {
     title: `francho.org`,
     siteUrl: `https://francho.org`,
   },
-  graphqlTypegen: true,
+  graphqlTypegen: {
+    generateOnBuild: true,
+  },
   plugins: [
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",
