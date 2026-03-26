@@ -30,7 +30,7 @@ const Menu: FC<MenuProps> = ({ back, isOpen }) => {
     <nav className={`${css.menu} ${isMenuOpened && css.active}`}>
       {back && <Link to={back} className={css.back} aria-label="volver"><BackIcon /></Link>}
       {jsMenu && <>
-        <input type="checkbox" id="overlay-input" onChange={(e) => setMenuOpened((v) => !v)} checked={isOpen} />
+        <input type="checkbox" id="overlay-input" aria-label={isMenuOpened ? "Cerrar menú" : "Abrir menú"} onChange={(e) => setMenuOpened((v) => !v)} checked={isMenuOpened} />
         <label className={css.overlayButton} htmlFor="overlay-input">
           {!isMenuOpened && <IconMenu />}
           {isMenuOpened && <IconX />}
