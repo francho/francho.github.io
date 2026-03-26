@@ -99,7 +99,7 @@ These guidelines are aligned with the Gatsby documentation, especially the offic
 	- `Componente.module.css`
 	- `Componente.test.tsx`
 - Keep the component, its styles, and its test colocated.
-- Every component must have tests that cover its expected rendering and key behavior.
+- Every component must have a unit test (`Componente.test.tsx`) that covers its expected rendering and key behavior.
 - When a component changes, update or extend its tests in the same task.
 - Do not consider component work finished unless the relevant tests pass.
 
@@ -131,3 +131,4 @@ These guidelines are aligned with the Gatsby documentation, especially the offic
 - Validate types when the change affects TypeScript, queries, or Gatsby APIs.
 - Do not consider the work complete until `pnpm build` succeeds without errors.
 - Do not consider any task complete until `pnpm typecheck` passes without errors.
+- Do not consider any task complete until `pnpm test` runs and all tests pass without errors.
