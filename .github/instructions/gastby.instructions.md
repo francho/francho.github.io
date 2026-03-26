@@ -129,6 +129,4 @@ These guidelines are aligned with the Gatsby documentation, especially the offic
 - If dependencies change, run `pnpm install` and ensure it succeeds before further validation.
 - If a task adds or changes components, run the relevant tests and ensure they pass.
 - Validate types when the change affects TypeScript, queries, or Gatsby APIs.
-- Do not consider the work complete until `pnpm build` succeeds without errors.
-- Do not consider any task complete until `pnpm typecheck` passes without errors.
-- Do not consider any task complete until `pnpm test` runs and all tests pass without errors.
+- Do not consider the work complete until `pnpm run ci` succeeds without errors.
