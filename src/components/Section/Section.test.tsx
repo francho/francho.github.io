@@ -28,6 +28,27 @@ describe("Section", () => {
     expect(section?.className).toBeTruthy()
   })
 
+  it("applies type-specific class for type='light'", () => {
+    const { container } = render(<Section type="light">contenido</Section>)
+    const section = container.querySelector("section")
+    expect(section).toBeInTheDocument()
+    expect(section?.className).toBeTruthy()
+  })
+
+  it("applies type-specific class for type='disclaimer'", () => {
+    const { container } = render(<Section type="disclaimer">contenido</Section>)
+    const section = container.querySelector("section")
+    expect(section).toBeInTheDocument()
+    expect(section?.className).toBeTruthy()
+  })
+
+  it("applies type-specific class for type='highlight'", () => {
+    const { container } = render(<Section type="highlight">contenido</Section>)
+    const section = container.querySelector("section")
+    expect(section).toBeInTheDocument()
+    expect(section?.className).toBeTruthy()
+  })
+
   it("applies custom className", () => {
     const { container } = render(
       <Section className="custom">contenido</Section>

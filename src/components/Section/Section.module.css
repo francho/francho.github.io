@@ -70,3 +70,22 @@
     margin-block: 0 !important;
   }
 }
+
+.highlight {
+  font-size: 1.8rem;
+  text-align: center;
+  padding: 1rem 0 1rem 0;
+  line-height: 2rem;
+
+  font-weight: 400;
+  font-style: normal;
+  color: var(--color-highlight);
+
+  small {
+    font-size: 1rem;
+    line-height: 1.2rem;
+    display: block;
+    margin-top: 0.5rem;
+    color: var(--color-primary);
+  }
+} 

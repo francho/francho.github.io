@@ -2,7 +2,7 @@ import React, { FC, ReactNode } from "react"
 import * as css from "./Section.module.css"
 
 interface SectionProps extends React.HTMLProps<HTMLElement> {
-  type?: "hello" | "dark" | "light" | "disclaimer"
+  type?: "hello" | "dark" | "light" | "disclaimer" | "highlight"
 }
 
 const Section: FC<SectionProps> = ({ type, className, children }, props) => {
@@ -10,7 +10,8 @@ const Section: FC<SectionProps> = ({ type, className, children }, props) => {
     hello: css.hello,
     dark: css.dark,
     light: css.light,
-    disclaimer: css.disclaimer
+    disclaimer: css.disclaimer,
+    highlight: css.highlight
   }
 
   const typeStyle = type ? styles[type] : ""
