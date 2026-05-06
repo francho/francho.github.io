@@ -2,10 +2,13 @@ import React from "react"
 import { render, screen } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 import { axe } from "jest-axe"
-import { useStaticQuery } from "gatsby"
+import { useStaticQuery, navigate } from "gatsby"
+import { useLocation } from "@reach/router"
 import Showcase from "./Showcase"
 
 const mockedUseStaticQuery = useStaticQuery as jest.Mock
+const mockedUseLocation = useLocation as jest.Mock
+const mockedNavigate = navigate as jest.Mock
 
 const mockShowcaseData = {
   allMdx: {
@@ -39,6 +42,10 @@ const mockShowcaseData = {
 describe("Showcase", () => {
   beforeEach(() => {
     mockedUseStaticQuery.mockReturnValue(mockShowcaseData)
+    mockedUseLocation.mockReturnValue({
+      pathname: "/i-like",
+      search: "",
+    })
   })
 
   it("renders category filter tags", () => {
@@ -61,6 +68,33 @@ describe("Showcase", () => {
     await userEvent.click(screen.getByRole("checkbox", { name: "libros" }))
     expect(await screen.findByAltText("Libro uno")).toBeInTheDocument()
     expect(screen.queryByAltText("Podcast uno")).not.toBeInTheDocument()
+  })
+
+  it("updates URL with cat param when a category is selected", async () => {
+    render(<Showcase />)
+    await userEvent.click(screen.getByRole("checkbox", { name: "libros" }))
+    expect(mockedNavigate).toHaveBeenCalledWith("/i-like?cat=libros", { replace: true })
+  })
+
+  it("removes cat param from URL when same category is clicked again", async () => {
+    mockedUseLocation.mockReturnValue({
+      pathname: "/i-like",
+      search: "?cat=libros",
+    })
+    render(<Showcase />)
+    await userEvent.click(screen.getByRole("checkbox", { name: "libros" }))
+    expect(mockedNavigate).toHaveBeenCalledWith("/i-like?", { replace: true })
+  })
+
+  it("pre-selects category from cat query param", async () => {
+    mockedUseLocation.mockReturnValue({
+      pathname: "/i-like",
+      search: "?cat=podcasts",
+    })
+    render(<Showcase />)
+    expect(await screen.findByAltText("Podcast uno")).toBeInTheDocument()
+    expect(screen.queryByAltText("Libro uno")).not.toBeInTheDocument()
+    expect(screen.getByRole("checkbox", { name: "podcasts" })).toBeChecked()
   })
 
   it("should have no accessibility violations", async () => {

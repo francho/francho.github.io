@@ -1,6 +1,7 @@
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { useStaticQuery, graphql, Link, navigate } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React, { FC, useEffect, useState } from "react"
+import { useLocation } from "@reach/router"
 import * as css from "./Showcase.module.css"
 import Filter from "./Filter/Filter";
 import Tag from "../Tag/Tag";
@@ -42,15 +43,38 @@ const Showcase: FC = () => {
     }
   `)
 
-  const [selectedCategory, setSelectedCategory] = useState("")
-  const [selectedTag, setSelectedTag] = useState("")
-  const [visibleItems, setVisibleItems] = useState(allMdx.nodes)
+  const location = useLocation()
+  const searchParams = new URLSearchParams(location.search)
+  const catFromUrl = searchParams.get("cat") || ""
 
+  const [selectedCategory, setSelectedCategory] = useState(catFromUrl)
+  const [selectedTag, setSelectedTag] = useState("")
+
+  const handleCategoryChange = (cat: string) => {
+    const newCat = selectedCategory === cat ? "" : cat
+    setSelectedCategory(newCat)
+    const params = new URLSearchParams(location.search)
+    if (newCat) {
+      params.set("cat", newCat)
+    } else {
+      params.delete("cat")
+    }
+    navigate(`${location.pathname}?${params.toString()}`, { replace: true })
+  }
 
   useEffect(() => {
-    const items = allMdx.nodes.filter((node: Queries.Mdx) => {
+    setSelectedCategory(catFromUrl)
+  }, [catFromUrl])
+  const [visibleItems, setVisibleItems] = useState(allMdx.nodes)
+  const categoryFilteredItems = allMdx.nodes.filter((node: Queries.Mdx) => {
+    const tags = (node.frontmatter?.tags || [])
+    return !selectedCategory || tags.includes(selectedCategory)
+  })
+
+  useEffect(() => {
+    const items = categoryFilteredItems.filter((node: Queries.Mdx) => {
       const tags = (node.frontmatter?.tags || [])
-      return (!selectedCategory || tags.includes(selectedCategory)) && (!selectedTag || tags.includes(selectedTag))
+      return !selectedTag || tags.includes(selectedTag)
     })
     setVisibleItems(items)
   }, [allMdx, selectedTag, selectedCategory])
@@ -58,10 +82,10 @@ const Showcase: FC = () => {
   return <div>
     <div className={css.categories}>
       {
-        categories.map(c => <Tag key={`cat-${c}`} tag={c} onClick={() => setSelectedCategory(c)} selected={selectedCategory === c} />)
+        categories.map(c => <Tag key={`cat-${c}`} tag={c} onClick={() => handleCategoryChange(c)} selected={selectedCategory === c} />)
       }
     </div>
-    <Filter nodes={allMdx.nodes} onTagSelected={setSelectedTag} />
+    <Filter nodes={categoryFilteredItems} onTagSelected={setSelectedTag} />
     <div className={css.showcase}>
       {
         visibleItems.map((node: Queries.Mdx) => {

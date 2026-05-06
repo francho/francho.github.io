@@ -19,6 +19,17 @@ const mockNodes = [
   },
 ] as unknown as Parameters<typeof Filter>[0]["nodes"]
 
+const mockPodcastNodes = [
+  {
+    id: "4",
+    frontmatter: { tags: ["entrevistas", "podcasts"] },
+  },
+  {
+    id: "5",
+    frontmatter: { tags: ["tecnología", "podcasts"] },
+  },
+] as unknown as Parameters<typeof Filter>[0]["nodes"]
+
 describe("Filter", () => {
   it("renders unique non-category tags", () => {
     render(<Filter nodes={mockNodes} onTagSelected={jest.fn()} />)
@@ -30,6 +41,14 @@ describe("Filter", () => {
   it("does not render category tags", () => {
     render(<Filter nodes={mockNodes} onTagSelected={jest.fn()} />)
     expect(screen.queryByLabelText("libros")).not.toBeInTheDocument()
+  })
+
+  it("only shows tags present in the provided nodes", () => {
+    render(<Filter nodes={mockPodcastNodes} onTagSelected={jest.fn()} />)
+    expect(screen.getByLabelText("entrevistas")).toBeInTheDocument()
+    expect(screen.getByLabelText("tecnología")).toBeInTheDocument()
+    expect(screen.queryByLabelText("novela")).not.toBeInTheDocument()
+    expect(screen.queryByLabelText("ficción")).not.toBeInTheDocument()
   })
 
   it("calls onTagSelected with the tag when clicked", async () => {

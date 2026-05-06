@@ -1,7 +1,4 @@
-const reach = jest.requireActual("@reach/router")
-
 module.exports = {
-  ...reach,
   useLocation: jest.fn(() => ({
     pathname: "/",
     search: "",
