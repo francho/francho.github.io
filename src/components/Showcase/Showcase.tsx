@@ -19,7 +19,10 @@ const getPath = (node: Queries.Mdx) => node!.internal!.contentFilePath!
 const Showcase: FC = () => {
   const { allMdx } = useStaticQuery(graphql`
     query {
-      allMdx(filter: { frontmatter: { tags: { in: ["libros","podcasts","series","películas", "documentales"] }}}) {
+      allMdx(
+        filter: { frontmatter: { tags: { in: ["libros","podcasts","series","películas", "documentales"] }}}
+        sort: { frontmatter: { title: ASC }}
+      ) {
         nodes {
           id,
           frontmatter {
