@@ -27,28 +27,13 @@ If URL or cover image cannot be confidently determined:
 
 ## Cover Image
 
-**Keep original format (jpg or png) — do NOT convert to WebP for podcasts.**
-
-If cover image URL is available:
-
-1. Download using curl:
+1. Download using curl to temporary location:
    ```bash
    curl -L -o /tmp/<slug>-cover "<image-url>"
    ```
 
-2. Detect format:
-   ```bash
-   file /tmp/<slug>-cover
-   ```
-
-3. Copy with appropriate extension (keep original format):
-   ```bash
-   # If JPEG:
-   cp /tmp/<slug>-cover src/i-like/podcasts/<slug>.jpg
-   
-   # If PNG:
-   cp /tmp/<slug>-cover src/i-like/podcasts/<slug>.png
-   ```
+2. Optimize with tool: `optimize-web-image` to convert to WebP at 180px width
+3. Save as: `src/i-like/podcasts/<slug>.webp`
 
 If no image URL provided, inform user they need to add it manually later.
 
@@ -60,7 +45,7 @@ title: <podcast title>
 tags:
   - podcasts
   - <optional existing category tags>
-image: ./<slug>.jpg  # or .png depending on source
+image: ./<slug>.webp
 url: <official podcast website URL>
 ---
 ```
@@ -70,4 +55,4 @@ url: <official podcast website URL>
 - Always include the official website `url`.
 - If URL cannot be automatically determined, stop and ask the user.
 - Do not invent or guess URLs or images.
-- Image format is `.jpg` or `.png` (not `.webp`).
+- Image format is `.webp` at 180px width.

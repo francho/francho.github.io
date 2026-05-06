@@ -47,13 +47,15 @@ user-invocable: true
 
 4. **Fetch metadata**: Follow type-specific instructions from the loaded reference file.
 
-5. **Download and process cover**: Follow type-specific instructions from the loaded reference file.
+5. **Download cover image**: Follow type-specific download instructions from the loaded reference file to save the image temporarily.
 
-6. **Propose 1-3 additional categories** using repository tag vocabulary from step 2.
+6. **Optimize cover image**: Use tool `optimize-web-image` to convert the downloaded image to WebP at 180px width and save to final location.
 
-7. **Wait for cover completion** and confirm image file exists (if applicable).
+7. **Propose 1-3 additional categories** using repository tag vocabulary from step 2.
 
-8. **Create MDX file** with frontmatter following type-specific format from the loaded reference file.
+8. **Wait for cover completion** and confirm image file exists (if applicable).
+
+9. **Create MDX file** with frontmatter following type-specific format from the loaded reference file.
 
 ## Common Repository Rules
 

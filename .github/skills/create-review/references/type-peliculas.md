@@ -24,9 +24,9 @@ Extract:
 
 ## Cover Image
 
-See **[tmdb.md](tmdb.md)** for poster download and optimization.
-
-Save as: `src/i-like/peliculas/<slug>.webp`
+1. Download poster - see **[tmdb.md](tmdb.md)** for instructions
+2. Optimize with tool: `optimize-web-image` to convert to WebP at 180px width
+3. Save as: `src/i-like/peliculas/<slug>.webp`
 
 ## Frontmatter
 

@@ -35,16 +35,16 @@ Extract `POSTER_PATH` from search results.
 
 If multiple results are found, stop and ask the user which one to use.
 
-## Download and Optimize Poster
+## Download Poster
 
-1. Download poster using fetch_webpage first, fallback to curl if needed:
-   ```bash
-   curl -L -o /tmp/<slug>-poster.jpg "<poster-url>"
-   ```
+Download poster using fetch_webpage first, fallback to curl if needed:
+```bash
+curl -L -o /tmp/<slug>-poster.jpg "<poster-url>"
+```
 
-2. Use tool: `optimize-web-image` with:
-   - Source: `/tmp/<slug>-poster.jpg`
-   - Target width: `180`
-   - Output: `src/i-like/<type>/<slug>.webp`
+## Optimize Poster
 
-3. Accept only if format is WEBP and width is 180px.
+Use tool: `optimize-web-image` with:
+- Source: `/tmp/<slug>-poster.jpg`
+- Target width: `180`
+- Output: `src/i-like/<type>/<slug>.webp`
