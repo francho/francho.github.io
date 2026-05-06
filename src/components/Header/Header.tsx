@@ -8,7 +8,7 @@ interface HeaderProps extends React.HTMLProps<HTMLElement> {
   back?: string
 }
 
-const Header: FC<HeaderProps> = ({ back, className }, props) => {
+const Header: FC<HeaderProps> = ({ back, className, ...props }) => {
   return <header className={`${className} ${css.header}`} {...props} >
     <link rel="icon" href="/favicon.ico" />
     <Menu back={back} />

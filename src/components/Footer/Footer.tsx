@@ -9,7 +9,7 @@ interface FooterProps extends React.HTMLProps<HTMLElement> {
   date?: string | null
 }
 
-const Footer: FC<FooterProps> = ({ className, date }, props) => {
+const Footer: FC<FooterProps> = ({ className, date, ...props }) => {
   let updated = null
   if (date) {
     const fecha = new Date(date);

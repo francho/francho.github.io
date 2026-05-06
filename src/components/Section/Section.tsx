@@ -5,7 +5,7 @@ interface SectionProps extends React.HTMLProps<HTMLElement> {
   type?: "hello" | "dark" | "light" | "disclaimer" | "highlight"
 }
 
-const Section: FC<SectionProps> = ({ type, className, children }, props) => {
+const Section: FC<SectionProps> = ({ type, className, children, ...props }) => {
   const styles = {
     hello: css.hello,
     dark: css.dark,
