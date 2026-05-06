@@ -53,6 +53,7 @@ const Showcase: FC = () => {
   const handleCategoryChange = (cat: string) => {
     const newCat = selectedCategory === cat ? "" : cat
     setSelectedCategory(newCat)
+    setSelectedTag("")
     const params = new URLSearchParams(location.search)
     if (newCat) {
       params.set("cat", newCat)
@@ -64,6 +65,7 @@ const Showcase: FC = () => {
 
   useEffect(() => {
     setSelectedCategory(catFromUrl)
+    setSelectedTag("")
   }, [catFromUrl])
   const [visibleItems, setVisibleItems] = useState(allMdx.nodes)
   const categoryFilteredItems = allMdx.nodes.filter((node: Queries.Mdx) => {
@@ -85,7 +87,7 @@ const Showcase: FC = () => {
         categories.map(c => <Tag key={`cat-${c}`} tag={c} onClick={() => handleCategoryChange(c)} selected={selectedCategory === c} />)
       }
     </div>
-    <Filter nodes={categoryFilteredItems} onTagSelected={setSelectedTag} />
+    <Filter nodes={categoryFilteredItems} selectedTag={selectedTag} onTagSelected={setSelectedTag} />
     <div className={css.showcase}>
       {
         visibleItems.map((node: Queries.Mdx) => {

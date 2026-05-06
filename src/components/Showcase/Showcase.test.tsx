@@ -35,6 +35,17 @@ const mockShowcaseData = {
           image: null,
         },
       },
+      {
+        id: "3",
+        internal: {
+          contentFilePath: "/home/user/site/src/i-like/libros/libro-2.mdx",
+        },
+        frontmatter: {
+          title: "Libro dos",
+          tags: ["libros", "tecnología"],
+          image: null,
+        },
+      },
     ],
   },
 }
@@ -95,6 +106,21 @@ describe("Showcase", () => {
     expect(await screen.findByAltText("Podcast uno")).toBeInTheDocument()
     expect(screen.queryByAltText("Libro uno")).not.toBeInTheDocument()
     expect(screen.getByRole("checkbox", { name: "podcasts" })).toBeChecked()
+  })
+
+  it("resets selected tag when category changes", async () => {
+    render(<Showcase />)
+    // select "libros" category — shows "Libro uno" (novela) and "Libro dos" (tecnología)
+    await userEvent.click(screen.getByRole("checkbox", { name: "libros" }))
+    // select "tecnología" tag — only "Libro dos" should show
+    await userEvent.click(screen.getByRole("checkbox", { name: "tecnología" }))
+    expect(screen.queryByAltText("Libro uno")).not.toBeInTheDocument()
+    expect(await screen.findByAltText("Libro dos")).toBeInTheDocument()
+    // change category — tag should reset, all items in new category visible
+    await userEvent.click(screen.getByRole("checkbox", { name: "podcasts" }))
+    expect(await screen.findByAltText("Podcast uno")).toBeInTheDocument()
+    expect(screen.queryByAltText("Libro dos")).not.toBeInTheDocument()
+    expect(screen.getByRole("checkbox", { name: "tecnología" })).not.toBeChecked()
   })
 
   it("should have no accessibility violations", async () => {

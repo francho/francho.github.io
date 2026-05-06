@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { FC } from "react";
 import * as css from "./Filter.module.css"
 import Tag from "../../Tag/Tag";
@@ -6,16 +6,12 @@ import { categories } from "../Showcase";
 
 export interface FilterProps {
   nodes: Queries.Mdx[]
+  selectedTag: string
   onTagSelected: (tag: string) => void
 }
 
-const Filter: FC<FilterProps> = ({ nodes, onTagSelected }) => {
+const Filter: FC<FilterProps> = ({ nodes, selectedTag, onTagSelected }) => {
   const allTags: string[] = [];
-  const [selectedTag, setSelectedTag] = useState("")
-
-  useEffect(() => {
-    onTagSelected(selectedTag)
-  }, [selectedTag])
 
   nodes.forEach((book: Queries.Mdx) => {
     allTags.push(...(book?.frontmatter?.tags as string[] || []));
@@ -26,7 +22,7 @@ const Filter: FC<FilterProps> = ({ nodes, onTagSelected }) => {
     {uniqueTags.map(t => <Tag
       key={`tag-${t}`}
       tag={t}
-      onClick={() => setSelectedTag(t !== selectedTag ? t : "")}
+      onClick={() => onTagSelected(t !== selectedTag ? t : "")}
       selected={t === selectedTag} />)}
   </div >
 }

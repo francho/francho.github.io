@@ -32,43 +32,48 @@ const mockPodcastNodes = [
 
 describe("Filter", () => {
   it("renders unique non-category tags", () => {
-    render(<Filter nodes={mockNodes} onTagSelected={jest.fn()} />)
+    render(<Filter nodes={mockNodes} selectedTag="" onTagSelected={jest.fn()} />)
     expect(screen.getByLabelText("novela")).toBeInTheDocument()
     expect(screen.getByLabelText("ficción")).toBeInTheDocument()
     expect(screen.getByLabelText("tecnología")).toBeInTheDocument()
   })
 
   it("does not render category tags", () => {
-    render(<Filter nodes={mockNodes} onTagSelected={jest.fn()} />)
+    render(<Filter nodes={mockNodes} selectedTag="" onTagSelected={jest.fn()} />)
     expect(screen.queryByLabelText("libros")).not.toBeInTheDocument()
   })
 
   it("only shows tags present in the provided nodes", () => {
-    render(<Filter nodes={mockPodcastNodes} onTagSelected={jest.fn()} />)
+    render(<Filter nodes={mockPodcastNodes} selectedTag="" onTagSelected={jest.fn()} />)
     expect(screen.getByLabelText("entrevistas")).toBeInTheDocument()
     expect(screen.getByLabelText("tecnología")).toBeInTheDocument()
     expect(screen.queryByLabelText("novela")).not.toBeInTheDocument()
     expect(screen.queryByLabelText("ficción")).not.toBeInTheDocument()
   })
 
+  it("reflects the selectedTag prop as checked", () => {
+    render(<Filter nodes={mockNodes} selectedTag="novela" onTagSelected={jest.fn()} />)
+    expect(screen.getByRole("checkbox", { name: "novela" })).toBeChecked()
+    expect(screen.getByRole("checkbox", { name: "tecnología" })).not.toBeChecked()
+  })
+
   it("calls onTagSelected with the tag when clicked", async () => {
     const onTagSelected = jest.fn()
-    render(<Filter nodes={mockNodes} onTagSelected={onTagSelected} />)
+    render(<Filter nodes={mockNodes} selectedTag="" onTagSelected={onTagSelected} />)
     await userEvent.click(screen.getByRole("checkbox", { name: "novela" }))
     expect(onTagSelected).toHaveBeenCalledWith("novela")
   })
 
   it("deselects the tag when clicked again", async () => {
     const onTagSelected = jest.fn()
-    render(<Filter nodes={mockNodes} onTagSelected={onTagSelected} />)
-    await userEvent.click(screen.getByRole("checkbox", { name: "novela" }))
+    render(<Filter nodes={mockNodes} selectedTag="novela" onTagSelected={onTagSelected} />)
     await userEvent.click(screen.getByRole("checkbox", { name: "novela" }))
     expect(onTagSelected).toHaveBeenLastCalledWith("")
   })
 
   it("should have no accessibility violations", async () => {
     const { container } = render(
-      <Filter nodes={mockNodes} onTagSelected={jest.fn()} />
+      <Filter nodes={mockNodes} selectedTag="" onTagSelected={jest.fn()} />
     )
     expect(await axe(container)).toHaveNoViolations()
   })
