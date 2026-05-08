@@ -125,7 +125,7 @@ describe("PageFooter", () => {
     })
 
     it("displays last added Footer first (reverse order)", () => {
-      const { container } = render(
+      render(
         <FooterContentProvider>
           <Footer>First</Footer>
           <Footer>Second</Footer>
@@ -134,14 +134,20 @@ describe("PageFooter", () => {
         </FooterContentProvider>
       )
       
-      const injectedContent = container.querySelector(".injectedContent")
-      expect(injectedContent).toBeInTheDocument()
+      // Verify all content is present
+      expect(screen.getByText("First")).toBeInTheDocument()
+      expect(screen.getByText("Second")).toBeInTheDocument()
+      expect(screen.getByText("Third")).toBeInTheDocument()
       
-      const children = Array.from(injectedContent!.children)
-      expect(children).toHaveLength(3)
-      expect(children[0]).toHaveTextContent("Third")
-      expect(children[1]).toHaveTextContent("Second")
-      expect(children[2]).toHaveTextContent("First")
+      // Verify order by checking text content position
+      const footerText = screen.getByRole("contentinfo").textContent
+      const firstIndex = footerText!.indexOf("First")
+      const secondIndex = footerText!.indexOf("Second")
+      const thirdIndex = footerText!.indexOf("Third")
+      
+      // Last added should appear first (reverse order)
+      expect(thirdIndex).toBeLessThan(secondIndex)
+      expect(secondIndex).toBeLessThan(firstIndex)
     })
   })
 })

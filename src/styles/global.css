@@ -1,26 +1,26 @@
 :root,
 :root[data-theme="light"] {
-  --color-primary: #374151;
-  --color-secondary: #779999;
-  --color-terciary: #78757a;
-  --color-highlight: orange;
-  --color-bg: white;
-  --color-menu: #78757a;
-  --color-footer: #78757a;
-  --color-menu-overlay: white;
-  --color-menu-overlay-bg: #374151;
+  --color-primary: #2c2c2c;
+  --color-secondary: #8b9a7b;
+  --color-terciary: #9b9896;
+  --color-highlight: #c97b63;
+  --color-bg: #faf8f5;
+  --color-menu: #9b9896;
+  --color-footer: #9b9896;
+  --color-menu-overlay: #e8e6e3;
+  --color-menu-overlay-bg: #3a3835;
 }
 
 :root[data-theme="dark"] {
-  --color-primary: white;
-  --color-secondary: #80a2a6;
-  --color-terciary: #78757a;
-  --color-highlight: orange;
-  --color-bg: #292e36;
-  --color-menu: #78757a;
-  --color-footer: rgb(164, 164, 164);
-  --color-menu-overlay: white;
-  --color-menu-overlay-bg: #374151;
+  --color-primary: #e8e6e3;
+  --color-secondary: #a8b89d;
+  --color-terciary: #a39e9a;
+  --color-highlight: #d4907d;
+  --color-bg: #2a2926;
+  --color-menu: #a39e9a;
+  --color-footer: #b5b1ad;
+  --color-menu-overlay: #e8e6e3;
+  --color-menu-overlay-bg: #3a3835;
 }
 
 
@@ -47,7 +47,7 @@ body {
   .home {
     section:last-of-type {
       background-color: #191919;
-      color: var(white);
+      color: #e8e6e3;
       padding: 1.5rem;
     }  
   }
