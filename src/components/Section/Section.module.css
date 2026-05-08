@@ -54,7 +54,7 @@
 
 .dark {
   background-color: #191919;
-  color: var(--color-bg);
+  color: white;
 }
 
 .light {

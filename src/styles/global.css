@@ -47,7 +47,7 @@ body {
   .home {
     section:last-of-type {
       background-color: #191919;
-      color: var(--color-bg);
+      color: var(white);
       padding: 1.5rem;
     }  
   }
