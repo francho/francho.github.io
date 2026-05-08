@@ -1,6 +1,5 @@
 .section {
   display: block;
-  padding: 1rem;
 
   p:last-of-type {
     margin-block: 1rem 0;
@@ -15,7 +14,7 @@
 .hello {
   font-size: 1.6rem;
   text-align: center;
-  padding: 2rem 0 2rem 0;
+  padding-bottom: 2rem;
 
   font-weight: 400;
   font-style: normal;
@@ -63,8 +62,7 @@
 
 .disclaimer {
   font-size: 0.8rem;
-  margin: 0 1rem;
-  color: var(--color-secondary);
+  color: var(--color-footer);
   p {
     line-height: 1.2rem;
     margin-block: 0 !important;

@@ -21,7 +21,7 @@ const BookPageTemplate: React.FC<PageProps<{ mdx: Queries.Mdx }>> = ({ data, chi
     <MDXProvider components={mdxComponents}>
       <Header back="/me-gusta/" />
       <PageTitle title='Me gusta' />
-      <article className={css.iLike}>
+      <article>
         <div className={css.info}>
           {image && <a href={url || "#"} target="_new" view-transition-name={`image-${data.mdx.id}`} >
             <GatsbyImage image={image} alt={meta?.title || ""} className={css.image} ></GatsbyImage>
