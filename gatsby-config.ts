@@ -25,6 +25,8 @@ const config: GatsbyConfig = {
             options: {
               maxWidth: 1200,
               linkImagesToOriginal: false,
+              backgroundColor: 'transparent',
+              quality: 90,
             },
           },
         ],
@@ -35,7 +37,7 @@ const config: GatsbyConfig = {
       options: {
         defaults: {
           formats: [`webp`, `auto`],
-          placeholder: `dominantColor`,
+          placeholder: `none`,
           quality: 50,
           breakpoints: [750, 1080, 1366, 1920],
           backgroundColor: `transparent`,
