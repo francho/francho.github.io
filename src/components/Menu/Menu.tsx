@@ -5,6 +5,7 @@ import { useLocation } from "@reach/router"
 import IconMenu from "../../images/icons/menu.svg"
 import IconX from "../../images/icons/x.svg"
 import BackIcon from "../../images/icons/back.svg"
+import ThemeToggle from "../ThemeToggle/ThemeToggle"
 export interface MenuProps {
   back?: string
   isOpen?: boolean
@@ -43,6 +44,7 @@ const Menu: FC<MenuProps> = ({ back, isOpen }) => {
         <ul >
           {options.map(({ link, label }) => <li key={`option-${link}`} className={link === location.pathname ? css.selected : ""}><Link to={link}>{label}</Link></li>)}
         </ul>
+        <ThemeToggle />
       </div>
 
     </nav>

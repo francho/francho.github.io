@@ -1,0 +1,48 @@
+.themeToggle {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.button {
+  background: transparent;
+  border: 2px solid var(---color-menu-overlay);
+  border-radius: 0.5rem;
+  color: var(--color-menu-overlay);
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  width: 44px;
+  height: 44px;
+}
+
+.button:hover {
+  background: var(--color-menu);
+  color: var(--color-menu-overlay);
+  transform: scale(1.05);
+}
+
+.button:focus {
+  outline: 2px solid var(--color-highlight);
+  outline-offset: 2px;
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+
+.button.active {
+  background: var(--color-menu-overlay);
+  border-color: var(--color-menu-overlay);
+  color: var(--color-menu);
+}
+
+.button svg {
+  width: 24px;
+  height: 24px;
+}

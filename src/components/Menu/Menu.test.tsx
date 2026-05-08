@@ -10,9 +10,26 @@ jest.mock("@reach/router", () => ({
 
 const mockedUseLocation = useLocation as jest.Mock
 
+const mockMatchMedia = (matches = false) => {
+  Object.defineProperty(window, "matchMedia", {
+    writable: true,
+    value: jest.fn().mockImplementation((query) => ({
+      matches,
+      media: query,
+      onchange: null,
+      addListener: jest.fn(),
+      removeListener: jest.fn(),
+      addEventListener: jest.fn(),
+      removeEventListener: jest.fn(),
+      dispatchEvent: jest.fn(),
+    })),
+  })
+}
+
 describe("Menu", () => {
   beforeEach(() => {
     mockedUseLocation.mockReturnValue({ pathname: "/" })
+    mockMatchMedia(false)
   })
 
   it("renders a nav element", () => {
