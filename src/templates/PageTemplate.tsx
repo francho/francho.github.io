@@ -3,13 +3,15 @@ import { graphql, Link, PageProps } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 import "../styles/global.css"
 import Section from '../components/Section/Section';
-import Footer from '../components/Footer/Footer';
+import PageFooter from '../components/PageFooter/PageFooter';
 import Header from '../components/Header/Header';
 import Showcase from '../components/Showcase/Showcase';
 import PagesList from '../components/PagesList/PagesList';
 import PageTitle from '../components/PageTitle/PageTitle';
 import Gif from '../components/Gif/Gif';
 import * as css from "./PageTemplate.module.css"
+import { FooterContentProvider } from '../components/PageFooter/FooterContext/FooterContext';
+import Footer from '../components/PageFooter/Footer/Footer';
 
 const shortcodes = { 
   Link, 
@@ -17,6 +19,7 @@ const shortcodes = {
   Showcase, 
   PagesList,
   Gif,
+  Footer,
   table: ({ children }: any) => (
       <table className={css.table}>{children}</table>
   ),
@@ -37,15 +40,23 @@ const PageTemplate: React.FC<PageProps<{ mdx: Queries.Mdx }>> = ({ data, childre
     back = "/proyectos/"
   }
 
+  const updatedDate = meta?.date ? new Intl.DateTimeFormat('es-ES', {
+    year: 'numeric',
+    month: 'long'
+  }).format(new Date(meta.date)) : null;
+
   return (
-    <MDXProvider components={shortcodes}>
-      <Header back={back} />
-      <PageTitle title={meta?.title || undefined} section={section} />
-      <article className={meta?.path === "/" ? "home" : ""}>
-        {children}
-      </article>
-      <Footer date={meta?.date} />
-    </MDXProvider>
+    <FooterContentProvider>
+      <MDXProvider components={shortcodes}>
+        <Header back={back} />
+        <PageTitle title={meta?.title || undefined} section={section} />
+        <article className={meta?.path === "/" ? "home" : ""}>
+          {children}
+        </article>
+        {updatedDate && <Footer>Actualizada en {updatedDate}</Footer>}
+        <PageFooter />
+      </MDXProvider>
+    </FooterContentProvider>
   );
 };
 
