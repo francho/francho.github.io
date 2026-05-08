@@ -8,7 +8,7 @@
   --color-menu: #78757a;
   --color-footer: #78757a;
   --color-menu-overlay: white;
-  --color-menu-overlay-bg: #374151;
+  --color-menu-overlay-bg: #374m0151;
 }
 
 :root[data-theme="dark"] {
