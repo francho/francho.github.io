@@ -3,9 +3,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  margin: 2rem auto 0;
-  width: fit-content;
+  padding: 0;
   
   font-size: 1rem;
   font-weight: 500;
@@ -17,21 +15,18 @@
   
   cursor: pointer;
   transition: all 0.2s ease;
+  color: var(--color-terciary);
 }
 
 .shareButton:hover {
   background-color: var(--color-text);
   color: var(--color-background);
-  transform: translateY(-2px);
-}
-
-.shareButton:active {
-  transform: translateY(0);
 }
 
 .shareButton svg {
   flex-shrink: 0;
 }
+
 
 /* Dark mode support - relies on global CSS custom properties */
 @media (prefers-color-scheme: dark) {

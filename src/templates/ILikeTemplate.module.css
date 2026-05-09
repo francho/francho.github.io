@@ -19,7 +19,6 @@
 
   p:first-of-type {
     color: var(--color-secondary);
-    font-size: 1.2rem;
   }
 
   p {
@@ -29,10 +28,8 @@
   }
 }
 
-.why {
-  p:first-of-type {
+.why>p:first-of-type {
     font-size: 1.2rem;
-    line-height: 1em;
     font-style: italic;
     font-weight: 400;
     color: var(--color-secondary);
@@ -45,12 +42,12 @@
       line-height: 0.22;
       vertical-align: middle;
     }
-  }
 }
 
 .tags {
   font-size: 0.75rem;
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
   align-items: center;
   justify-content: start;
@@ -62,6 +59,24 @@
   border-radius: 5px;
   padding: 2px 4px;
   line-height: 1.25em;
+}
+
+.inline {
+  position: relative;
+  width: 100%;
+
+  & h2 {
+    text-align: center;
+    padding-inline: 3rem;
+  }
+
+  & > button {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+  }
 }
 
 .image {

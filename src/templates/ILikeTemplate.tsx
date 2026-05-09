@@ -12,8 +12,9 @@ import Gif from '../components/Gif/Gif';
 import { FooterContentProvider } from '../components/PageFooter/FooterContext/FooterContext';
 import Footer from '../components/PageFooter/Footer/Footer';
 import ShareButton from '../components/ShareButton/ShareButton';
+import PodcastEpisode from '../components/PodcastEpisode/PodcastEpisode';
 
-const mdxComponents = { Link, Section, Gif, Footer }
+const mdxComponents = { Link, Section, Gif, Footer, PodcastEpisode }
 
 const BookPageTemplate: React.FC<PageProps<{ mdx: Queries.Mdx }>> = ({ data, children }) => {
   const meta = data.mdx.frontmatter;
@@ -36,6 +37,7 @@ const BookPageTemplate: React.FC<PageProps<{ mdx: Queries.Mdx }>> = ({ data, chi
               <GatsbyImage image={image} alt={meta?.title || ""} className={css.image} ></GatsbyImage>
             </a>}
             <h2>{meta?.title}</h2>
+            <ShareButton title={''} />
             {!!meta?.author && <p>{meta?.author}</p>}
             {!!meta?.isbn && <p>isbn: {meta?.isbn}</p>}
           </div>
@@ -45,7 +47,6 @@ const BookPageTemplate: React.FC<PageProps<{ mdx: Queries.Mdx }>> = ({ data, chi
               meta?.tags?.map(tag => <span className={css.tag} key={`tag-${tag}`}>{tag}</span>)
             }
           </div>
-          <ShareButton title={meta?.title || 'Contenido recomendado'} />
         </article>
 
         {updatedDate && <Footer>Actualizada en {updatedDate}</Footer>}
