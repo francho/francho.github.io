@@ -11,6 +11,7 @@ import PageTitle from '../components/PageTitle/PageTitle';
 import Gif from '../components/Gif/Gif';
 import { FooterContentProvider } from '../components/PageFooter/FooterContext/FooterContext';
 import Footer from '../components/PageFooter/Footer/Footer';
+import ShareButton from '../components/ShareButton/ShareButton';
 
 const mdxComponents = { Link, Section, Gif, Footer }
 
@@ -44,6 +45,7 @@ const BookPageTemplate: React.FC<PageProps<{ mdx: Queries.Mdx }>> = ({ data, chi
               meta?.tags?.map(tag => <span className={css.tag} key={`tag-${tag}`}>{tag}</span>)
             }
           </div>
+          <ShareButton title={meta?.title || 'Contenido recomendado'} />
         </article>
 
         {updatedDate && <Footer>Actualizada en {updatedDate}</Footer>}

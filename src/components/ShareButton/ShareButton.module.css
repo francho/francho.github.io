@@ -1,0 +1,41 @@
+.shareButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  margin: 2rem auto 0;
+  width: fit-content;
+  
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text);
+  
+  background-color: var(--color-background);
+  border: 2px solid var(--color-text);
+  border-radius: 0.5rem;
+  
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.shareButton:hover {
+  background-color: var(--color-text);
+  color: var(--color-background);
+  transform: translateY(-2px);
+}
+
+.shareButton:active {
+  transform: translateY(0);
+}
+
+.shareButton svg {
+  flex-shrink: 0;
+}
+
+/* Dark mode support - relies on global CSS custom properties */
+@media (prefers-color-scheme: dark) {
+  .shareButton {
+    border-color: var(--color-text);
+  }
+}
