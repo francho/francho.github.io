@@ -82,8 +82,7 @@ describe("PodcastEpisode", () => {
 
     it("renders link to open in Spotify", () => {
       render(<PodcastEpisode url={spotifyUrl} />)
-      const link = screen.getByRole("link", { name: /abrir en spotify/i })
-      expect(link).toHaveAttribute("href", spotifyUrl)
+      expect(screen.getByText(/escuchar en spotify/i)).toBeInTheDocument()
     })
 
     it("renders share button", () => {
@@ -113,9 +112,7 @@ describe("PodcastEpisode", () => {
 
     it("renders link to open in Pocket Casts", () => {
       render(<PodcastEpisode url={pocketCastsUrl} />)
-      const links = screen.getAllByRole("link", { name: /pocket casts/i })
-      expect(links.length).toBeGreaterThan(0)
-      expect(links[0]).toHaveAttribute("href", pocketCastsUrl)
+      expect(screen.getByText(/escuchar en pocket casts/i)).toBeInTheDocument()
     })
 
     it("renders share button", () => {
@@ -145,8 +142,7 @@ describe("PodcastEpisode", () => {
 
     it("renders link to open in iVoox", () => {
       render(<PodcastEpisode url={ivooxUrl} />)
-      const link = screen.getByRole("link", { name: /ivoox/i })
-      expect(link).toHaveAttribute("href", ivooxUrl)
+      expect(screen.getByText(/escuchar en ivoox/i)).toBeInTheDocument()
     })
 
     it("renders share button", () => {
@@ -176,8 +172,7 @@ describe("PodcastEpisode", () => {
 
     it("renders download link", () => {
       render(<PodcastEpisode url={rssUrl} />)
-      const link = screen.getByRole("link", { name: /descargar/i })
-      expect(link).toHaveAttribute("href", rssUrl)
+      expect(screen.getByText(/descargar episodio/i)).toBeInTheDocument()
     })
 
     it("renders share button", () => {

@@ -39,11 +39,11 @@ describe("ShareButton", () => {
     })
   })
 
-  it("displays 'Compartir' text by default", async () => {
+  it("displays title text by default", async () => {
     render(<ShareButton title="Test Title" />)
 
     await waitFor(() => {
-      expect(screen.getByText("Compartir")).toBeInTheDocument()
+      expect(screen.getByText("Test Title")).toBeInTheDocument()
     })
   })
 
@@ -53,7 +53,7 @@ describe("ShareButton", () => {
     // Wait for the component to render after useEffect
     await waitFor(() => {
       expect(container.firstChild).toBeInTheDocument()
-      expect(screen.getByText("Compartir")).toBeInTheDocument()
+      expect(screen.getByText("Test Title")).toBeInTheDocument()
     })
   })
 
@@ -63,7 +63,7 @@ describe("ShareButton", () => {
     render(<ShareButton title="Test Title" url="https://test.com/page" />)
 
     await waitFor(() => {
-      expect(screen.getByText("Compartir")).toBeInTheDocument()
+      expect(screen.getByText("Test Title")).toBeInTheDocument()
     })
 
     const button = screen.getByRole("button", { name: "Compartir esta página" })
@@ -82,7 +82,7 @@ describe("ShareButton", () => {
     render(<ShareButton title="Test Title" url="https://custom.url/page" />)
 
     await waitFor(() => {
-      expect(screen.getByText("Compartir")).toBeInTheDocument()
+      expect(screen.getByText("Test Title")).toBeInTheDocument()
     })
 
     const button = screen.getByRole("button", { name: "Compartir esta página" })
@@ -106,7 +106,7 @@ describe("ShareButton", () => {
     render(<ShareButton title="Test Title" url="https://test.com/page" />)
 
     await waitFor(() => {
-      expect(screen.getByText("Compartir")).toBeInTheDocument()
+      expect(screen.getByText("Test Title")).toBeInTheDocument()
     })
 
     const button = screen.getByRole("button", { name: "Compartir esta página" })
@@ -128,7 +128,7 @@ describe("ShareButton", () => {
     render(<ShareButton title="Test Title" url="https://test.com/page" />)
 
     await waitFor(() => {
-      expect(screen.getByText("Compartir")).toBeInTheDocument()
+      expect(screen.getByText("Test Title")).toBeInTheDocument()
     })
 
     const button = screen.getByRole("button", { name: "Compartir esta página" })
@@ -147,7 +147,7 @@ describe("ShareButton", () => {
     render(<ShareButton title="Test Title" url="https://test.com/page" />)
 
     await waitFor(() => {
-      expect(screen.getByText("Compartir")).toBeInTheDocument()
+      expect(screen.getByText("Test Title")).toBeInTheDocument()
     })
 
     const button = screen.getByRole("button", { name: "Compartir esta página" })
@@ -167,7 +167,7 @@ describe("ShareButton", () => {
     render(<ShareButton title="Test Title" url="https://test.com/page" />)
 
     await waitFor(() => {
-      expect(screen.getByText("Compartir")).toBeInTheDocument()
+      expect(screen.getByText("Test Title")).toBeInTheDocument()
     })
 
     const button = screen.getByRole("button", { name: "Compartir esta página" })
@@ -182,7 +182,7 @@ describe("ShareButton", () => {
     const { container } = render(<ShareButton title="Test Title" />)
     
     await waitFor(() => {
-      expect(screen.getByText("Compartir")).toBeInTheDocument()
+      expect(screen.getByText("Test Title")).toBeInTheDocument()
     })
 
     expect(await axe(container)).toHaveNoViolations()
