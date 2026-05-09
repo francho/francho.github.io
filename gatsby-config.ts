@@ -27,6 +27,8 @@ const config: GatsbyConfig = {
               linkImagesToOriginal: false,
               backgroundColor: 'transparent',
               quality: 90,
+              disableBgImage: true,
+              loading: 'lazy',
             },
           },
         ],
