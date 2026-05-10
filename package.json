@@ -17,8 +17,7 @@
     "test": "jest",
     "typecheck": "tsc --noEmit",
     "ci": "pnpm build && pnpm typecheck && pnpm test",
-    "audit": "pnpm audit --audit-level=high",
-    "postinstall": "pnpm audit --audit-level=high"
+    "audit": "pnpm audit --audit-level=high"
   },
   "dependencies": {
     "@mdx-js/react": "^3.1.1",
