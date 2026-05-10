@@ -70,6 +70,16 @@ jobs:
         env:
           PREFIX_PATHS: 'true'
         run: pnpm run ci
+      - name: Run Lighthouse
+        run: |
+          pnpm exec lhci collect \
+            --url=http://francho.org \
+            --numberOfRuns=1 \
+            --settings.output=json \
+            --settings.outputPath=/tmp/lighthouse.json \
+            --settings.chromeFlags="--no-sandbox --headless"
+      - name: Generate Lighthouse badges
+        run: node scripts/lighthouse-badges.mjs /tmp/lighthouse.json
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
