@@ -10,9 +10,10 @@ const mockPagesData = {
   allSitePage: {
     nodes: [
       {
-        id: "1",
+        id: "page-1",
         path: "/proyectos/app-1/",
         pageContext: {
+          id: "mdx-1",
           frontmatter: {
             title: "App 1",
             tags: ["proyectos", "react"],
@@ -21,9 +22,10 @@ const mockPagesData = {
         },
       },
       {
-        id: "2",
+        id: "page-2",
         path: "/proyectos/app-2/",
         pageContext: {
+          id: "mdx-2",
           frontmatter: {
             title: "App 2",
             tags: ["proyectos", "gatsby"],
@@ -32,15 +34,51 @@ const mockPagesData = {
         },
       },
       {
-        id: "3",
+        id: "page-3",
         path: "/notas/nota-1/",
         pageContext: {
+          id: "mdx-3",
           frontmatter: {
             title: "Nota 1",
             tags: ["notas"],
             date: "2024-03-01",
           },
         },
+      },
+      {
+        id: "page-4",
+        path: "/proyectos/sin-fecha/",
+        pageContext: {
+          id: "mdx-4",
+          frontmatter: {
+            title: "Sin Fecha",
+            tags: ["proyectos", "wip"],
+          },
+        },
+      },
+    ],
+  },
+  allMdx: {
+    nodes: [
+      {
+        id: "mdx-1",
+        excerpt: "Resumen de App 1",
+        parent: { modifiedTime: "2024-01-10T00:00:00.000Z" },
+      },
+      {
+        id: "mdx-2",
+        excerpt: "Resumen de App 2",
+        parent: { modifiedTime: "2024-02-01T00:00:00.000Z" },
+      },
+      {
+        id: "mdx-3",
+        excerpt: "Resumen de Nota 1",
+        parent: { modifiedTime: "2024-03-01T00:00:00.000Z" },
+      },
+      {
+        id: "mdx-4",
+        excerpt: "Resumen de Sin Fecha",
+        parent: { modifiedTime: "2024-06-01T00:00:00.000Z" },
       },
     ],
   },
@@ -74,8 +112,67 @@ describe("PagesList", () => {
     ).toHaveAttribute("href", "/proyectos/app-1/")
   })
 
+  describe("excludeTags", () => {
+    it("excludes pages that have any of the excluded tags", async () => {
+      render(<PagesList tags={["proyectos"]} excludeTags={["wip"]} />)
+      expect(await screen.findByText("App 1")).toBeInTheDocument()
+      expect(screen.queryByText("Sin Fecha")).not.toBeInTheDocument()
+    })
+
+    it("shows all matching pages when excludeTags is empty", async () => {
+      render(<PagesList tags={["proyectos"]} excludeTags={[]} />)
+      expect(await screen.findByText("App 1")).toBeInTheDocument()
+      expect(await screen.findByText("Sin Fecha")).toBeInTheDocument()
+    })
+  })
+
+  describe("showTags", () => {
+    it("does not render tags by default", async () => {
+      render(<PagesList tags={["proyectos"]} />)
+      await screen.findByText("App 1")
+      expect(screen.queryByText("react")).not.toBeInTheDocument()
+    })
+
+    it("renders tags when showTags is true", async () => {
+      render(<PagesList tags={["proyectos"]} showTags />)
+      expect(await screen.findByText("react")).toBeInTheDocument()
+      expect(await screen.findByText("gatsby")).toBeInTheDocument()
+    })
+  })
+
+  describe("showSummary", () => {
+    it("does not render excerpt by default", async () => {
+      render(<PagesList tags={["proyectos"]} />)
+      await screen.findByText("App 1")
+      expect(screen.queryByText("Resumen de App 1")).not.toBeInTheDocument()
+    })
+
+    it("renders excerpt when showSummary is true", async () => {
+      render(<PagesList tags={["proyectos"]} showSummary />)
+      expect(await screen.findByText("Resumen de App 1")).toBeInTheDocument()
+      expect(await screen.findByText("Resumen de App 2")).toBeInTheDocument()
+    })
+  })
+
+  describe("ordering", () => {
+    it("shows pages without date before pages with date when modifiedTime is more recent", async () => {
+      render(<PagesList tags={["proyectos"]} />)
+      const links = await screen.findAllByRole("link")
+      const titles = links.map(l => l.textContent)
+      expect(titles.indexOf("Sin Fecha")).toBeLessThan(titles.indexOf("App 2"))
+      expect(titles.indexOf("Sin Fecha")).toBeLessThan(titles.indexOf("App 1"))
+    })
+  })
+
   it("should have no accessibility violations", async () => {
     const { container } = render(<PagesList tags={["proyectos"]} />)
+    expect(await axe(container)).toHaveNoViolations()
+  })
+
+  it("should have no accessibility violations with showTags and showSummary", async () => {
+    const { container } = render(
+      <PagesList tags={["proyectos"]} showTags showSummary />
+    )
     expect(await axe(container)).toHaveNoViolations()
   })
 })
