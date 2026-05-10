@@ -162,6 +162,16 @@ ul {
   margin: 1rem;
 }
 
+.task-list-item {
+  list-style: none;
+
+  input[type="checkbox"] {
+    margin-left: -1.4em;
+    margin-right: 0.3em;
+    vertical-align: middle;
+  }
+}
+
 strong {
   color: var(--color-secondary);
 }
