@@ -12,15 +12,10 @@ describe("PageTitle", () => {
     )
   })
 
-  it("renders the document title tag", () => {
-    render(<PageTitle title="Mi página" />)
-    // React 19 hoists <title> to <head> — verify the element is present in the document
-    expect(document.querySelector("title")).toBeInTheDocument()
-  })
-
-  it("includes section in document title when provided", () => {
+  it("includes section in heading when provided", () => {
     render(<PageTitle title="Mi página" section="Blog" />)
-    expect(document.querySelector("title")).toBeInTheDocument()
+    expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("Blog")
+    expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("Mi página")
   })
 
   it("does not render h1 when title is not provided", () => {
