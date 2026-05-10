@@ -162,6 +162,10 @@ ul {
   margin: 1rem;
 }
 
+strong {
+  color: var(--color-secondary);
+}
+
 @view-transition {
   navigation: auto;
   types: bounce slide;
