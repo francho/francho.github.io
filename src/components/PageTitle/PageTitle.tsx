@@ -8,7 +8,6 @@ export interface PageTitleProps {
 
 const PageTitle: FC<PageTitleProps> = ({ title, section }) => {
   return <>
-    <title>{title} :: Francho Joven</title>
     {title && <h1 className={css.pageTitle}><span>Francho {section && ` / ${section}`}</span>{title}</h1>}
   </>
 }

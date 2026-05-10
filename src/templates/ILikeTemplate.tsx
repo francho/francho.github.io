@@ -58,7 +58,12 @@ const BookPageTemplate: React.FC<PageProps<{ mdx: Queries.Mdx }>> = ({ data, chi
 
 export default BookPageTemplate;
 
-export const Head = () => <html lang="en" />
+export const Head: React.FC<PageProps<{ mdx: Queries.Mdx }>> = ({ data }) => (
+  <>
+    <html lang="es" />
+    <title>{data.mdx.frontmatter?.title} :: Francho Joven</title>
+  </>
+)
 
 export const query = graphql`
   query($id: String!) {
