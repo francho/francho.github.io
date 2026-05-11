@@ -76,8 +76,8 @@ jobs:
             --url=http://francho.org \
             --numberOfRuns=1 \
             --settings.output=json \
-            --settings.outputPath=/tmp/lighthouse.json \
             --settings.chromeFlags="--no-sandbox --headless"
+          cp "$(ls -t .lighthouseci/lhr-*.json | head -1)" /tmp/lighthouse.json
       - name: Generate Lighthouse badges
         run: node scripts/lighthouse-badges.mjs /tmp/lighthouse.json
       - name: Upload artifact
