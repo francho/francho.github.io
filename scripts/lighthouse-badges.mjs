@@ -48,7 +48,6 @@ for (const { key, label } of CATEGORIES) {
     message: String(score),
     color: scoreColor(score),
     style: "flat",
-    namedLogo: "lighthouse",
   });
 
   const outFile = join(OUT_DIR, `lighthouse-${key}.svg`);
