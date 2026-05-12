@@ -1,6 +1,8 @@
 import { useStaticQuery, graphql, Link } from "gatsby"
 import React, { FC, useMemo } from "react"
 import Tag from "../Tag/Tag"
+import Card from "../Card/Card"
+import * as css from "./PagesList.module.css"
 
 interface PageInfo {
   id: string
@@ -9,6 +11,7 @@ interface PageInfo {
   tags: string[]
   timestamp: number
   excerpt?: string
+  image?: any
 }
 
 interface PageFrontmatter {
@@ -37,7 +40,7 @@ const PagesList: FC<PagesListProps> = ({
   showFilterTags = false,
   showSummary = false,
 }) => {
-  const { allSitePage, allMdx } = useStaticQuery(graphql`
+  const { allSitePage, allMdx, allFile } = useStaticQuery(graphql`
     query {
       allSitePage {
         nodes {
@@ -57,17 +60,31 @@ const PagesList: FC<PagesListProps> = ({
           }
         }
       }
+      allFile(filter: { sourceInstanceName: { eq: "content" }, relativeDirectory: { eq: "proyectos" }, extension: { in: ["png", "jpg", "jpeg", "webp"] } }) {
+        nodes {
+          name
+          childImageSharp {
+            gatsbyImageData(width: 400, height: 180, layout: CONSTRAINED)
+          }
+        }
+      }
     }
   `)
 
   const visiblePages = useMemo<PageInfo[]>(() => {
     const excerptMap: Record<string, string> = {}
     const modifiedTimeMap: Record<string, number> = {}
+    const imageMap: Record<string, any> = {}
+
     for (const mdxNode of allMdx?.nodes ?? []) {
       if (mdxNode.id) {
         excerptMap[mdxNode.id] = mdxNode.excerpt ?? ""
         modifiedTimeMap[mdxNode.id] = Date.parse(mdxNode.parent?.modifiedTime ?? "1970/01/01")
       }
+    }
+
+    for (const fileNode of allFile?.nodes ?? []) {
+      imageMap[fileNode.name] = fileNode.childImageSharp?.gatsbyImageData
     }
 
     return (allSitePage?.nodes?.map((node: Queries.SitePage): PageInfo => {
@@ -77,6 +94,7 @@ const PagesList: FC<PagesListProps> = ({
       const timestamp = dateStr
         ? Date.parse(dateStr)
         : (modifiedTimeMap[mdxId] ?? 0)
+      const pageName = node.path.replace(/^\/proyectos\//, "").replace(/\/$/, "")
       return {
         id: node?.id,
         path: node.path,
@@ -84,6 +102,7 @@ const PagesList: FC<PagesListProps> = ({
         tags: ctx?.frontmatter?.tags ?? [],
         timestamp,
         excerpt: excerptMap[mdxId],
+        image: imageMap[pageName],
       }
     }) ?? [])
       .filter((p: PageInfo) => tags.every(tag => (p.tags || []).includes(tag)))
@@ -93,22 +112,21 @@ const PagesList: FC<PagesListProps> = ({
         return dateSort === 0 ? a?.title?.localeCompare(b?.title, "es-ES") : dateSort
       })
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [allSitePage, allMdx, JSON.stringify(tags), JSON.stringify(excludeTags)])
+  }, [allSitePage, allMdx, allFile, JSON.stringify(tags), JSON.stringify(excludeTags)])
 
   return (
-    <ul>
-      {visiblePages.map(({ id, path, title, tags: pageTags, excerpt }) => (
-        <li key={id}>
-          <Link to={path}>{title}</Link>
-          {showTags && pageTags.length > 0 && (
-            <div>
-              {(showFilterTags ? pageTags : pageTags.filter(tag => !tags.includes(tag))).map(tag => <Tag key={`${id}-${tag}`} tag={tag} onClick={() => {}} selected={false} />)}
-            </div>
-          )}
-          {showSummary && excerpt && <p>{excerpt}</p>}
-        </li>
+    <div className={css.grid}>
+      {visiblePages.map(({ id, path, title, tags: pageTags, excerpt, image }) => (
+        <Card
+          key={id}
+          title={title}
+          excerpt={excerpt}
+          tags={showTags ? (showFilterTags ? pageTags : pageTags.filter(tag => !tags.includes(tag))) : []}
+          image={image}
+          path={path}
+        />
       ))}
-    </ul>
+    </div>
   )
 }
 
