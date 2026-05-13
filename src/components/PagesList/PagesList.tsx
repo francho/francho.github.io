@@ -115,18 +115,19 @@ const PagesList: FC<PagesListProps> = ({
   }, [allSitePage, allMdx, allFile, JSON.stringify(tags), JSON.stringify(excludeTags)])
 
   return (
-    <div className={css.grid}>
+    <ul className={css.grid}>
       {visiblePages.map(({ id, path, title, tags: pageTags, excerpt, image }) => (
-        <Card
-          key={id}
-          title={title}
-          excerpt={excerpt}
-          tags={showTags ? (showFilterTags ? pageTags : pageTags.filter(tag => !tags.includes(tag))) : []}
-          image={image}
-          path={path}
-        />
+        <li key={id} className={css.item}>
+          <Card
+            title={title}
+            excerpt={showSummary ? excerpt : undefined}
+            tags={showTags ? (showFilterTags ? pageTags : pageTags.filter(tag => !tags.includes(tag))) : []}
+            image={image}
+            path={path}
+          />
+        </li>
       ))}
-    </div>
+    </ul>
   )
 }
 

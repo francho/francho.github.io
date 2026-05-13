@@ -1,5 +1,5 @@
 import React from "react"
-import { render, screen } from "@testing-library/react"
+import { render, screen, within } from "@testing-library/react"
 import { axe } from "jest-axe"
 import { useStaticQuery } from "gatsby"
 import PagesList from "./PagesList"
@@ -158,7 +158,9 @@ describe("PagesList", () => {
     it("shows pages without date before pages with date when modifiedTime is more recent", async () => {
       render(<PagesList tags={["proyectos"]} />)
       const links = await screen.findAllByRole("link")
-      const titles = links.map(l => l.textContent)
+      const titles = links.map(link =>
+        within(link).getByRole("heading", { level: 3 }).textContent
+      )
       expect(titles.indexOf("Sin Fecha")).toBeLessThan(titles.indexOf("App 2"))
       expect(titles.indexOf("Sin Fecha")).toBeLessThan(titles.indexOf("App 1"))
     })
