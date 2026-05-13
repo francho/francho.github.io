@@ -117,6 +117,12 @@ article .gatsby-resp-image-wrapper {
   width: 100% !important;
 }
 
+.flex-row {
+  display: flex;
+  gap: .2rem;
+  flex-wrap: wrap;
+}
+
 p {
   margin-block: 1rem;
 }
