@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import React, { FC } from "react"
 import Tag from "../Tag/Tag"
 import * as css from "./Card.module.css"
+import BluePrintMask from "../../images/blueprint_mask.svg"
 
 interface CardProps {
   title: string
@@ -21,10 +22,9 @@ const Card: FC<CardProps> = ({ title, excerpt, tags, image, path }) => {
         {gatsbyImage ? (
           <GatsbyImage image={gatsbyImage} alt={title} className={css.image} />
         ) : (
-          <div className={css.placeholder}>
-            
-          </div>
+          <div className={css.placeholder}></div>
         )}
+        <BluePrintMask className={css.blueprintMask} />
       </div>
       <div className={css.content}>
         <h3 className={css.title}>{title}</h3>

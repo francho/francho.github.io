@@ -15,8 +15,6 @@
   --color-shadow: rgba(0, 0, 0, 0.18);
 }
 
-
-
 .imageContainer {
   position: absolute;
   inset: 0;
@@ -26,28 +24,6 @@
   background: rgba(78, 104, 142, 0.08);
 }
 
-.imageContainer::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 80, 180, 0.95);
-  mix-blend-mode: multiply;
-  pointer-events: none;
-  z-index: 2;
-}
-
-.imageContainer::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  background-image:
-    linear-gradient(var(--color-grid) 1px, transparent 1px),
-    linear-gradient(90deg, var(--color-grid) 1px, transparent 1px);
-  background-size: 32px 32px;
-  pointer-events: none;
-}
-
 .image {
   position: absolute;
   inset: 0;
@@ -55,7 +31,14 @@
   height: 100%;
   object-fit: cover;
   box-shadow: inset 0 0 0 1px var(--color-shadow);
-  filter: opacity(0.5) grayscale(100%) contrast(1.12) brightness(2) invert();
+  filter:
+    opacity(0.1)
+    grayscale(1)
+    contrast(1.12)
+    brightness(2)
+    hue-rotate(165deg)
+    invert(1)
+    saturate(4);
 }
 
 .image > div {
@@ -106,17 +89,16 @@
 }
 
 .title {
-  margin: 0 0 0.5rem 0;
   font-size: 1.25rem;
   font-weight: 600;
   color: white;
 }
 
 .excerpt {
-  margin: 0 0 1rem 0;
   font-size: 0.875rem;
   line-height: 1.4;
   color: white;
+  margin-block: 0;
 }
 
 .tags {
