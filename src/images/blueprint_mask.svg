@@ -1,14 +1,14 @@
-<svg viewBox="0 0 1600 1200" preserveAspectRatio="xMidYMid meet" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="600" height="600" viewBox="0 0 1600 1200" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <!-- Grid fino -->
-    <pattern id="smallGrid" width="20" height="20" patternUnits="userSpaceOnUse">
-      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#8fd3ff" stroke-width="0.4" opacity="0.25"/>
+    <pattern id="smallGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#8fd3ff" stroke-width="0.5" opacity="0.25"/>
     </pattern>
 
     <!-- Grid principal -->
-    <pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse">
-      <rect width="100" height="100" fill="url(#smallGrid)"/>
-      <path d="M 100 0 L 0 0 0 100" fill="none" stroke="#c9ecff" stroke-width="1" opacity="0.45"/>
+    <pattern id="grid" width="200" height="200" patternUnits="userSpaceOnUse">
+      <rect width="200" height="200" fill="url(#smallGrid)"/>
+      <path d="M 200 0 L 0 0 0 200" fill="none" stroke="#c9ecff" stroke-width="1" opacity="0.45"/>
     </pattern>
 
     <!-- Glow suave -->
@@ -22,7 +22,7 @@
   </defs>
 
   <!-- Fondo azul semitransparente -->
-  <rect width="1600" height="1200" fill="#2a3d6c" opacity="0.9"/>
+  <rect width="1600" height="1200" fill="#1745ba" opacity="0.2"/>
 
   <!-- Fondo transparente -->
   <rect width="1600" height="1200" fill="url(#grid)"/>
