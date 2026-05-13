@@ -117,10 +117,14 @@ article .gatsby-resp-image-wrapper {
   width: 100% !important;
 }
 
-.flex-row {
+.badges {
   display: flex;
-  gap: .2rem;
+  justify-content: center;
+  gap: .5rem;
   flex-wrap: wrap;
+  img {
+    margin: 0;
+  }
 }
 
 p {
