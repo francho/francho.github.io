@@ -15,8 +15,8 @@ const NotFoundPage: React.FC<PageProps> = () => {
       userSelect: "none",
       gap: "2rem",
     }}>
-      {/* Title */}
-        <div
+      <div>
+        <h1
           style={{
             fontSize: 72,
             fontWeight: 900,
@@ -24,14 +24,16 @@ const NotFoundPage: React.FC<PageProps> = () => {
             letterSpacing: -2,
             lineHeight: 1,
             textShadow: "4px 4px 0 #c0392b, 8px 8px 0 rgba(200,50,50,0.3)",
+            animation: "none",
+            paddingBottom: 0
           }}
         >
           404
-        </div>
-        <div style={{ color: "#8892a4", fontSize: 13, letterSpacing: 4, paddingBlockEnd: 8 }}>
+        </h1>
+        <div style={{ color: "#8892a4", fontSize: 13, letterSpacing: 4 }}>
           PÁGINA NO ENCONTRADA
         </div>
-        
+        </div>
       <Game404 />
       <Link to="/">Volver al inicio</Link>
     </main>

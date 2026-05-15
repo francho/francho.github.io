@@ -64,11 +64,12 @@ interface GameState {
 const SPRITE_FILES = [aussie, bichon, francho];
 
 // Visual bottom row of each frame (measured from sprite-frame top).
-// New layout: single row of 8 frames. Measured with Pillow.
+// Layout: single row of 8 frames. Each dog extracted at true content boundaries
+// (gap-based, no cross-frame bleed). Measured with Pillow.
 const SPRITE_BOTTOM_ROWS: number[][] = [
-  [386, 412, 414, 417, 220, 216, 223, 200], // aussie  (frameH=425)
-  [401, 408, 408, 415, 215, 215, 222, 221], // bichon  (frameH=422)
-  [438, 459, 444, 456, 406, 386, 412, 392], // francho (frameH=512)
+  [189, 210, 212, 215, 217, 209, 209, 191], // aussie  (frameH=221, cellW=370)
+  [209, 209, 194, 207, 209, 212, 199, 200], // bichon  (frameH=216, cellW=333)
+  [356, 373, 358, 365, 385, 363, 384, 357], // francho (frameH=389, cellW=342)
 ];
 
 const SPRITE_COLS = 8;
@@ -94,7 +95,7 @@ const PALETTE = {
   snow: "#eef4f8",
   text: "#2c1810",
   accent: "#c0392b",
-  ui: "#34495e",
+  ui: "#ffffff",
 };
 
 // ─── Pure helpers (no hooks) ──────────────────────────────────────────────────
@@ -269,29 +270,29 @@ const NotFoundGame: React.FC = () => {
   }
 
   function drawHUD(ctx: CanvasRenderingContext2D, score: number, hi: number) {
-    ctx.font = "bold 14px 'Courier New', monospace";
+    ctx.font = "bold 32px 'Courier New', monospace";
     ctx.textAlign = "right";
     ctx.fillStyle = PALETTE.ui;
-    ctx.fillText(`HI ${String(hi).padStart(5, "0")}`, CANVAS_W - 12, 26);
+    ctx.fillText(`HI ${String(hi).padStart(5, "0")}`, CANVAS_W - 12, 32);
     ctx.fillStyle = PALETTE.text;
-    ctx.fillText(String(score).padStart(5, "0"), CANVAS_W - 12, 46);
+    ctx.fillText(String(score).padStart(5, "0"), CANVAS_W - 12, 64);
     ctx.textAlign = "left";
   }
 
   function drawPrompt(ctx: CanvasRenderingContext2D, over: boolean, started: boolean) {
     ctx.textAlign = "center";
     if (over) {
-      ctx.font = "bold 28px 'Courier New', monospace";
+      ctx.font = "bold 72px 'Courier New', monospace";
       ctx.fillStyle = PALETTE.accent;
       ctx.fillText("GAME OVER", CANVAS_W / 2, CANVAS_H / 2 - 20);
-      ctx.font = "15px 'Courier New', monospace";
+      ctx.font = "32px 'Courier New', monospace";
       ctx.fillStyle = PALETTE.ui;
-      ctx.fillText("Pulsa ESPACIO o toca para reiniciar", CANVAS_W / 2, CANVAS_H / 2 + 14);
+      ctx.fillText("Pulsa ESPACIO o toca para reiniciar", CANVAS_W / 2, CANVAS_H - 28);
     } else if (!started) {
-      ctx.font = "15px 'Courier New', monospace";
+      ctx.font = "32px 'Courier New', monospace";
       ctx.fillStyle = PALETTE.ui;
-      ctx.fillText("Pulsa ESPACIO o toca para empezar", CANVAS_W / 2, CANVAS_H / 2 - 16);
-    }
+      ctx.fillText("Pulsa ESPACIO o toca para empezar", CANVAS_W / 2, CANVAS_H - 28);
+    } 
     ctx.textAlign = "left";
   }
 
@@ -455,9 +456,6 @@ const NotFoundGame: React.FC = () => {
           height={CANVAS_H}
           style={{ display: "block", maxWidth: "100vw" }}
         />
-      </div>
-      <div style={{ marginTop: 16, color: "#4a5568", fontSize: 12, letterSpacing: 2, textTransform: "uppercase" }}>
-        Espacio / ↑ / Toca para saltar
       </div>
     </div>
   );
