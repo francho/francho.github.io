@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useCallback } from "react";
-import bichon from "./sprites/bichon_sprites.png";
-import francho from "./sprites/francho_sprites.png";
-import aussie from "./sprites/aussie_sprites.png";
+import bichon from "./sprites/bichon_strip.png";
+import francho from "./sprites/francho_strip.png";
+import aussie from "./sprites/aussie_strip.png";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -64,16 +64,15 @@ interface GameState {
 const SPRITE_FILES = [aussie, bichon, francho];
 
 // Visual bottom row of each frame (measured from sprite-frame top).
-// Frame order: cols 0-3 of row 0, then cols 0-3 of row 1 (8 frames total).
-// Measured with Pillow — used to anchor sprites so feet never float.
+// New layout: single row of 8 frames. Measured with Pillow.
 const SPRITE_BOTTOM_ROWS: number[][] = [
-  [388, 415, 415, 415, 220, 214, 225, 198], // aussie  (frameH=425)
-  [400, 407, 407, 414, 214, 214, 221, 220], // bichon  (frameH=422)
-  [387, 421, 414, 421, 345, 335, 345, 323], // francho (frameH=428)
+  [386, 412, 414, 417, 220, 216, 223, 200], // aussie  (frameH=425)
+  [401, 408, 408, 415, 215, 215, 222, 221], // bichon  (frameH=422)
+  [438, 459, 444, 456, 406, 386, 412, 392], // francho (frameH=512)
 ];
 
-const SPRITE_COLS = 4;
-const SPRITE_ROWS = 2;
+const SPRITE_COLS = 8;
+const SPRITE_ROWS = 1;
 const GRAVITY = 0.6;
 const JUMP_FORCE = -16;
 const FRAME_SPEED = 8; // game ticks between animation frames
