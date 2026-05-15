@@ -77,15 +77,15 @@ const SPRITE_ROWS = 1;
 const GRAVITY = 0.6;
 const JUMP_FORCE = -16;
 const FRAME_SPEED = 8; // game ticks between animation frames
-const CANVAS_W = 900;
-const CANVAS_H = 320;
-const GROUND_LINE = 252; // Y of the ground surface
+const CANVAS_W = 800;
+const CANVAS_H = 374;
+const GROUND_LINE = 320; // Y of the ground surface
 
 const CHAR_SCALES = [0.40, 0.20, 0.48]; // aussie, bichon, francho
 const CHAR_X = [150, 200, 60];          
 
 const PALETTE = {
-  sky: ["#dce8f5", "#c5d8ee", "#b0c8e3"],
+  sky: ["#dce8f5", "#acdacb", "#44af5b"],
   ground: "#8b7355",
   groundLine: "#6b5535",
   groundDetail: "#9d8464",
@@ -93,7 +93,7 @@ const PALETTE = {
   mountainMid: "#8fa8b8",
   mountainNear: "#6b8898",
   snow: "#eef4f8",
-  text: "#2c1810",
+  text: "#8b9a7b",
   accent: "#c0392b",
   ui: "#ffffff",
 };
@@ -273,8 +273,14 @@ const NotFoundGame: React.FC = () => {
     ctx.font = "bold 32px 'Courier New', monospace";
     ctx.textAlign = "right";
     ctx.fillStyle = PALETTE.ui;
+    ctx.shadowColor = "#000000aa";
+    ctx.shadowOffsetX = 1;
+    ctx.shadowOffsetY = 1;
     ctx.fillText(`HI ${String(hi).padStart(5, "0")}`, CANVAS_W - 12, 32);
     ctx.fillStyle = PALETTE.text;
+    ctx.shadowColor = "#000000aa";
+    ctx.shadowOffsetX = 1;
+    ctx.shadowOffsetY = 1;
     ctx.fillText(String(score).padStart(5, "0"), CANVAS_W - 12, 64);
     ctx.textAlign = "left";
   }
@@ -282,16 +288,19 @@ const NotFoundGame: React.FC = () => {
   function drawPrompt(ctx: CanvasRenderingContext2D, over: boolean, started: boolean) {
     ctx.textAlign = "center";
     if (over) {
-      ctx.font = "bold 72px 'Courier New', monospace";
+      ctx.font = "900 64px 'Courier New', monospace";
       ctx.fillStyle = PALETTE.accent;
-      ctx.fillText("GAME OVER", CANVAS_W / 2, CANVAS_H / 2 - 20);
+      ctx.shadowColor = "#000000aa";
+      ctx.shadowOffsetX = 2;
+      ctx.shadowOffsetY = 2;
+      ctx.fillText("GAME OVER", CANVAS_W / 2, CANVAS_H / 2 + 32);
       ctx.font = "32px 'Courier New', monospace";
       ctx.fillStyle = PALETTE.ui;
-      ctx.fillText("Pulsa ESPACIO o toca para reiniciar", CANVAS_W / 2, CANVAS_H - 28);
+      ctx.fillText("Pulsa ESPACIO o toca para reiniciar", CANVAS_W / 2, CANVAS_H - 20);
     } else if (!started) {
       ctx.font = "32px 'Courier New', monospace";
       ctx.fillStyle = PALETTE.ui;
-      ctx.fillText("Pulsa ESPACIO o toca para empezar", CANVAS_W / 2, CANVAS_H - 28);
+      ctx.fillText("Pulsa ESPACIO o toca para empezar", CANVAS_W / 2, CANVAS_H - 20);
     } 
     ctx.textAlign = "left";
   }

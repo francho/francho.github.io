@@ -13,9 +13,13 @@ const NotFoundPage: React.FC<PageProps> = () => {
       minHeight: "100vh",
       fontFamily: "'Courier New', monospace",
       userSelect: "none",
-      gap: "2rem",
+      gap: "1rem",
     }}>
-      <div>
+      <div style={{
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center"}}>
         <h1
           style={{
             fontSize: 72,
@@ -25,7 +29,7 @@ const NotFoundPage: React.FC<PageProps> = () => {
             lineHeight: 1,
             textShadow: "4px 4px 0 #c0392b, 8px 8px 0 rgba(200,50,50,0.3)",
             animation: "none",
-            paddingBottom: 0
+            padding: 0
           }}
         >
           404
@@ -33,9 +37,9 @@ const NotFoundPage: React.FC<PageProps> = () => {
         <div style={{ color: "#8892a4", fontSize: 13, letterSpacing: 4 }}>
           PÁGINA NO ENCONTRADA
         </div>
-        </div>
+      </div>
       <Game404 />
-      <Link to="/">Volver al inicio</Link>
+      <Link to="/" style={{margin: "0 auto", textAlign: "center"}}>&lt; Volver a las cosicas de Francho</Link>
     </main>
   )
 }
