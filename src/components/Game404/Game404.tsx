@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useCallback } from "react";
 import bichon from "./sprites/bichon_strip.png";
 import francho from "./sprites/francho_strip.png";
 import aussie from "./sprites/aussie_strip.png";
+import stone from "./obstacles/stone.png";
+import brush from "./obstacles/brush.png";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -33,9 +35,10 @@ interface Obstacle {
   y: number;
   w: number;
   h: number;
-  type: "rock" | "bush";
-  variant: number;
+  file: string;
 }
+
+type ObstacleTemplate = Omit<Obstacle, "x" | "y">;
 
 interface Mountain {
   x: number;
@@ -62,6 +65,7 @@ interface GameState {
 // ─── Constants ────────────────────────────────────────────────────────────────
 
 const SPRITE_FILES = [aussie, bichon, francho];
+const OBSTACLE_FILES = [ stone, brush ];
 
 // Visual bottom row of each frame (measured from sprite-frame top).
 // Layout: single row of 8 frames. Each dog extracted at true content boundaries
@@ -72,15 +76,16 @@ const SPRITE_BOTTOM_ROWS: number[][] = [
   [356, 373, 358, 365, 385, 363, 384, 357], // francho (frameH=389, cellW=342)
 ];
 
+const MAX_OBSTACLE_SIZE = 52;
 const SPRITE_COLS = 8;
 const SPRITE_ROWS = 1;
-const GRAVITY = 0.6;
+const GRAVITY = 0.5;
 const JUMP_FORCE = -16;
 const FRAME_SPEED = 8; // game ticks between animation frames
 const CANVAS_W = 800;
 const CANVAS_H = 374;
 const GROUND_LINE = 320; // Y of the ground surface
-
+ 
 const CHAR_SCALES = [0.40, 0.20, 0.48]; // aussie, bichon, francho
 const CHAR_X = [150, 200, 60];          
 
@@ -94,7 +99,7 @@ const PALETTE = {
   mountainNear: "#6b8898",
   snow: "#eef4f8",
   text: "#8b9a7b",
-  accent: "#c0392b",
+  accent: "#e94560",
   ui: "#ffffff",
 };
 
@@ -120,6 +125,13 @@ function makeSheet(img: HTMLImageElement, bottomRows: number[]): SpriteSheet {
   };
 }
 
+const obstacleImages = new Map<string, CanvasImageSource>();
+const obstacleTemplates: ObstacleTemplate[] = [];
+
+function randomBetween(min: number, max: number): number {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 /**
  * Returns the sprite top-left Y so its visual feet sit exactly on GROUND_LINE.
  * Each frame gets its own Y because the visual bottom varies frame-to-frame.
@@ -127,6 +139,109 @@ function makeSheet(img: HTMLImageElement, bottomRows: number[]): SpriteSheet {
 function groundAnchorY(sheet: SpriteSheet, frame: number, scale: number): number {
   const pad = sheet.frameBottomPad[frame] * scale;
   return GROUND_LINE - sheet.frameH * scale + pad;
+}
+
+function createCleanObstacleCanvas(img: HTMLImageElement): HTMLCanvasElement {
+  const width = img.width;
+  const height = img.height;
+  const temp = document.createElement("canvas");
+  temp.width = width;
+  temp.height = height;
+  const ctx = temp.getContext("2d");
+  if (!ctx) return temp;
+
+  ctx.drawImage(img, 0, 0);
+  const imageData = ctx.getImageData(0, 0, width, height);
+  const data = imageData.data;
+  const visited = new Uint8Array(width * height);
+  const queue: number[] = [];
+
+  const isBackgroundPixel = (x: number, y: number) => {
+    const idx = (y * width + x) * 4;
+    const alpha = data[idx + 3];
+    if (alpha === 0) return true;
+    const r = data[idx];
+    const g = data[idx + 1];
+    const b = data[idx + 2];
+    return r > 240 && g > 240 && b > 240;
+  };
+
+  const enqueue = (x: number, y: number) => {
+    const index = y * width + x;
+    if (visited[index]) return;
+    visited[index] = 1;
+    queue.push(index);
+  };
+
+  for (let x = 0; x < width; x++) {
+    enqueue(x, 0);
+    enqueue(x, height - 1);
+  }
+  for (let y = 0; y < height; y++) {
+    enqueue(0, y);
+    enqueue(width - 1, y);
+  }
+
+  while (queue.length > 0) {
+    const index = queue.shift()!;
+    const x = index % width;
+    const y = Math.floor(index / width);
+    if (!isBackgroundPixel(x, y)) continue;
+
+    const neighbors = [
+      [x + 1, y],
+      [x - 1, y],
+      [x, y + 1],
+      [x, y - 1],
+    ];
+    for (const [nx, ny] of neighbors) {
+      if (nx < 0 || nx >= width || ny < 0 || ny >= height) continue;
+      const nIndex = ny * width + nx;
+      if (visited[nIndex]) continue;
+      visited[nIndex] = 1;
+      queue.push(nIndex);
+    }
+  }
+
+  for (let y = 0; y < height; y++) {
+    for (let x = 0; x < width; x++) {
+      const index = y * width + x;
+      if (!visited[index]) continue;
+      const idx = index * 4;
+      data[idx + 3] = 0;
+    }
+  }
+
+  ctx.putImageData(imageData, 0, 0);
+
+  let minX = width;
+  let minY = height;
+  let maxX = -1;
+  let maxY = -1;
+
+  for (let y = 0; y < height; y++) {
+    for (let x = 0; x < width; x++) {
+      const idx = (y * width + x) * 4;
+      if (data[idx + 3] > 0) {
+        minX = Math.min(minX, x);
+        minY = Math.min(minY, y);
+        maxX = Math.max(maxX, x);
+        maxY = Math.max(maxY, y);
+      }
+    }
+  }
+
+  if (maxX < minX || maxY < minY) return temp;
+
+  const output = document.createElement("canvas");
+  output.width = maxX - minX + 1;
+  output.height = maxY - minY + 1;
+  const outputCtx = output.getContext("2d");
+  if (outputCtx) {
+    outputCtx.drawImage(temp, minX, minY, output.width, output.height, 0, 0, output.width, output.height);
+  }
+
+  return output;
 }
 
 function drawSprite(
@@ -182,44 +297,24 @@ function drawMountain(ctx: CanvasRenderingContext2D, mt: Mountain) {
   ctx.closePath(); ctx.fillStyle = PALETTE.snow; ctx.fill();
 }
 
-function drawRock(ctx: CanvasRenderingContext2D, { x, y, w, h, variant }: Obstacle) {
-  const c = ["#7a6a5a", "#8a7a6a", "#6a5a4a"];
-  if (variant === 0) {
-    ctx.beginPath(); ctx.ellipse(x + w / 2, y + h * 0.6, w * 0.5, h * 0.45, -0.1, 0, Math.PI * 2);
-    ctx.fillStyle = c[0]; ctx.fill();
-    ctx.beginPath(); ctx.ellipse(x + w * 0.35, y + h * 0.35, w * 0.25, h * 0.2, -0.3, 0, Math.PI * 2);
-    ctx.fillStyle = "#9a8a7a"; ctx.fill();
-  } else if (variant === 1) {
-    ctx.beginPath(); ctx.ellipse(x + w * 0.35, y + h * 0.65, w * 0.35, h * 0.38, 0, 0, Math.PI * 2);
-    ctx.fillStyle = c[0]; ctx.fill();
-    ctx.beginPath(); ctx.ellipse(x + w * 0.72, y + h * 0.75, w * 0.28, h * 0.28, 0.2, 0, Math.PI * 2);
-    ctx.fillStyle = c[2]; ctx.fill();
-  } else {
-    [[0.2, 0.7, 0.22, 0.32], [0.5, 0.65, 0.28, 0.38], [0.8, 0.78, 0.2, 0.25]].forEach(([rx, ry, rw, rh], i) => {
-      ctx.beginPath(); ctx.ellipse(x + w * rx, y + h * ry, w * rw, h * rh, 0, 0, Math.PI * 2);
-      ctx.fillStyle = c[i % 3]; ctx.fill();
-    });
+
+function drawObstacleImage(ctx: CanvasRenderingContext2D, ob: Obstacle) {
+  const image = obstacleImages.get(ob.file);
+  if (image) {
+    ctx.drawImage(image, ob.x, ob.y, ob.w, ob.h);
   }
 }
 
-function drawBush(ctx: CanvasRenderingContext2D, { x, y, w, h, variant }: Obstacle) {
-  const g = ["#2d6a2d", "#3a8a3a", "#1e4d1e", "#4aaa4a"];
-  const clusters = variant === 0 ? [[0.5, 0.5, 0.5], [0.2, 0.7, 0.35], [0.8, 0.7, 0.35]]
-    : variant === 1 ? [[0.3, 0.5, 0.42], [0.7, 0.5, 0.42], [0.5, 0.3, 0.35]]
-    : [[0.5, 0.45, 0.55], [0.25, 0.65, 0.38], [0.75, 0.65, 0.38], [0.5, 0.75, 0.3]];
-  clusters.forEach(([cx, cy, cr], i) => {
-    ctx.beginPath(); ctx.arc(x + w * cx, y + h * cy, w * cr * 0.5, 0, Math.PI * 2);
-    ctx.fillStyle = g[i % g.length]; ctx.fill();
-  });
-}
-
 function makeObstacle(): Obstacle {
-  // const type: "rock" | "bush" = Math.random() < 0.5 ? "rock" : "bush";
-  
-  const type = "rock";
-  const w = type === "rock" ? 20 + Math.random() * 30 : 50 + Math.random() * 40;
-  const h = type === "rock" ? 10 + Math.random() * 20 : 40 + Math.random() * 30;
-  return { x: CANVAS_W + 50, y: GROUND_LINE - h, w, h, type, variant: Math.floor(Math.random() * 3) };
+  const template = obstacleTemplates[Math.floor(Math.random() * obstacleTemplates.length)];
+  const scale = randomBetween(50, 100) / 100;
+  return {
+    x: CANVAS_W + 50,
+    y: GROUND_LINE - template.h * scale + randomBetween(5, 10),
+    w: template.w * scale,
+    h: template.h * scale,
+    file: template.file,
+  };
 }
 
 // ─── Component ────────────────────────────────────────────────────────────────
@@ -265,7 +360,7 @@ const NotFoundGame: React.FC = () => {
       ctx.fillRect(gx + 20, GROUND_LINE + 18, 2, 2);
     }
 
-    gs.obstacles.forEach((ob) => ob.type === "rock" ? drawRock(ctx, ob) : drawBush(ctx, ob));
+    gs.obstacles.forEach((ob) => drawObstacleImage(ctx, ob));
     gs.chars.forEach((c) => { if (c.sheet) drawSprite(ctx, c.sheet, c.frame, c.x, c.y, c.scale); });
   }
 
@@ -401,11 +496,28 @@ const NotFoundGame: React.FC = () => {
     if (loadedRef.current) return;
     loadedRef.current = true;
 
-    Promise.all(SPRITE_FILES.map(loadImage))
+    Promise.all([
+      ...SPRITE_FILES.map(loadImage),
+      ...OBSTACLE_FILES.map(loadImage),
+    ])
       .then((imgs) => {
         const gs = stateRef.current;
-        gs.sheets = imgs.map((img, i) => makeSheet(img, SPRITE_BOTTOM_ROWS[i]));
+        const spriteImgs = imgs.slice(0, SPRITE_FILES.length) as HTMLImageElement[];
+        const obstacleImgs = imgs.slice(SPRITE_FILES.length) as HTMLImageElement[];
+
+        gs.sheets = spriteImgs.map((img, i) => makeSheet(img, SPRITE_BOTTOM_ROWS[i]));
         gs.chars = (gs.sheets as SpriteSheet[]).map(buildChar);
+        gs.obstacles = [];
+
+        obstacleTemplates.length = 0;
+        obstacleImgs.forEach((img, i) => {
+          const file = OBSTACLE_FILES[i];
+          const canvas = createCleanObstacleCanvas(img);
+          obstacleImages.set(file, canvas);
+          const scale = Math.min(MAX_OBSTACLE_SIZE / canvas.width, MAX_OBSTACLE_SIZE / canvas.height);
+          obstacleTemplates.push({ file, w: canvas.width * scale, h: canvas.height * scale });
+        });
+
         startLoop("idle");
       })
       .catch(console.error);
