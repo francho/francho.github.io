@@ -54,7 +54,13 @@
       "brace-expansion": ">=1.1.13",
       "cookie": ">=0.7.0",
       "on-headers": ">=1.1.0",
-      "@babel/plugin-transform-modules-systemjs": ">=7.29.4",
+      "@babel/core": "^7.29.7",
+      "form-data": "^4.0.6",
+      "joi": "^17.13.4",
+      "multer": "^2.2.0",
+      "qs": "^6.15.2",
+      "uuid": "^11.1.1",
+      "ws": "^8.21.0",
       "file-type": ">=21.3.1"
     }
   },
@@ -78,6 +84,7 @@
     "jest-axe": "^10.0.0",
     "jest-environment-jsdom": "^30.0.0",
     "svg-react-loader": "^0.4.6",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "@babel/core": "^7.29.7"
   }
 }
