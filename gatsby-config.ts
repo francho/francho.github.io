@@ -85,22 +85,6 @@ const config: GatsbyConfig = {
       },
       __key: "content",
     },
-    {
-      resolve: `gatsby-plugin-react-svg`,
-      options: {
-        rule: {
-          include: /images\/.*\.svg/,
-          omitKeys: [
-            "xmlnsDc",
-            "xmlnsCc",
-            "xmlnsRdf",
-            "xmlnsSvg",
-            "xmlnsSodipodi",
-            "xmlnsInkscape",
-          ],
-        },
-      },
-    },
   ],
 };
 

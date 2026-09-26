@@ -4,6 +4,28 @@ import { GatsbyNode } from "gatsby";
 const pageTemplate = path.resolve(`./src/templates/PageTemplate.tsx`);
 const iLikeTemplate = path.resolve(`./src/templates/ILikeTemplate.tsx`);
 
+export const onCreateWebpackConfig: GatsbyNode["onCreateWebpackConfig"] = ({
+  actions,
+  getConfig,
+  rules,
+}) => {
+  const config = getConfig();
+  const imagesRule = rules.images();
+  const componentSvg = /images\/.*\.svg$/;
+
+  config.module.rules = config.module.rules.map((rule: typeof imagesRule) =>
+    rule.test?.toString() === imagesRule.test?.toString()
+      ? { ...rule, exclude: componentSvg }
+      : rule
+  );
+  config.module.rules.push({
+    test: /\.svg$/,
+    include: componentSvg,
+    use: [{ loader: "@svgr/webpack", options: { svgo: false } }],
+  });
+  actions.replaceWebpackConfig(config);
+};
+
 export const createPages: GatsbyNode["createPages"] = async ({
   graphql,
   actions,
