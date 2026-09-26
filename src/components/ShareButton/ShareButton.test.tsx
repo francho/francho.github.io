@@ -136,6 +136,7 @@ describe("ShareButton", () => {
 
     await waitFor(() => {
       expect(screen.getByText("Copiado")).toBeInTheDocument()
+      expect(screen.getByText("Copiado")).toHaveAttribute("aria-live", "polite")
     })
   })
 
