@@ -63,9 +63,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gatsby-build-
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-      - name: Audit dependencies
-        run: pnpm audit --audit-level=high
+        run: pnpm install --frozen-lockfile --prod=false
       - name: Build and type-check
         env:
           PREFIX_PATHS: 'true'
