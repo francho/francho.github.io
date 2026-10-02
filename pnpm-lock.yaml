@@ -115,8 +115,8 @@ importers:
         specifier: ^3.16.0
         version: 3.16.0(@babel/core@7.29.7)(core-js@3.43.0)
       badge-maker:
-        specifier: ^5.0.2
-        version: 5.0.2
+        specifier: ^6.0.0
+        version: 6.0.0
       gatsby:
         specifier: ^5.16.1
         version: 5.16.1(@swc/helpers@0.5.23)(@types/node@22.19.17)(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(type-fest@0.21.3)(typescript@5.8.3)
@@ -359,6 +359,11 @@ packages:
 
   '@babel/parser@7.29.8':
     resolution: {integrity: sha512-E8lTAYNB1KW+FH+VGJuZM1ioAx2E6oVlvQFRrf5P8ZZmsiJXYAD9vTFV7yyEURNzgh1dFqMZuO6tUwcARbqFCA==}
+    engines: {node: '>=6.0.0'}
+    hasBin: true
+
+  '@babel/parser@7.29.9':
+    resolution: {integrity: sha512-CjXrNHTnvqBVqHgdBysY3vk2T8tpJHb5/RMeHJBTyVa9xgugCB0CJTx/3oO8RV2QRQP391RWpB7D6hLjm8V9uA==}
     engines: {node: '>=6.0.0'}
     hasBin: true
 
@@ -2998,8 +3003,8 @@ packages:
     peerDependencies:
       '@babel/core': ^7.29.7
 
-  badge-maker@5.0.2:
-    resolution: {integrity: sha512-Xd3YUmKPEShQcn6PFB03Wxq0RNJRFwVVroyRz0qIjSXwniYUGsGWNHqtNsQYi/Sbs8Ni7qAEf7LKgDOtcAoCDg==}
+  badge-maker@6.0.0:
+    resolution: {integrity: sha512-+P5EsfmFWAR2cA9M0q20pa4OVOgnOXZkfRYUkQYHanECXCIg10ZnSBzelfBtEjt03b4Vac/yC1h55/wJPLmaOg==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -8418,6 +8423,10 @@ snapshots:
     dependencies:
       '@babel/types': 7.29.8
 
+  '@babel/parser@7.29.9':
+    dependencies:
+      '@babel/types': 7.29.8
+
   '@babel/plugin-bugfix-firefox-class-in-computed-class-key@7.27.1(@babel/core@7.29.7)':
     dependencies:
       '@babel/core': 7.29.7
@@ -11383,7 +11392,7 @@ snapshots:
   babel-eslint@10.1.0(eslint@7.32.0):
     dependencies:
       '@babel/code-frame': 7.29.7
-      '@babel/parser': 7.29.8
+      '@babel/parser': 7.29.9
       '@babel/traverse': 7.29.8
       '@babel/types': 7.29.8
       eslint: 7.32.0
@@ -11560,7 +11569,7 @@ snapshots:
       babel-plugin-jest-hoist: 30.5.0
       babel-preset-current-node-syntax: 1.2.0(@babel/core@7.29.7)
 
-  badge-maker@5.0.2:
+  badge-maker@6.0.0:
     dependencies:
       anafanafo: 2.0.0
       css-color-converter: 2.0.0
