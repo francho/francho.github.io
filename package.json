@@ -113,6 +113,6 @@
     "react-dom": "^19.3.0",
     "remark-frontmatter": "^5.0.0",
     "remark-gfm": "^3.0.1",
-    "typescript": "^5.3.3"
+    "typescript": "^7.0.2"
   }
 }
